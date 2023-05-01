@@ -1,0 +1,49 @@
+# resources: https://github.com/qutebrowser/qutebrowser/blob/master/.github/workflows/nightly.yml
+# https://github.com/JackMcKew/pyinstaller-action-windows,
+# https://github.com/Nuitka/Nuitka-Action
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+# https://github.com/svenstaro/upload-release-action
+# https://blog.knoldus.com/manual-trigger-in-github-actions/
+
+name: create pdfs and pngs
+
+on:
+  workflow_dispatch:
+    inputs:
+      number:
+        description: 'Which document should be generated?'
+        type: string
+        required: true
+        default: 1
+
+jobs:
+  build:
+    name: Document ${{ github.event.inputs.number }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout Master Branch
+        uses: actions/checkout@v3
+        with:
+          ref: "master"
+
+      - uses: matthejue/texlive-action-personal-copy/full@master
+        with:
+          run: |
+            apk add make
+            cd ./Exercise_class_${{ github.event.inputs.number }}
+            latexmk -pdf main.tex
+        # continue-on-error: true
+
+      - name: Upload pdf of document to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.UPLOAD_TO_REPO }}
+          file: ${{ github.event.inputs.number }}/main.pdf
+          asset_name: Exercise_class_${{ github.event.inputs.number }}.pdf
+          tag: ${{ github.ref_name }}
+          overwrite: true
+          body: "Document ${{ github.event.inputs.number }}.pdf was added / updated most recently"
