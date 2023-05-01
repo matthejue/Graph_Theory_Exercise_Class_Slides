@@ -42,7 +42,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.UPLOAD_TO_REPO }}
-          file: ${{ github.event.inputs.number }}/main.pdf
+          file: Exercise_class_${{ github.event.inputs.number }}/main.pdf
           asset_name: Exercise_class_${{ github.event.inputs.number }}.pdf
           tag: ${{ github.ref_name }}
           overwrite: true
