@@ -6,9 +6,8 @@
 
 \includeonly{
   ./content/Vorbereitung,
-  % ./content/Aufgabe1,
-  % ./content/Aufgabe1,
-  % ./content/Aufgabe2,
+  ./content/Aufgabe1,
+  ./content/Aufgabe2,
   % ./content/Aufgabe3,
   % ./content/Aufgabe4,
   % ./content/Appendix,
@@ -16,50 +15,49 @@
 }
 
 \begin{document}
+  \begin{withoutheadline}
+    \begin{withoutfootline}
+      \begin{frame}
+        \titlepagesecond
+      \end{frame}
+    \end{withoutfootline}
 
-\begin{withoutheadline}
-  \begin{withoutfootline}
-    \begin{frame}
-      \titlepagesecond
+    \begin{frame}[shrink=10]{Table of Contents}
+      \tableofcontents[hideallsubsections]
     \end{frame}
-  \end{withoutfootline}
+  \end{withoutheadline}
 
-  \begin{frame}[shrink=10]{Table of Contents}
-    \tableofcontents[hideallsubsections]
+  \setcounter{section}{-1}
+
+  \include{./content/Introduction}
+  \include{./content/Vorbereitung}
+  \include{./content/Aufgabe1}
+  \include{./content/Aufgabe2}
+  \include{./content/Aufgabe3}
+  \include{./content/Aufgabe4}
+  \include{./content/Appendix}
+  \include{./content/Bonus}
+
+  \section{Literature}
+  %
+  % \begin{frame}{Bücher}
+  %   \printbibliography[type=book,heading=subbibliography,title={Bücher}]
+  % \end{frame}
+  %
+  % \begin{frame}{Artikel}
+  %   \printbibliography[type=article,heading=subbibliography,title={Artikel}]
+  % \end{frame}
+  %
+  % \begin{frame}{Vorlesungen}
+  %   \printbibliography[type=unpublished,heading=subbibliography,title={Vorlesungen}]
+  % \end{frame}
+  %
+  \begin{frame}{Online}
+    \nocite{noauthor_download_nodate}
+    \printbibliography[type=online,heading=subbibliography,title={Online}]
   \end{frame}
-\end{withoutheadline}
-
-\setcounter{section}{0}
-
-\include{./content/Introduction}
-\include{./content/Vorbereitung}
-\include{./content/Aufgabe1}
-\include{./content/Aufgabe2}
-\include{./content/Aufgabe3}
-\include{./content/Aufgabe4}
-\include{./content/Appendix}
-\include{./content/Bonus}
-
-\section{Literature}
-%
-% \begin{frame}{Bücher}
-%   \printbibliography[type=book,heading=subbibliography,title={Bücher}]
-% \end{frame}
-%
-% \begin{frame}{Artikel}
-%   \printbibliography[type=article,heading=subbibliography,title={Artikel}]
-% \end{frame}
-%
-% \begin{frame}{Vorlesungen}
-%   \printbibliography[type=unpublished,heading=subbibliography,title={Vorlesungen}]
-% \end{frame}
-%
-\begin{frame}{Online}
-  \nocite{noauthor_download_nodate}
-  \printbibliography[type=online,heading=subbibliography,title={Online}]
-\end{frame}
-%
-% \begin{frame}{Sonstiges}
-%   \printbibliography[nottype=book, nottype=article, nottype=online, nottype=unpublished,heading=subbibliography,keyword=wikikeyword,title={Sonstige Quellen}]
-% \end{frame}
+  %
+  % \begin{frame}{Sonstiges}
+  %   \printbibliography[nottype=book, nottype=article, nottype=online, nottype=unpublished,heading=subbibliography,keyword=wikikeyword,title={Sonstige Quellen}]
+  % \end{frame}
 \end{document}

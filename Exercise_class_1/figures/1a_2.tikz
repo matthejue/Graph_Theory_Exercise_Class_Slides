@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={graph_theory}] (0) at (-1.75, 0.25) {a};
+		\node [style={graph_theory}] (1) at (0.25, -1.75) {d};
+		\node [style={graph_theory}] (2) at (3.75, -1.75) {e};
+		\node [style={graph_theory}] (3) at (0.25, 2.25) {b};
+		\node [style={graph_theory}] (4) at (3.75, 2.25) {c};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to node [above] {e1} (3);
+		\draw (0) to node [above] {e2} (1);
+		\draw (3) to node [above] {e3} (4);
+		\draw (3) to node [above] {e4} (1);
+		\draw (4) to node [above] {e5} (2);
+		\draw (1) to node [above] {e6} (2);
+	\end{pgfonlayer}
+\end{tikzpicture}

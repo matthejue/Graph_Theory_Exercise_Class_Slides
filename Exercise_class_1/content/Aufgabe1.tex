@@ -11,3 +11,263 @@
 \section{Aufgabe 1}
 
 \setcounter{task}{1}
+
+\begin{frame}[allowframebreaks]{Task 1}{Undirected Graphs}
+  \begin{requirementsnoinc}
+    \begin{columns}
+      \begin{column}{0.6\textwidth}
+        \centering
+        \begin{align*}
+          G_1 &:= (V_1, E_1, R_1)\\
+          V_1 &:= \{a, b, c, d, e\},\\
+          E_1 &:= \{e_1, e_2, e_3, e_4, e_5\},\\
+          R_1 &:= \{e_1 \mapsto \{a, b\} , e_2 \mapsto \{d, a\}, e_3 \mapsto \{a, c\},\\\ & \qquad e_4 \mapsto \{d, c\}, e_5 \mapsto \{e\}\},\\
+        \end{align*}
+      \end{column}
+      \begin{column}{0.4\textwidth}
+        \centering
+        $G_2 :=
+        \begin{pmatrix}
+        0 & 1 & 0 & 1 & 0 \\
+        1 & 0 & 1 & 1 & 0 \\
+        0 & 1 & 0 & 0 & 1 \\
+        1 & 1 & 0 & 0 & 1 \\
+        0 & 0 & 1 & 1 & 0
+        \end{pmatrix}$
+      \end{column}
+    \end{columns}
+  \end{requirementsnoinc}
+  \begin{solutionnoinc}
+    \begin{columns}
+      \begin{column}{0.6\textwidth}
+        \centering
+        \begin{align*}
+          G_1 &:= (V_1, E_1, R_1)\\
+          V_1 &:= \{a, b, c, d, e\},\\
+          E_1 &:= \{e_1, e_2, e_3, e_4, e_5\},\\
+          R_1 &:= \{e_1 \mapsto \{a, b\} , e_2 \mapsto \{d, a\}, e_3 \mapsto \{a, c\},\\\ & \qquad e_4 \mapsto \{d, c\}, e_5 \mapsto \{e\}\},\\
+        \end{align*}
+      \end{column}
+      \begin{column}{0.4\textwidth}
+        \ctikzfig{1a_no_edges}
+        % ../figures/1a_no_edges.tikz
+      \end{column}
+    \end{columns}
+  \end{solutionnoinc}
+  \begin{solutionnoinc}
+    \begin{columns}
+      \begin{column}{0.6\textwidth}
+        \centering
+        \begin{align*}
+          G_1 &:= (V_1, E_1, R_1)\\
+          V_1 &:= \{a, b, c, d, e\},\\
+          E_1 &:= \{e_1, e_2, e_3, e_4, e_5\},\\
+          R_1 &:= \{e_1 \mapsto \{a, b\} , e_2 \mapsto \{d, a\}, e_3 \mapsto \{a, c\},\\\ & \qquad e_4 \mapsto \{d, c\}, e_5 \mapsto \{e\}\},\\
+        \end{align*}
+      \end{column}
+      \begin{column}{0.4\textwidth}
+        \ctikzfig{1a}
+        % ../figures/1a.tikz
+      \end{column}
+    \end{columns}
+  \end{solutionnoinc}
+  \begin{solutionnoinc}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \centering
+        $G_2 :=
+        \begin{pmatrix}
+        0 & 1 & 0 & 1 & 0 \\
+        1 & 0 & 1 & 1 & 0 \\
+        0 & 1 & 0 & 0 & 1 \\
+        1 & 1 & 0 & 0 & 1 \\
+        0 & 0 & 1 & 1 & 0
+        \end{pmatrix}$
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{1a_no_edges}
+        % ../figures/1a_no_edges.tikz
+      \end{column}
+    \end{columns}
+  \end{solutionnoinc}
+  \begin{solution}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \centering
+        $G_2 :=
+        \begin{pmatrix}
+        0 & 1 & 0 & 1 & 0 \\
+        1 & 0 & 1 & 1 & 0 \\
+        0 & 1 & 0 & 0 & 1 \\
+        1 & 1 & 0 & 0 & 1 \\
+        0 & 0 & 1 & 1 & 0
+        \end{pmatrix}$
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{1a_2}
+        % ../figures/1a_2.tikz
+      \end{column}
+    \end{columns}
+  \end{solution}
+\end{frame}
+\begin{frame}[allowframebreaks]{Task 1}{Undirected Graphs}
+  \begin{solutionnoinc}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{1a}
+        % ../figures/1a.tikz
+      \end{column}
+      \begin{column}{0.5\textwidth} 
+        \centering
+        $G_2 :=
+        \begin{pmatrix}
+        \_ & \_ & \_ & \_ & \_ \\
+        \_ & \_ & \_ & \_ & \_ \\
+        \_ & \_ & \_ & \_ & \_ \\
+        \_ & \_ & \_ & \_ & \_ \\
+        \_ & \_ & \_ & \_ & \_
+        \end{pmatrix}$
+      \end{column}
+    \end{columns}
+  \end{solutionnoinc}
+  \begin{solutionnoinc}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{1a}
+        % ../figures/1a.tikz
+      \end{column}
+      \begin{column}{0.5\textwidth} 
+        \centering
+        $G_2 :=
+        \begin{pmatrix}
+        0 & 1 & 1 & 1 & 0 \\
+        1 & 0 & 0 & 0 & 0 \\
+        1 & 0 & 0 & 1 & 0 \\
+        1 & 0 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 0 & 1
+        \end{pmatrix}$
+      \end{column}
+    \end{columns}
+  \end{solutionnoinc}
+  \begin{solutionnoinc}
+    \begin{columns}
+      \begin{column}{0.4\textwidth}
+        \ctikzfig{1a_2}
+        % ../figures/1a_2.tikz
+      \end{column}
+      \begin{column}{0.6\textwidth} 
+        $\begin{aligned}
+          G_1 &:= \\
+          V_1 &:= \\
+          E_1 &:= \\
+          R_1 &:=
+        \end{aligned}$
+      \end{column}
+    \end{columns}
+  \end{solutionnoinc}
+  \begin{solution}
+    \begin{columns}
+      \begin{column}{0.4\textwidth}
+        \ctikzfig{1a_2}
+        % ../figures/1a_2.tikz
+      \end{column}
+      \begin{column}{0.6\textwidth} 
+        \centering
+        \begin{align*}
+          G_1 &:= (V_1, E_1, R_1)\\
+          V_1 &:= \{a, b, c, d, e\},\\
+          E_1 &:= \{e_1, e_2, e_3, e_4, e_5, e_6\},\\
+          R_1 &:= \{e_1 \mapsto \{a, b\} , e_2 \mapsto \{a, d\}, e_3 \mapsto \{b, c\},\\\ & \qquad e_4 \mapsto \{b, d\}, e_5 \mapsto \{c, e\}, e_6 \mapsto \{d, e\}\},\\
+        \end{align*}
+      \end{column}
+    \end{columns}
+  \end{solution}
+\end{frame}
+\begin{frame}[allowframebreaks]{Task 1}{Undirected Graphs}
+  \begin{solutionnoinc}
+    \begin{center}
+      % \hspace{-1cm}
+      \begin{tabular}{m{0.6\textwidth}|m{0.15\textwidth}|m{0.15\textwidth}}
+        % \toprule
+        \textbf{Property}                                & \textbf{$G_1$ has property?} & \textbf{$G_2$ has property?} \\
+        \hlineB{4}
+        zusammenhängend / \textit{connected}             &                              &                              \\
+        \hline
+        schleifenfrei / \textit{loop-free}               &                              &                              \\
+        \hline
+        enthält Mehrfachkanten / \textit{multiple-edged} &                              &                              \\
+        \hline
+        unendlich / \textit{infinite}                    &                              &                              \\
+        \hline
+        einfach / \textit{simple}                        &                              &                              \\%\par
+        % \bottomrule
+      \end{tabular}
+    \end{center}
+  \end{solutionnoinc}
+  \begin{requirementsnoinc}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{1a}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{1a_2}
+      \end{column}
+    \end{columns}
+  \end{requirementsnoinc}
+  \begin{solution}
+    \begin{center}
+      % \hspace{-1cm}
+      \begin{tabular}{m{0.6\textwidth}|m{0.15\textwidth}|m{0.15\textwidth}}
+        % \toprule
+        \textbf{Property}                                & \textbf{$G_1$ has property?} & \textbf{$G_2$ has property?} \\
+        \hlineB{4}
+        zusammenhängend / \textit{connected}             & no                           & yes                          \\
+        \hline
+        schleifenfrei / \textit{loop-free}               & no                           & yes                          \\
+        \hline
+        enthält Mehrfachkanten / \textit{multiple-edged} & no                           & no                           \\
+        \hline
+        unendlich / \textit{infinite}                    & no                           & no                           \\
+        \hline
+        einfach / \textit{simple}                        & no                           & yes                          \\%\par
+        % \bottomrule
+      \end{tabular}
+    \end{center}
+  \end{solution}
+\end{frame}
+\begin{frame}[allowframebreaks]{Task 1}{Undirected Graphs}
+  \begin{solutionnoinc}
+    \begin{columns}
+      \begin{column}{0.5\textwidth} 
+        \ctikzfig{1a_2}
+      \end{column}
+      \begin{column}{0.5\textwidth} 
+        $M(G_2) :=
+        \begin{pmatrix}
+          \_ & \_ & \_ & \_ & \_ & \_ \\
+          \_ & \_ & \_ & \_ & \_ & \_ \\
+          \_ & \_ & \_ & \_ & \_ & \_ \\
+          \_ & \_ & \_ & \_ & \_ & \_ \\
+          \_ & \_ & \_ & \_ & \_ & \_
+        \end{pmatrix}$
+      \end{column}
+    \end{columns}
+  \end{solutionnoinc}
+  \begin{solution}
+    \begin{columns}
+      \begin{column}{0.5\textwidth} 
+        \ctikzfig{1a_2}
+      \end{column}
+      \begin{column}{0.5\textwidth} 
+        $M(G_2) :=
+        \begin{pmatrix}
+          1 & 1 & 0 & 0 & 0 & 0 \\
+          1 & 0 & 1 & 1 & 0 & 0 \\
+          0 & 0 & 1 & 0 & 1 & 0 \\
+          0 & 1 & 0 & 1 & 0 & 1 \\
+          0 & 0 & 0 & 0 & 1 & 1
+        \end{pmatrix}$
+      \end{column}
+    \end{columns}
+  \end{solution}
+\end{frame} 
