@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={graph_theory}] (0) at (-5, 2) {a};
+		\node [style={graph_theory}] (1) at (-3, 2) {b};
+		\node [style={graph_theory}] (2) at (-1, 2) {c};
+		\node [style={graph_theory}] (3) at (3.75, 4) {x};
+		\node [style={graph_theory}] (4) at (2, 2) {y};
+		\node [style={graph_theory}] (5) at (4, 0) {z};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1);
+		\draw (1) to (2);
+		\draw (4) to (5);
+		\draw (4) to (3);
+		\draw [style=dotted, bend left] (0) to node [above] {$\varphi(a)$} (3);
+		\draw [style=dotted, bend left, looseness=1.25] (1) to node [above] {$\varphi(b)$} (4);
+		\draw [style=dotted, bend right] (2) to node [above] {$\varphi(c)$} (5);
+	\end{pgfonlayer}
+\end{tikzpicture}

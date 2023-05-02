@@ -8,3 +8,4 @@
 
 % Edge styles
 \tikzstyle{graph_theory_directed}=[<-]
+\tikzstyle{dotted}=[dashed, ->]
