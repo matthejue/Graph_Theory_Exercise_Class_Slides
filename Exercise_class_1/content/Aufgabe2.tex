@@ -21,9 +21,10 @@
       \begin{itemize}
         \item because of the \alert{bijection} both graphs $G$ and $H$ must have the \alert{same number} of \alert{vertices}
         \item because both graphs $G$ and $H$ need to have the \alert{\enquote{same neighbours}} (have to satisfy two corresponding relations) they must have the \alert{same number} of \alert{edges}. To be clear, it does also hold: $uv\not\in E(G) \Leftrightarrow \varphi(u)\varphi(v)\not\in E(H)$
+        \item two \alert{unlabbeled graphs} are isomorphic if they would be isomorphic under \alert{any} \alert{labelling} of their vertices
       \end{itemize} 
       \ctikzfig{example_isomorphism}
-\end{itemize}
+    \end{itemize}
   \end{requirementsnoinc}
   \begin{requirementsnoinc}
     \begin{itemize}
@@ -113,4 +114,11 @@
       \end{pmatrix}
     \end{aligned}\]
   \end{solution}
+  \begin{example}
+    \ctikzfig{example_isomorphism_2}
+    \begin{itemize}
+      \item \alert{fast method:} find \textit{corresponding vertices of same degree} and make sure the \enquote{neigbors} match up
+      \item \alert{confirm isomorphism} between graphs by \alert{creating the isomorphism}
+    \end{itemize}
+  \end{example}
 \end{frame}

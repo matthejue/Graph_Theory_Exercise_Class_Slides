@@ -1,0 +1,73 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={graph_theory}] (0) at (0, 2) {};
+		\node [style={graph_theory}] (1) at (2, 0) {};
+		\node [style={graph_theory}] (2) at (-2, 0) {};
+		\node [style={graph_theory}] (3) at (-1, -2.25) {};
+		\node [style={graph_theory}] (4) at (1, -2.25) {};
+		\node [style={graph_theory}] (5) at (-1, -2.25) {};
+		\node [style={graph_theory}] (6) at (3.5, 1) {};
+		\node [style={graph_theory}] (7) at (6.5, 1) {};
+		\node [style={graph_theory}] (8) at (3.5, -1) {};
+		\node [style={graph_theory}] (10) at (6.5, -1) {};
+		\node [style={graph_theory}] (11) at (5, -2) {};
+		\node [style={graph_theory}] (12) at (5, 2) {};
+		\node [style={graph_theory}] (13) at (10.25, 2) {};
+		\node [style={graph_theory}] (14) at (12.25, 0) {};
+		\node [style={graph_theory}] (15) at (8.25, 0) {};
+		\node [style={graph_theory}] (16) at (9.25, -2.25) {};
+		\node [style={graph_theory}] (17) at (11.25, -2.25) {};
+		\node [style={graph_theory}] (18) at (9.25, -2.25) {};
+		\node [style={graph_theory}] (19) at (20.5, 2) {};
+		\node [style={graph_theory}] (20) at (22.5, 0) {};
+		\node [style={graph_theory}] (21) at (18.5, 0) {};
+		\node [style={graph_theory}] (22) at (19.5, -2.25) {};
+		\node [style={graph_theory}] (23) at (21.5, -2.25) {};
+		\node [style={graph_theory}] (24) at (19.5, -2.25) {};
+		\node [style={graph_theory}] (25) at (15.25, 2) {};
+		\node [style={graph_theory}] (26) at (17.25, 0) {};
+		\node [style={graph_theory}] (27) at (13.25, 0) {};
+		\node [style={graph_theory}] (28) at (14.25, -2.25) {};
+		\node [style={graph_theory}] (29) at (16.25, -2.25) {};
+		\node [style={graph_theory}] (30) at (14.25, -2.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (5) to (4);
+		\draw (4) to (1);
+		\draw (1) to (0);
+		\draw (0) to (2);
+		\draw (2) to (5);
+		\draw (5) to (1);
+		\draw (2) to (1);
+		\draw (11) to (10);
+		\draw (10) to (7);
+		\draw (6) to (8);
+		\draw (8) to (11);
+		\draw (6) to (12);
+		\draw (12) to (7);
+		\draw [bend right=60, looseness=2.00] (11) to (7);
+		\draw [bend left=270, looseness=2.50] (7) to (8);
+		\draw (18) to (17);
+		\draw (17) to (14);
+		\draw (14) to (13);
+		\draw (13) to (15);
+		\draw (15) to (18);
+		\draw [bend left=45, looseness=1.50] (13) to (14);
+		\draw [bend right=60, looseness=2.00] (18) to (14);
+		\draw (24) to (23);
+		\draw (23) to (20);
+		\draw (20) to (19);
+		\draw (19) to (21);
+		\draw (21) to (24);
+		\draw [bend left=75, looseness=2.75] (21) to (20);
+		\draw [bend right=285, looseness=1.75] (23) to (21);
+		\draw (30) to (29);
+		\draw (29) to (26);
+		\draw (26) to (25);
+		\draw (25) to (27);
+		\draw (27) to (30);
+		\draw [bend left=45, looseness=1.50] (25) to (26);
+		\draw [bend right=60, looseness=2.00] (30) to (26);
+		\draw (27) to (26);
+	\end{pgfonlayer}
+\end{tikzpicture}
