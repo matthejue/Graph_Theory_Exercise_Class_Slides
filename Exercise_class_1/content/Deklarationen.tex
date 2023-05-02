@@ -5,6 +5,7 @@
 % ./Aufgabe1.tex
 % ./Aufgabe2.tex
 % ./Aufgabe3.tex
+% ./Aufgabe4.tex
 % ./Bonus.tex
 
 % ┌──────────┐
@@ -97,28 +98,35 @@ after title={\hspace{0.2cm}\includegraphics[height=3mm]{./figures/lupe.png}}
 % https://tex.stackexchange.com/questions/152565/define-a-new-block-environment-in-latex-beamer
 \renewenvironment<>{task}[1][]{%
   \setbeamercolor{block title}{fg=white,bg=SecondaryColor}%
-\begin{block}#2{Task \thesection{.}\thetask:\enspace\ignorespaces #1 \anotebook}}{\end{block}\stepcounter{task}}
+\begin{block}#2{Task \thesection{.}\thetask\enspace\ignorespaces #1 \magnifier}}{\end{block}\stepcounter{task}}
 
 % https://tex.stackexchange.com/questions/152565/define-a-new-block-environment-in-latex-beamer
 \renewenvironment<>{tasknoinc}[1][]{%
   \setbeamercolor{block title}{fg=white,bg=SecondaryColor}%
-\begin{block}#2{Task \thesection{.}\thetask:\enspace\ignorespaces #1 \anotebook}}{\end{block}}
+\begin{block}#2{Task \thesection{.}\thetask\enspace\ignorespaces #1 \magnifier}}{\end{block}}
 
 \newenvironment<>{requirements}[1][]{%
-  \setbeamercolor{block title}{fg=white,bg=PrimaryColor}%
-\begin{block}#2{Requirements \thesection{.}\thetask:\enspace\ignorespaces #1 \anotebook}\itshape}{\end{block}\stepcounter{task}}
+  \setbeamercolor{block title}{fg=white,bg=SecondaryColor}%
+\begin{block}#2{Requirements \thesection{.}\thetask\enspace\ignorespaces #1 \magnifier}\itshape}{\end{block}\stepcounter{task}}
 
 \newenvironment<>{requirementsnoinc}[1][]{%
-  \setbeamercolor{block title}{fg=white,bg=PrimaryColor}%
-\begin{block}#2{Requirements \thesection{.}\thetask:\enspace\ignorespaces #1 \anotebook}\itshape}{\end{block}}
+  \setbeamercolor{block title}{fg=white,bg=SecondaryColor}%
+\begin{block}#2{Requirements \thesection{.}\thetask\enspace\ignorespaces #1 \magnifier}\itshape}{\end{block}}
 
 \newenvironment<>{solution}[1][]{%
   \setbeamercolor{block title}{fg=white,bg=PrimaryColor}%
-\begin{block}#2{Solution \thesection{.}\thetask:\enspace\ignorespaces #1 \anotebook}\itshape}{\end{block}\stepcounter{task}}
+\begin{block}#2{Solution \thesection{.}\thetask\enspace\ignorespaces #1 \magnifier}\itshape}{\end{block}\stepcounter{task}}
 
 \newenvironment<>{solutionnoinc}[1][]{%
   \setbeamercolor{block title}{fg=white,bg=PrimaryColor}%
-\begin{block}#2{Solution \thesection{.}\thetask:\enspace\ignorespaces #1 \anotebook}\itshape}{\end{block}}
+\begin{block}#2{Solution \thesection{.}\thetask\enspace\ignorespaces #1 \magnifier}\itshape}{\end{block}}
+
+\newcounter{definition}
+\setcounter{definition}{1}
+
+\newenvironment<>{definition}[1]{%
+  \setbeamercolor{block title}{fg=white,bg=SecondaryColorDimmed}%
+\begin{block}#2{Definition \thedefinition\enspace\ignorespaces #1 \anotebook}\itshape}{\end{block}\stepcounter{definition}}
 
 % https://stackoverflow.com/questions/34274267/how-can-i-number-theorems-definitions-etc-etc-consecutively-in-latex-without
 \newtheorem{customtheorem}{Custom Theorem}[section]
