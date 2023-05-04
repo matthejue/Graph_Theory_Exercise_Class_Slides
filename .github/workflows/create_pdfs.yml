@@ -34,7 +34,7 @@ jobs:
         with:
           run: |
             apk add make
-            cd ./Exercise_class_${{ github.event.inputs.number }}
+            cd ./Exercise_class_${{ github.event.inputs.number }}*
             latexmk -pdf main.tex
         # continue-on-error: true
 
