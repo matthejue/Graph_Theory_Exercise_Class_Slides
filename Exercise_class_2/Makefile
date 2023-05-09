@@ -13,18 +13,18 @@ clean:
 	-rm -f make/bib
 	-rm -f *.bcf
 	-rm -f *.fdb_latexmk
-	-rm -f Main.fls
-	-rm -f Main.locodecaption
-	-rm -f Main.lof
-	-rm -f Main.lofloatgrammar
-	-rm -f Main.lot
-	-rm -f Main.pdf
-	-rm -f Main.run.xml
-	-rm -f Main.synctex.gz
-	-rm -f Main.theorem_list
+	-rm -f *.fls
+	-rm -f *.locodecaption
+	-rm -f *.lof
+	-rm -f *.lofloatgrammar
+	-rm -f *.lot
+	-rm -f *.pdf
+	-rm -f *.run.xml
+	-rm -f *.synctex.gz
+	-rm -f *.theorem_list
 	-rm -rf _minted-Main
-	-rm -r Main.locodecaption
-	-rm -r Main.synctex(busy)
+	-rm -r *.locodecaption
+	-rm -r *.synctex(busy)
 	-rm -r *.fls
 	-rm -r *.listing
 	-rm -r *.synctex\(busy\)

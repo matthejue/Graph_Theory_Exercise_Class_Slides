@@ -89,37 +89,37 @@ after title={\hspace{0.2cm}\includegraphics[height=3mm]{./figures/lupe.png}}
 % │ Beamer Blocks │
 % └───────────────┘
 
-\newcounter{task}
-\setcounter{task}{1}
+\newcounter{exercise}
+\setcounter{exercise}{1}
 
 % https://tex.stackexchange.com/questions/309463/beamer-numerating-theorems-and-color-of-block
 \setbeamertemplate{theorems}[numbered]
 
 % https://tex.stackexchange.com/questions/152565/define-a-new-block-environment-in-latex-beamer
-\renewenvironment<>{task}[1][]{%
+\renewenvironment<>{exercise}[1][]{%
   \setbeamercolor{block title}{fg=white,bg=SecondaryColor}%
-\begin{block}#2{Task \thesection{.}\thetask\enspace\ignorespaces #1 \notebook}}{\end{block}\stepcounter{task}}
+\begin{block}#2{Exercise \thesection{.}\theexercise\enspace\ignorespaces #1 \anotebook}}{\end{block}\stepcounter{exercise}}
 
 % https://tex.stackexchange.com/questions/152565/define-a-new-block-environment-in-latex-beamer
-\renewenvironment<>{tasknoinc}[1][]{%
+\renewenvironment<>{exercisenoinc}[1][]{%
   \setbeamercolor{block title}{fg=white,bg=SecondaryColor}%
-\begin{block}#2{Task \thesection{.}\thetask\enspace\ignorespaces #1 \notebook}}{\end{block}}
+\begin{block}#2{Exercise \thesection{.}\theexercise\enspace\ignorespaces #1 \anotebook}}{\end{block}}
 
 \newenvironment<>{requirements}[1][]{%
   \setbeamercolor{block title}{fg=white,bg=SecondaryColor}%
-\begin{block}#2{Requirements \thesection{.}\thetask\enspace\ignorespaces #1 \anotebook}\itshape}{\end{block}\stepcounter{task}}
+\begin{block}#2{Requirements \thesection{.}\theexercise\enspace\ignorespaces #1 \anotebook}\itshape}{\end{block}\stepcounter{exercise}}
 
 \newenvironment<>{requirementsnoinc}[1][]{%
   \setbeamercolor{block title}{fg=white,bg=SecondaryColor}%
-\begin{block}#2{Requirements \thesection{.}\thetask\enspace\ignorespaces #1 \anotebook}\itshape}{\end{block}}
+\begin{block}#2{Requirements \thesection{.}\theexercise\enspace\ignorespaces #1 \anotebook}\itshape}{\end{block}}
 
 \newenvironment<>{solution}[1][]{%
   \setbeamercolor{block title}{fg=white,bg=PrimaryColor}%
-\begin{block}#2{Solution \thesection{.}\thetask\enspace\ignorespaces #1 \notebook}\itshape}{\end{block}\stepcounter{task}}
+\begin{block}#2{Solution \thesection{.}\theexercise\enspace\ignorespaces #1 \notebook}\itshape}{\end{block}\stepcounter{exercise}}
 
 \newenvironment<>{solutionnoinc}[1][]{%
   \setbeamercolor{block title}{fg=white,bg=PrimaryColor}%
-\begin{block}#2{Solution \thesection{.}\thetask\enspace\ignorespaces #1 \notebook}\itshape}{\end{block}}
+\begin{block}#2{Solution \thesection{.}\theexercise\enspace\ignorespaces #1 \notebook}\itshape}{\end{block}}
 
 \newcounter{definition}
 \setcounter{definition}{1}

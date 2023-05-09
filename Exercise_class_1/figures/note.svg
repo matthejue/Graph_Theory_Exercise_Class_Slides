@@ -7,7 +7,7 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg5"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="note.svg"
    inkscape:export-filename="note.png"
    inkscape:export-xdpi="51.152893"
@@ -28,12 +28,12 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.72439513"
-     inkscape:cx="410.68747"
-     inkscape:cy="323.02812"
+     inkscape:cx="412.06793"
+     inkscape:cy="323.71836"
      inkscape:window-width="1906"
-     inkscape:window-height="1047"
+     inkscape:window-height="1020"
      inkscape:window-x="6"
-     inkscape:window-y="26"
+     inkscape:window-y="53"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -43,7 +43,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#a7dec5;fill-opacity:1;stroke:none;stroke-width:0.2"
+       style="fill:#ffb27b;fill-opacity:1;stroke:none;stroke-width:0.2"
        id="rect61"
        width="61.900909"
        height="72.33075"
@@ -101,7 +101,7 @@
        d="m 51.933376,85.090301 3.280244,2.51009 -5.503819,4.009027 z"
        sodipodi:nodetypes="cccc" />
     <rect
-       style="fill:#fcbb68;fill-opacity:1;stroke:none;stroke-width:0.2"
+       style="fill:#ffe18f;fill-opacity:1;stroke:none;stroke-width:0.2"
        id="rect61-3"
        width="61.900909"
        height="72.33075"
