@@ -8,9 +8,32 @@
 % ./Aufgabe4.tex
 % ./Bonus.tex
 
-\section{Aufgabe 2}
+\section{Exercise 2}
 
 \setcounter{exercise}{1}
 
-\begin{frame}[allowframebreaks]{Task \thesection}{XYZ}
+\begin{frame}[allowframebreaks]{Task \thesection}{Connectivity, Trails, Circuits}
+    \begin{exercisenoinc}
+        \ctikzfig{2}
+    \end{exercisenoinc}
+    \begin{solution}
+        \ctikzfig{2_ext}
+        \begin{itemize}
+            \item \textcolor{SecondaryColor}{$\blacksquare$} $\hat=$ weak connected
+            \item \textcolor{PrimaryColor}{$\blacksquare$} $\hat=$ strong connected
+            \item the color assignment in the exercise sheet was not really fitting
+        \end{itemize}
+    \end{solution}
+    \begin{solutionnoinc}
+        \ctikzfig{2_trail}
+        \begin{itemize}
+            \item \alert{Trail} is a walk that contains no edge twice. Length 6
+        \end{itemize}
+    \end{solutionnoinc}
+    \begin{solutionnoinc}
+        \ctikzfig{2_circuit}
+        \begin{itemize}
+            \item \alert{Circuit} is a closed trail. Length 4
+        \end{itemize}
+    \end{solutionnoinc}
 \end{frame}

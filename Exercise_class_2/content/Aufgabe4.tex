@@ -4,13 +4,114 @@
 % ./Deklarationen.tex
 % ./Vorbereitung.tex
 % ./Aufgabe1.tex
-% ./Aufgabe2.tex
 % ./Aufgabe3.tex
+% ./Aufgabe4.tex
 % ./Bonus.tex
 
-\section{Aufgabe 4}
+\section{Exercise 4}
 
 \setcounter{exercise}{1}
 
-\begin{frame}[allowframebreaks]{Task \thesection}{XYZ}
+\begin{frame}[allowframebreaks]{Task \thesection}{Bäume und Kruskal}
+    \begin{exercisenoinc}
+        \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{18cm}
+                \ctikzfig{figures/4_before}
+            \end{minipage}
+        }
+    \end{exercisenoinc}
+    \begin{solutionnoinc}
+        \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{18cm}
+                \ctikzfig{figures/4_1}
+            \end{minipage}
+        }
+    \end{solutionnoinc}
+    \begin{solutionnoinc}
+        \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{18cm}
+                \ctikzfig{figures/4_2}
+            \end{minipage}
+        }
+    \end{solutionnoinc}
+    \begin{solutionnoinc}
+        \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{18cm}
+                \ctikzfig{figures/4_3}
+            \end{minipage}
+        }
+    \end{solutionnoinc}
+    \begin{solutionnoinc}
+        \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{18cm}
+                \ctikzfig{figures/4_4}
+            \end{minipage}
+        }
+    \end{solutionnoinc}
+    \begin{solutionnoinc}
+        \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{18cm}
+                \ctikzfig{figures/4_5}
+            \end{minipage}
+        }
+    \end{solutionnoinc}
+    \begin{solutionnoinc}
+        \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{18cm}
+                \ctikzfig{figures/4_6}
+            \end{minipage}
+        }
+    \end{solutionnoinc}
+    \begin{solutionnoinc}
+        \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{18cm}
+                \ctikzfig{figures/4_7}
+            \end{minipage}
+        }
+    \end{solutionnoinc}
+    \begin{solutionnoinc}
+        \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{18cm}
+                \ctikzfig{figures/4_8}
+            \end{minipage}
+        }
+    \end{solutionnoinc}
+    \begin{solution}
+        \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{18cm}
+                \ctikzfig{figures/4_9}
+            \end{minipage}
+        }
+    \end{solution}
+    \begin{solution}
+      \begin{itemize}
+        \item \alert{Durchmesser:} $diam(G) := max_{u,v\in V(G)} d(u, v) = 11+10+6+7+3+2 = 39$
+      \end{itemize}
+      \resizebox{\textwidth}{!}{
+          \begin{minipage}[t]{20cm}
+              \ctikzfig{figures/4_diam}
+          \end{minipage}
+      }
+    \end{solution}
+    \begin{solutionnoinc}
+      \begin{itemize}
+        \item \alert{Exzentrizität:} $\epsilon(u) := max_{v\in V(G)} d(u,v) = 27$
+      \end{itemize}
+      \resizebox{\textwidth}{!}{
+          \begin{minipage}[t]{22cm}
+              \ctikzfig{figures/4_rad_2}
+          \end{minipage}
+      }
+    \end{solutionnoinc}
+    \begin{solution}
+      \begin{itemize}
+        \item \alert{Exzentrizität:} $\epsilon(u) := max_{v\in V(G)} d(u,v) = 21$
+        \item \alert{Radius:} $rad(G) := min_{u\in V(G)} \epsilon(u) = 21$
+      \end{itemize}
+      \resizebox{\textwidth}{!}{
+          \begin{minipage}[t]{22cm}
+              \ctikzfig{figures/4_rad}
+          \end{minipage}
+      }
+    \end{solution}
 \end{frame}

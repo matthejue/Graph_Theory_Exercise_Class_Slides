@@ -8,9 +8,40 @@
 % ./Aufgabe4.tex
 % ./Bonus.tex
 
-\section{Aufgabe 3}
+\section{Exercise 3}
 
 \setcounter{exercise}{1}
 
-\begin{frame}[allowframebreaks]{Task \thesection}{XYZ}
+\begin{frame}[allowframebreaks]{Task \thesection}{Representations of directed graphs}
+    \begin{exercisenoinc}
+        \begin{figure}[H]
+    \centering
+    $A(G) :=
+    \begin{pmatrix}
+    % 1   2   3   4   5   6
+      0 & 1 & 0 & 0 & 0 \\ % 1
+      0 & 0 & 1 & 0 & 0 \\ % 2 
+      0 & 0 & 0 & 1 & 0 \\ % 3
+      1 & 0 & 0 & 0 & 1 \\ % 4
+      1 & 0 & 0 & 0 & 0 % 5
+    \end{pmatrix}$
+\end{figure}
+    \end{exercisenoinc}
+    \begin{solution}
+        \ctikzfig{3}
+    \end{solution}
+    \begin{solution}
+        \[ M(G) := 
+        \begin{pmatrix}
+1 & 0 & 0 & 0 & -1 & -1 \\
+-1 & 1 & 0 & 0 & 0 & 0 \\
+0 & -1 & 1 & 0 & 0 & 0 \\
+0 & 0 & -1 & 1 & 1 & 0 \\
+0 & 0 & 0 & -1 & 0 & 1
+        \end{pmatrix}
+        \]
+    \end{solution}
+    \begin{solution}
+        \ctikzfig{3_ext}
+    \end{solution}
 \end{frame}

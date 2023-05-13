@@ -103,7 +103,8 @@ after title={\hspace{0.2cm}\includegraphics[height=3mm]{./figures/lupe.png}}
 % https://tex.stackexchange.com/questions/152565/define-a-new-block-environment-in-latex-beamer
 \renewenvironment<>{exercisenoinc}[1][]{%
   \setbeamercolor{block title}{fg=white,bg=SecondaryColor}%
-\begin{block}#2{Exercise \thesection{.}\theexercise\enspace\ignorespaces #1 \anotebook}}{\end{block}}
+\begin{block}#2{
+Exercise \thesection{.}\theexercise\enspace\ignorespaces #1 \anotebook}}{\end{block}}
 
 \newenvironment<>{requirements}[1][]{%
   \setbeamercolor{block title}{fg=white,bg=SecondaryColor}%
@@ -115,11 +116,23 @@ after title={\hspace{0.2cm}\includegraphics[height=3mm]{./figures/lupe.png}}
 
 \newenvironment<>{solution}[1][]{%
   \setbeamercolor{block title}{fg=white,bg=PrimaryColor}%
-\begin{block}#2{Solution \thesection{.}\theexercise\enspace\ignorespaces #1 \notebook}\itshape}{\end{block}\stepcounter{exercise}}
+\begin{block}#2{
+\if\matthias0{
+Solution
+}\else{
+Lösungsidee
+}\fi
+ \thesection{.}\theexercise\enspace\ignorespaces #1 \notebook}\itshape}{\end{block}\stepcounter{exercise}}
 
 \newenvironment<>{solutionnoinc}[1][]{%
   \setbeamercolor{block title}{fg=white,bg=PrimaryColor}%
-\begin{block}#2{Solution \thesection{.}\theexercise\enspace\ignorespaces #1 \notebook}\itshape}{\end{block}}
+\begin{block}#2{
+\if\matthias0{
+Solution
+}\else{
+Lösungsidee
+}\fi
+ \thesection{.}\theexercise\enspace\ignorespaces #1 \notebook}\itshape}{\end{block}}
 
 \newcounter{definition}
 \setcounter{definition}{1}

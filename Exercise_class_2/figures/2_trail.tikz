@@ -15,16 +15,16 @@
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [style={graph_theory_directed_right}] (2) to (3);
-		\draw [style={graph_theory_directed_left}] (2) to (6);
-		\draw [style={graph_theory_directed_right}] (2) to (1);
-		\draw [style={graph_theory_directed_right}] (11) to (1);
-		\draw [style={graph_theory_directed_right}, bend right, looseness=1.25] (1) to (7);
+		\draw [style=new edge style 2] (2) to (6);
+		\draw [style=new edge style 3] (2) to (1);
+		\draw [style=new edge style 3] (11) to (1);
+		\draw [style=new edge style 3, bend right, looseness=1.25] (1) to (7);
 		\draw [style={graph_theory_directed_right}, bend left=330, looseness=1.25] (7) to (1);
-		\draw [style={graph_theory_directed_right}] (7) to (10);
-		\draw [style={graph_theory_directed_right}] (10) to (11);
+		\draw [style=new edge style 3] (7) to (10);
+		\draw [style=new edge style 3] (10) to (11);
 		\draw [style={graph_theory_directed_right}, bend right, looseness=1.50] (12) to (0);
 		\draw [style={graph_theory_directed_right}, bend right=45, looseness=1.25] (0) to (12);
-		\draw [style={graph_theory_directed_left}] (6) to (3);
+		\draw [style=new edge style 2] (6) to (3);
 		\draw [style={graph_theory_directed_right}] (2) to (11);
 		\draw [style={graph_theory_directed_right}] (8) to (13);
 	\end{pgfonlayer}
