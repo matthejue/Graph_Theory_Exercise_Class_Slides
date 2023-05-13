@@ -71,7 +71,7 @@
       \item[]
     \end{enumerate}
   \end{solutionnoinc}
-  \begin{solution}
+  \begin{solutionnoinc}
     \begin{columns}
       \begin{column}{0.5\textwidth}
         \ctikzfig{2a_1_sol}
@@ -88,6 +88,22 @@
       \item look at \alert{degree} of vertices
       \item search for \alert{subgraphs} / \alert{cycles}
     \end{enumerate}
+  \end{solutionnoinc}
+  \begin{solution}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{2a_1_sol}
+        % ./figures/2a_1_sol.tikz
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{2a_2_sol}
+        % ./figures/2a_2_sol.tikz
+      \end{column}
+    \end{columns}
+    \vspace{0.5cm}
+    \begin{itemize}
+      \item the left graph has no cycle with length $3$, but the right graph has a cycle with length $3$
+    \end{itemize}
   \end{solution}
   \begin{requirementsnoinc}
     \includegraphics[width=\textwidth]{./figures/isomorphism2.png}
@@ -114,11 +130,4 @@
       \end{pmatrix}
     \end{aligned}\]
   \end{solution}
-  \begin{example}
-    \ctikzfig{example_isomorphism_2}
-    \begin{itemize}
-      \item \alert{fast method:} find \textit{corresponding vertices of same degree} and make sure the \enquote{neigbors} match up
-      \item \alert{confirm isomorphism} between graphs by \alert{creating the isomorphism}
-    \end{itemize}
-  \end{example}
 \end{frame}
