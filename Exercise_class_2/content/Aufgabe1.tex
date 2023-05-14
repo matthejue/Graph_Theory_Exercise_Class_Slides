@@ -13,12 +13,21 @@
 \setcounter{exercise}{1}
 
 % https://tex.stackexchange.com/questions/210450/print-counter-value-minus-1
-\begin{frame}[allowframebreaks]{Task \thesection}{XYZ}
+\begin{frame}[allowframebreaks, fragile]{Task \thesection}{XYZ}
   \begin{requirementsnoinc}
-    
+    \centering
+    \begin{minipage}{0.6\textwidth}
+      \begin{linenums}
+        \numberedcodebox[minted language=python, minted options={}]{./figures/edges.py}
+      \end{linenums}
+    \end{minipage}
+    \begin{terminal}
+      |\prompt|./edges.py
+      [(0, 0), (0, 1), (1, 2), (1, 3), (2, 0), (2, 1), (3, 2), (3, 3), 
+       (4, 0), (4, 1), (5, 2), (5, 3), (6, 0), (6, 1), (7, 2), (7, 3)]
+    \end{terminal}
   \end{requirementsnoinc}
   \begin{exercisenoinc}
-    
   \end{exercisenoinc}
   \begin{solutionnoinc}
   \end{solutionnoinc}
