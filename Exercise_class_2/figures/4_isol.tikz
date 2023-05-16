@@ -12,14 +12,14 @@
 		\node [style=circle node] (9) at (-8, 8) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [style=new edge style 4] (0) to node [right] {2} (5);
-		\draw [style=new edge style 4] (6) to node [right] {11} (9);
+		\draw [style=marked undirected edge] (0) to node [right] {2} (5);
+		\draw [style=marked undirected edge] (6) to node [right] {11} (9);
 		\draw [style=marked undirected edge] (1) to node [right] {5} (2);
 		\draw [style=marked undirected edge] (2) to node [above] {1} (8);
-		\draw [style=new edge style 4] (9) to node [left] {10} (8);
-		\draw [style=new edge style 4] (8) to node [above] {6} (3);
-		\draw [style=new edge style 4] (3) to node [right] {7} (4);
+		\draw [style=marked undirected edge] (9) to node [left] {10} (8);
+		\draw [style=marked undirected edge] (8) to node [above] {6} (3);
+		\draw [style=marked undirected edge] (3) to node [right] {7} (4);
 		\draw [style=marked undirected edge] (2) to node [above] {4} (7);
-		\draw [style=new edge style 4] (4) to node [right] {3} (5);
+		\draw [style=marked undirected edge] (4) to node [right] {3} (5);
 	\end{pgfonlayer}
 \end{tikzpicture}

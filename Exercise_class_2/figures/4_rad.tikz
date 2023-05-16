@@ -12,19 +12,13 @@
 		\node [style=circle node] (9) at (-8, 8) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw (9) to (0);
 		\draw [style=marked undirected edge] (0) to (5);
-		\draw (5) to (1);
-		\draw (1) to (6);
 		\draw [style=marked undirected edge, in=315, out=135] (6) to (9);
-		\draw (7) to (1);
 		\draw [style=marked undirected edge] (1) to (2);
 		\draw [style=marked undirected edge] (2) to node [above] {6} (8);
-		\draw (8) to (7);
 		\draw [style=marked undirected edge] (9) to node [left] {21} (8);
 		\draw [style=marked undirected edge] (8) to node [above] {18} (3);
 		\draw [style=marked undirected edge] (3) to (4);
-		\draw (4) to (2);
 		\draw [style=marked undirected edge] (2) to (7);
 		\draw [style=marked undirected edge] (4) to (5);
 	\end{pgfonlayer}
