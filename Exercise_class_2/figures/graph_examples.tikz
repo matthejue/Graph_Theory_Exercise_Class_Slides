@@ -8,6 +8,8 @@
 		\node [style=circle node] (5) at (8, 0) {c};
 		\node [style=none] (6) at (-5.75, 4.75) {$G_1$:};
 		\node [style=none] (7) at (3.25, 4.75) {$G_2$:};
+		\node [style=circle node] (8) at (8, 4) {};
+		\node [style=circle node] (9) at (8, 4) {d};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (0) to node [left] {$e_1$} (1);
