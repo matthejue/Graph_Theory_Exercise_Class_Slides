@@ -12,15 +12,15 @@
 		\node [style=circle node] (9) at (8, 4) {d};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw (0) to node [left] {$e_1$} (1);
-		\draw (1) to node [right] {$e_4$} (2);
-		\draw [bend right] (0) to node [below] {$e_6$} (2);
-		\draw [bend right, looseness=1.25] (2) to node [above] {$e_5$} (0);
-		\draw (3) to node [left] {$e_1$} (4);
-		\draw (4) to node [right] {$e_2$} (5);
-		\draw [bend right] (3) to node [below] {$e_3$} (5);
-		\draw [bend right, looseness=1.25] (5) to node [above] {$e_3$} (3);
-		\draw [in=180, out=90, loop] (1) to node [above] {$e_2$} ();
-		\draw [in=90, out=0, loop] (1) to node [above] {$e_3$} ();
+		\draw [style={graph_theory_directed_right}] (0) to node [left] {$e_1$} (1);
+		\draw [style={graph_theory_directed_right}] (1) to node [right] {$e_4$} (2);
+		\draw [style={graph_theory_directed_right}, bend right] (0) to node [below] {$e_6$} (2);
+		\draw [style={graph_theory_directed_right}, bend right, looseness=1.25] (2) to node [above] {$e_5$} (0);
+		\draw [style={graph_theory_directed_right}] (3) to node [left] {$e_1$} (4);
+		\draw [style={graph_theory_directed_right}] (4) to node [right] {$e_2$} (5);
+		\draw [style={graph_theory_directed_right}, bend right] (3) to node [below] {$e_3$} (5);
+		\draw [style={graph_theory_directed_right}, bend right, looseness=1.25] (5) to node [above] {$e_3$} (3);
+		\draw [style={graph_theory_directed_right}, in=180, out=90, loop] (1) to node [above] {$e_2$} ();
+		\draw [style={graph_theory_directed_right}, in=90, out=0, loop] (1) to node [above] {$e_3$} ();
 	\end{pgfonlayer}
 \end{tikzpicture}
