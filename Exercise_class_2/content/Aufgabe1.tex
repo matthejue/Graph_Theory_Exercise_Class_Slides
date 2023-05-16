@@ -15,14 +15,21 @@
 % https://tex.stackexchange.com/questions/210450/print-counter-value-minus-1
 \begin{frame}[allowframebreaks, fragile]{Exercise \thesection}{Directed Graphs}
   \begin{exercisenoinc}
-    \begin{itemize}
-      \item Digraph $G=\left(V,E,\phi\right)$:
-      \begin{align*}
-        V &= \{v_0, v_1, ..., v_7\} \\
-        E &= \{r_0, r_1, ..., r_{15} \} \\
-        \phi(r_i) &= (v_{\lfloor i / 2\rfloor}, v_{i \; \text{mod} \; 4})
-      \end{align*}
-    \end{itemize}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item Digraph $G=\left(V,E,\phi\right)$:
+          \begin{align*}
+            V &= \{v_0, v_1, ..., v_7\} \\
+            E &= \{r_0, r_1, ..., r_{15} \} \\
+            \phi(r_i) &= (v_{\lfloor i / 2\rfloor}, v_{i \; \text{mod} \; 4})
+          \end{align*}
+        \end{itemize}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{1a_empty}
+      \end{column}
+    \end{columns}
   \end{exercisenoinc}
   \begin{requirementsnoinc}
     \centering
@@ -37,15 +44,26 @@
        (4, 0), (4, 1), (5, 2), (5, 3), (6, 0), (6, 1), (7, 2), (7, 3)]
     \end{terminal}
   \end{requirementsnoinc}
-  \begin{solutionnoinc}
-    \ctikzfig{1a_empty}
-  \end{solutionnoinc}
 \end{frame}
 \begin{frame}[allowframebreaks]{Exercise \thesection}{Directed Graphs}
   \begin{solution}
-    \ctikzfig{1a}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item Digraph $G=\left(V,E,\phi\right)$:
+          \begin{align*}
+            V &= \{v_0, v_1, ..., v_7\} \\
+            E &= \{r_0, r_1, ..., r_{15} \} \\
+            \phi(r_i) &= (v_{\lfloor i / 2\rfloor}, v_{i \; \text{mod} \; 4})
+          \end{align*}
+        \end{itemize}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{1a}
+      \end{column}
+    \end{columns}
   \end{solution}
-  \begin{solutionnoinc}
+  \begin{exercisenoinc}
     \begin{itemize}
       \item Is it simple?
       \begin{itemize}
@@ -56,47 +74,68 @@
         \item[]
       \end{itemize}
     \end{itemize}
-  \end{solutionnoinc}
+  \end{exercisenoinc}
   \begin{solution}
-    \begin{itemize}
-      \item Is it simple?
-      \begin{itemize}
-        \item The diagram is simple in terms of the definition of the lecture.
-      \end{itemize}
-      \item Is it Eulerian?
-      \begin{itemize}
-        \item Not Eulerian, for a digraph to be Eulerian we require that $d^{+}(v)\,=\,d^{-}(v)$ for all vertices. However this is not the case for $v_i, i > 3$
-      \end{itemize}
-    \end{itemize}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item Is it simple?
+            \begin{itemize}
+              \item The diagram is simple in terms of the definition of the lecture.
+            \end{itemize}
+          \item Is it Eulerian?
+            \begin{itemize}
+              \item Not Eulerian, for a digraph to be Eulerian we require that $d^{+}(v)\,=\,d^{-}(v)$ for all vertices. However this is not the case for $v_i, i > 3$
+            \end{itemize}
+        \end{itemize}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{1a}
+      \end{column}
+    \end{columns}
   \end{solution}
-  \begin{solutionnoinc}
+  \begin{exercisenoinc}
     \begin{itemize}
       \item $v(0): d^{+}=\qquad ,d^{-}=\qquad ,N^{+}=\{\qquad, \qquad\},N^{-}=\{\qquad ,\qquad ,\qquad ,\qquad \}$
       \item $v(2): d^{+}=\qquad ,d^{-}=\qquad ,N^{+}=\{\qquad, \qquad\},N^{-}=\{\qquad ,\qquad ,\qquad ,\qquad \}$
       \item $v(7): d^{+}=\qquad ,d^{-}=\qquad ,N^{+}=\{\qquad, \qquad\},N^{-}=\{\qquad \}$
       \item $n(G)=|V(G)|=\qquad$ and $e(G)=|E(G)|=\qquad$
     \end{itemize}
-  \end{solutionnoinc}
+  \end{exercisenoinc}
   \begin{solution}
-    \begin{itemize}
-      \item $v(0): d^{+}=2,d^{-}=4,N^{+}=\{v_{0},v_{1}\},N^{-}=\{v_{0},v_{2},v_{4},v_{6}\}$
-      \item $v(2): d^{+}=2,d^{-}=4,N^{+}=\{v_{0},v_{1}\},N^{-}=\{v_{1},v_{3},v_{5},v_{7}\}$
-      \item $v(7): d^{+}=2,d^{-}=0,N^{+}=\{v_{2},v_{3}\},N^{-}=\{\}$
-      \item $n(G)=|V(G)|=8$ and $e(G)=|E(G)|=16$
-    \end{itemize}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item $v(0): d^{+}=2,d^{-}=4,N^{+}=\{v_{0},v_{1}\},N^{-}=\{v_{0},v_{2},v_{4},v_{6}\}$
+          \item $v(2): d^{+}=2,d^{-}=4,N^{+}=\{v_{0},v_{1}\},N^{-}=\{v_{1},v_{3},v_{5},v_{7}\}$
+          \item $v(7): d^{+}=2,d^{-}=0,N^{+}=\{v_{2},v_{3}\},N^{-}=\{\}$
+          \item $n(G)=|V(G)|=8$ and $e(G)=|E(G)|=16$
+        \end{itemize}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{1a}
+      \end{column}
+    \end{columns}
   \end{solution}
-  \begin{solutionnoinc}
+  \begin{exercisenoinc}
     \begin{itemize}
       \item For $d^+$ it is $\qquad$, for $d^-$ the first four, so $v_0, v_1, v_2, v_3$ holds $d^- = \qquad$ and for all other $\qquad$.
       \item So $\delta(G)^{+}=\qquad, \,\delta(G)^{-}=\qquad$ and $\Delta(G)^{+}=\qquad,\,\Delta(G)^{-}=\qquad.$
     \end{itemize}
-  \end{solutionnoinc}
+  \end{exercisenoinc}
 \end{frame}
 \begin{frame}[allowframebreaks]{Exercise \thesection}{Directed Graphs}
   \begin{solution}
-    \begin{itemize}
-      \item For $d^+$ it is $2$, for $d^-$ the first four, so $v_0, v_1, v_2, v_3$ holds $d^- = 4$ and for all other $0$.
-      \item $\mathrm{So~}\delta(G)^{+}=2, \,\delta(G)^{-}=0\mathrm{~and~}\Delta(G)^{+}=2,\,\Delta(G)^{-}=4.$
-    \end{itemize}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item For $d^+$ it is $2$, for $d^-$ the first four, so $v_0, v_1, v_2, v_3$ holds $d^- = 4$ and for all other $0$.
+          \item $\mathrm{So~}\delta(G)^{+}=2, \,\delta(G)^{-}=0\mathrm{~and~}\Delta(G)^{+}=2,\,\Delta(G)^{-}=4.$
+        \end{itemize}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{1a}
+      \end{column}
+    \end{columns}
   \end{solution}
 \end{frame}

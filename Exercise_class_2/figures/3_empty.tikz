@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=circle node] (0) at (-3, 3) {$v_1$};
+		\node [style=circle node] (1) at (0, 3) {$v_2$};
+		\node [style=circle node] (2) at (-3, 0) {$v_0$};
+		\node [style=circle node] (3) at (-1.5, -2) {$v_4$};
+		\node [style=circle node] (4) at (0, 0) {$v_3$};
+	\end{pgfonlayer}
+\end{tikzpicture}

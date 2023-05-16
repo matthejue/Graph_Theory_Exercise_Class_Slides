@@ -14,34 +14,159 @@
 
 \begin{frame}[allowframebreaks]{Exercise \thesection}{Representations of directed graphs, Eulerian Trails and Circuits}
     \begin{exercisenoinc}
-        \begin{figure}[H]
-    \centering
-    $A(G) :=
-    \begin{pmatrix}
-    % 1   2   3   4   5   6
-      0 & 1 & 0 & 0 & 0 \\ % 1
-      0 & 0 & 1 & 0 & 0 \\ % 2 
-      0 & 0 & 0 & 1 & 0 \\ % 3
-      1 & 0 & 0 & 0 & 1 \\ % 4
-      1 & 0 & 0 & 0 & 0 % 5
-    \end{pmatrix}$
-\end{figure}
+      \begin{columns}
+        \begin{column}{0.5\textwidth}
+          \begin{figure}[H]
+            \centering
+            $A(G) :=
+            \begin{pmatrix}
+              % 1   2   3   4   5   6
+              0 & 1 & 0 & 0 & 0 \\ % 1
+              0 & 0 & 1 & 0 & 0 \\ % 2 
+              0 & 0 & 0 & 1 & 0 \\ % 3
+              1 & 0 & 0 & 0 & 1 \\ % 4
+              1 & 0 & 0 & 0 & 0 % 5
+            \end{pmatrix}$
+          \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+          \ctikzfig{3_empty}
+        \end{column}
+      \end{columns}
     \end{exercisenoinc}
     \begin{solution}
-        \ctikzfig{3}
+      \begin{columns}
+        \begin{column}{0.5\textwidth}
+          \begin{figure}[H]
+            \centering
+            $A(G) :=
+            \begin{pmatrix}
+              % 1   2   3   4   5   6
+              0 & 1 & 0 & 0 & 0 \\ % 1
+              0 & 0 & 1 & 0 & 0 \\ % 2 
+              0 & 0 & 0 & 1 & 0 \\ % 3
+              1 & 0 & 0 & 0 & 1 \\ % 4
+              1 & 0 & 0 & 0 & 0 % 5
+            \end{pmatrix}$
+          \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+          \ctikzfig{3}
+        \end{column}
+      \end{columns}
     \end{solution}
+    \begin{exercisenoinc}
+      \begin{columns}
+        \begin{column}{0.4\textwidth}
+          \ctikzfig{3}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+          \[ M(G) := 
+            \begin{pmatrix}
+              \_ & \_ & \_ & \_ & \_ & \_ \\
+              \_ & \_ & \_ & \_ & \_ & \_ \\
+              \_ & \_ & \_ & \_ & \_ & \_ \\
+              \_ & \_ & \_ & \_ & \_ & \_ \\
+              \_ & \_ & \_ & \_ & \_ & \_
+            \end{pmatrix}
+          \]
+        \end{column}
+      \end{columns}
+    \end{exercisenoinc}
     \begin{solution}
-        \[ M(G) := 
-        \begin{pmatrix}
-1 & 0 & 0 & 0 & -1 & -1 \\
--1 & 1 & 0 & 0 & 0 & 0 \\
-0 & -1 & 1 & 0 & 0 & 0 \\
-0 & 0 & -1 & 1 & 1 & 0 \\
-0 & 0 & 0 & -1 & 0 & 1
-        \end{pmatrix}
-        \]
+      \begin{columns}
+        \begin{column}{0.4\textwidth}
+          \ctikzfig{3}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+          \[ M(G) := 
+            \begin{pmatrix}
+              1 & 0 & 0 & 0 & -1 & -1 \\
+              -1 & 1 & 0 & 0 & 0 & 0 \\
+              0 & -1 & 1 & 0 & 0 & 0 \\
+              0 & 0 & -1 & 1 & 1 & 0 \\
+              0 & 0 & 0 & -1 & 0 & 1
+            \end{pmatrix}
+          \]
+        \end{column}
+      \end{columns}
     \end{solution}
+    \begin{exercisenoinc}
+      \begin{columns}
+        \begin{column}{0.3\textwidth}
+          \ctikzfig{3}
+        \end{column}
+        \begin{column}{0.3\textwidth}
+          \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{5cm}
+              \centering
+              $A(G) :=
+              \begin{pmatrix}
+                % 1   2   3   4   5   6
+                0 & 1 & 0 & 0 & 0 \\ % 1
+                0 & 0 & 1 & 0 & 0 \\ % 2 
+                0 & 0 & 0 & 1 & 0 \\ % 3
+                1 & 0 & 0 & 0 & 1 \\ % 4
+                1 & 0 & 0 & 0 & 0 % 5
+              \end{pmatrix}$
+            \end{minipage}
+          }
+        \end{column}
+        \begin{column}{0.4\textwidth}
+          \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{8cm}
+              \centering
+              \[ M(G) := 
+                \begin{pmatrix}
+                1 & 0 & 0 & 0 & -1 & -1 & \_ \\
+                -1 & 1 & 0 & 0 & 0 & 0  & \_ \\
+                0 & -1 & 1 & 0 & 0 & 0  & \_ \\
+                0 & 0 & -1 & 1 & 1 & 0  & \_ \\
+                0 & 0 & 0 & -1 & 0 & 1  & \_ 
+              \end{pmatrix}
+            \]
+            \end{minipage}
+          }
+        \end{column}
+      \end{columns}
+    \end{exercisenoinc}
     \begin{solution}
-        \ctikzfig{3_ext}
+      \begin{columns}
+        \begin{column}{0.2\textwidth}
+          \ctikzfig{3_ext}
+        \end{column}
+        \begin{column}{0.3\textwidth}
+          \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{5cm}
+              \centering
+              $A(G) :=
+              \begin{pmatrix}
+                % 1   2   3   4   5   6
+                0 & 1 & 0 & \textcolor{SecondaryColor}{1} & 0 \\ % 1
+                0 & 0 & 1 & 0 & 0 \\ % 2 
+                0 & 0 & 0 & 1 & 0 \\ % 3
+                1 & 0 & 0 & 0 & 1 \\ % 4
+                1 & 0 & 0 & 0 & 0 % 5
+              \end{pmatrix}$
+            \end{minipage}
+          }
+        \end{column}
+        \begin{column}{0.4\textwidth}
+          \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{8cm}
+              \centering
+              \[ M(G) := 
+                \begin{pmatrix}
+                  1 & 0 & 0 & 0 & -1 & -1 & \textcolor{SecondaryColor}{1}\\
+                  -1 & 1 & 0 & 0 & 0 & 0  & \textcolor{SecondaryColor}{0}\\
+                  0 & -1 & 1 & 0 & 0 & 0  & \textcolor{SecondaryColor}{0} \\
+                  0 & 0 & -1 & 1 & 1 & 0  & \textcolor{SecondaryColor}{-1}\\
+                  0 & 0 & 0 & -1 & 0 & 1  & \textcolor{SecondaryColor}{0}
+                \end{pmatrix}
+              \]
+            \end{minipage}
+          }
+        \end{column}
+      \end{columns}
     \end{solution}
 \end{frame}

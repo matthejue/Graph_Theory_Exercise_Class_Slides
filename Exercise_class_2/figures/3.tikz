@@ -1,17 +1,17 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=circle node] (0) at (-2, 2) {$v_1$};
-		\node [style=circle node] (1) at (2, 2) {$v_2$};
-		\node [style=circle node] (2) at (0, 0) {$v_0$};
-		\node [style=circle node] (3) at (-2, -2) {$v_4$};
-		\node [style=circle node] (4) at (1, -2) {$v_3$};
+		\node [style=circle node] (0) at (-3, 3) {$v_1$};
+		\node [style=circle node] (1) at (0, 3) {$v_2$};
+		\node [style=circle node] (2) at (-3, 0) {$v_0$};
+		\node [style=circle node] (3) at (-1.5, -2) {$v_4$};
+		\node [style=circle node] (4) at (0, 0) {$v_3$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [style={graph_theory_directed_right}] (0) to node [above] {$e_2$} (1);
-		\draw [style={graph_theory_directed_right}] (2) to node [above] {$e_1$} (0);
-		\draw [style={graph_theory_directed_right}] (4) to node [left] {$e_5$} (2);
+		\draw [style={graph_theory_directed_right}] (2) to node [left] {$e_1$} (0);
+		\draw [style={graph_theory_directed_right}, in=360, out=180] (4) to node [above] {$e_5$} (2);
 		\draw [style={graph_theory_directed_right}] (3) to node [left] {$e_6$} (2);
-		\draw [style={graph_theory_directed_right}] (4) to node [below] {$e_4$} (3);
+		\draw [style={graph_theory_directed_right}] (4) to node [right] {$e_4$} (3);
 		\draw [style={graph_theory_directed_right}] (1) to node [right] {$e_3$} (4);
 	\end{pgfonlayer}
 \end{tikzpicture}
