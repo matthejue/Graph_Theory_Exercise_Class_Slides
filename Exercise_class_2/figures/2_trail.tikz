@@ -14,7 +14,7 @@
 		\node [style=circle node] (14) at (3, 3) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [style={graph_theory_directed_right}] (2) to (3);
+		\draw [style=new edge style 3] (2) to (3);
 		\draw [style=new edge style 2] (2) to (6);
 		\draw [style=new edge style 3] (2) to (1);
 		\draw [style=new edge style 3] (11) to (1);
