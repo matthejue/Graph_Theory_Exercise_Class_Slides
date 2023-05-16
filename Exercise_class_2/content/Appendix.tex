@@ -1,10 +1,52 @@
-%!Tex Root = ../Tutorat6.tex
+%!Tex Root = ../main.tex
 % ./Packete.tex
 % ./Design.tex
 % ./Deklarationen.tex
+% ./Vorbereitung.tex
 % ./Aufgabe1.tex
 % ./Aufgabe2.tex
 % ./Aufgabe3.tex
-% ./Bonus.tex
+% ./Aufgabe4.tex
 
-% \section{Appendix}
+\section{Appendix}
+% letztes Übugsblatt Aufgabe 3, generell nochmal mit Musterlösung vergleichen
+% Struktur, Modell, Mengenrepräsentation, Begriffe
+% Homomorphismen
+
+\begin{frame}[allowframebreaks]{Appendix}{Sufficient and Necessary}
+  \begin{itemize}
+    \item \alert{Sufficient:} If $A\rightarrow B$ then $A$ is a sufficient condition for $B$
+      \begin{itemize}
+        \item for $\neg A$ it can be both $\neg A \rightarrow B$ or $\neg A \rightarrow \neg B$
+      \end{itemize}
+    \item \alert{Necessary:} If $A\leftarrow B$ then $A$ is a necessary condition for $B$, because of $\neg A \rightarrow \neg B$
+      \begin{itemize}
+        \item for $A$ it can be both $A \rightarrow B$ or $A \rightarrow \neg B$
+      \end{itemize}
+  \end{itemize}
+  \begin{figure}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \resizebox{\columnwidth}{!}{%
+          \vbox{
+            \ctikzfig{sufficient}
+          }
+        }
+        \caption{$A \subset B$, sufficient}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.4\textwidth}
+      \resizebox{\columnwidth}{!}{%
+        \vbox{
+          \ctikzfig{necessary}
+        }
+      }
+      \caption{$A \supset B$, necessary}
+    \end{subfigure}
+  \end{figure}
+  \begin{Sidenote}
+    \begin{itemize}
+      \item if $A\rightarrow B$ then for $A$ we \alert{only} know for sure $\neg B\rightarrow \neg A$, for $\neg A$ it can \alert{both} be the case that $\neg A\rightarrow B$ or $\neg A\rightarrow \neg B$,
+      \item thus for $A\leftrightarrow B$ we know $\neg A\leftrightarrow \neg B$, because we know $\neg B\rightarrow \neg A$ and $\neg A\rightarrow \neg B$ are both the case because $A\leftrightarrow B$ \alert{iff} $B\leftarrow A$ and $A\leftarrow B$
+      \item in \alert{german}: \enquote{hinreichend und notwendig}
+    \end{itemize}
+  \end{Sidenote}
+\end{frame}
