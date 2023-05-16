@@ -50,15 +50,33 @@
     \end{itemize}
   \end{Sidenote}
 \end{frame}
-\begin{frame}{Appendix}{Languages and Structures}
+
+\begin{frame}[allowframebreaks]{Appendix}{Languages and Structures}
   \begin{itemize}
     \item \alert{Language:} ${\mathcal{L}}=\{c_{i}\}_{i\in I}\cup\{f_{j}\}_{j\in J}\cup\{R_{k}\}_{k\in K}.$
-    \item \alert{$\mathcal{L}$-Structure:} $\mathcal{A}=(A,\{c_{i}^{\mathcal{A}}\}_{i\in I},\{f_{j}^{\mathcal{A}}\}_{j\in J},\{R_{k}^{\mathcal{A}}\}_{k\in K}\}.$ with:
+    \item \alert{$\mathcal{L}$-Structure:} $\mathcal{A}=(A,\{c_{i}^{\mathcal{A}}\}_{i\in I},\{f_{j}^{\mathcal{A}}\}_{j\in J},\{R_{k}^{\mathcal{A}}\}_{k\in K}\}$ with:
     \begin{itemize}
-      \item we have a non-empty TODO $A$ together with interpretations of the \alert{constant}, \alert{function} and \alert{relation} signs
+      \item we have a non-empty \alert{universe} $A$ together with interpretations of the \alert{constant}, \alert{function} and \alert{relation} signs
       \item for every \alert{constant sign} $c_i$ there's a element from $A$ that we call $c_i^{\mathcal{A}}$
-      \item for every \alert{function sign} $f_j$ TODO $n_j$ there's a function $f_j^{\mathcal{A}}: A^{n, j} \rightarrow A$
-      \item for every \alert{relation sign} $R_k$ TODO $n_k$ there's a subset $R_k^{\mathcal{A}}$ of $A^{n, k}$
+      \item for every \alert{function sign} $f_j$ with arity $n_j$ there's a function $f_j^{\mathcal{A}}: A^{n, j} \rightarrow A$
+      \item for every \alert{relation sign} $R_k$ with arity $n_k$ there's a subset $R_k^{\mathcal{A}}$ of $A^{n, k}$
     \end{itemize}
   \end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Appendix}{Graphs - Function or Relation?}
+  \begin{columns}
+    \begin{column}{0.6\textwidth}
+      \ctikzfig{graph_examples}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \begin{align*}
+        G_3 =\;&\left(V,E,\phi\right):\\
+        V =\;&\{v_0, v_1, v_2\}, \\
+        E =\;&\{e_0, e_1, e_{2} \}, \\
+        \phi = &\{e_0 \mapsto \{v_0, v_1\},\\ 
+               &\enspace e_1 \mapsto  \{v_1, v_2\}\} 
+      \end{align*}
+    \end{column}
+  \end{columns}
 \end{frame}

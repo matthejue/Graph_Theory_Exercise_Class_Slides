@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=circle node] (0) at (-5, 0) {b};
+		\node [style=circle node] (1) at (-3, 4) {a};
+		\node [style=circle node] (2) at (-1, 0) {c};
+		\node [style=circle node] (3) at (4, 0) {b};
+		\node [style=circle node] (4) at (6, 4) {a};
+		\node [style=circle node] (5) at (8, 0) {c};
+		\node [style=none] (6) at (-5.75, 4.75) {$G_1$:};
+		\node [style=none] (7) at (3.25, 4.75) {$G_2$:};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to node [left] {$e_1$} (1);
+		\draw (1) to node [right] {$e_4$} (2);
+		\draw [bend right] (0) to node [below] {$e_6$} (2);
+		\draw [bend right, looseness=1.25] (2) to node [above] {$e_5$} (0);
+		\draw (3) to node [left] {$e_1$} (4);
+		\draw (4) to node [right] {$e_2$} (5);
+		\draw [bend right] (3) to node [below] {$e_3$} (5);
+		\draw [bend right, looseness=1.25] (5) to node [above] {$e_3$} (3);
+		\draw [in=180, out=90, loop] (1) to node [above] {$e_2$} ();
+		\draw [in=90, out=0, loop] (1) to node [above] {$e_3$} ();
+	\end{pgfonlayer}
+\end{tikzpicture}
