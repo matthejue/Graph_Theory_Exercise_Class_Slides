@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=circle node] (0) at (0, 0) {$v_3$};
+		\node [style=circle node] (1) at (0, -2) {$v_4$};
+		\node [style=circle node] (2) at (-2, -1) {$v_2$};
+		\node [style=circle node] (3) at (2, 0) {$v_5$};
+		\node [style=circle node] (4) at (2, -2) {$v_6$};
+		\node [style=circle node] (6) at (4, 0) {$v_8$};
+		\node [style=circle node] (7) at (4, -2) {...};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style={graph_theory_directed_right}] (2) to (0);
+		\draw [style={graph_theory_directed_right}] (2) to (1);
+		\draw [style={graph_theory_directed_right}] (0) to (1);
+		\draw [style={graph_theory_directed_right}] (1) to (3);
+		\draw [style={graph_theory_directed_right}] (0) to (4);
+		\draw [style={graph_theory_directed_right}] (3) to (4);
+		\draw [style={graph_theory_directed_right}] (1) to (6);
+		\draw [style={graph_theory_directed_right}] (4) to (7);
+		\draw [style={graph_theory_directed_right}] (3) to (7);
+		\draw [style={graph_theory_directed_right}] (6) to (7);
+	\end{pgfonlayer}
+\end{tikzpicture}

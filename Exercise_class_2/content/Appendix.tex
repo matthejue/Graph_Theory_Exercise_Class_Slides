@@ -42,6 +42,19 @@
       \caption{$A \supset B$, necessary}
     \end{subfigure}
   \end{figure}
+  \begin{table}
+    \centering
+    \begin{tblr}{
+      cells = {BoxColor},
+      row{1} = {PrimaryColor,fg=white},
+    }
+    $A$ & $B$ & $A\rightarrow B $ & $B\rightarrow A$ & $A\Leftrightarrow B$ \\
+      0  &  0  &  1   &  1   &   1  \\
+      0  &  1  &  1   &  0   &   0  \\
+      1  &  0  &  0   &  1   &   0  \\
+      1  &  1  &  1   &  1   &   1  
+    \end{tblr}
+  \end{table}
   \begin{Sidenote}
     \begin{itemize}
       \item if $A\rightarrow B$ then for $A$ we \alert{only} know for sure $\neg B\rightarrow \neg A$, for $\neg A$ it can \alert{both} be the case that $\neg A\rightarrow B$ or $\neg A\rightarrow \neg B$,

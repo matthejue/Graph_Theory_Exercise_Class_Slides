@@ -1,0 +1,113 @@
+%!Tex Root = ../main.tex
+% ./Packete.tex
+% ./Design.tex
+% ./Deklarationen.tex
+% ./Vorbereitung.tex
+% ./Aufgabe1.tex
+% ./Aufgabe3.tex
+% ./Aufgabe4.tex
+% ./Appendix.tex
+
+\section{Exercise 2}
+
+\setcounter{exercise}{1}
+
+\begin{frame}[allowframebreaks]{Aufgabe \thesection}{Reachability in infinite graphs}
+  \begin{exercisenoinc}    
+    \begin{align*}
+      V(G) &:= \{v_i | i \in \mathbb{N}_0\}\\
+      E(G) &:= \{(v_2,v_0)\}\cup \{(v_1,v_i)| i \in \mathbb{N}_0\backslash \{1,0\}\}
+    \end{align*}
+  \end{exercisenoinc}
+  \begin{solution}
+    \begin{columns}
+      \begin{column}[t]{0.5\textwidth}
+        \resizebox{\textwidth}{!}{
+          \begin{minipage}[t]{1.5\textwidth}
+            \algtwo
+          \end{minipage}
+        }
+      \end{column}
+      \begin{column}[t]{0.5\textwidth}
+        \ctikzfig{2a}
+        \vspace{0.25cm}
+        \begin{itemize}
+          \item \alert{If the following rule gets applided:} If there's a choice between several adjacent nodes the node with the lowest index gets taken.
+        \end{itemize}
+        \begin{columns}
+          \begin{column}[t]{0.5\linewidth}
+            \begin{itemize}
+              \item $BFS(G, v_1, v_0)$
+              \begin{itemize}
+                \item starte bei $v1$
+                \item visit $v_2$
+                \item visit $v_3$
+                \item visit $\ldots$
+                \item doesn't terminate
+              \end{itemize}
+            \end{itemize}
+          \end{column}
+          \begin{column}[t]{0.5\linewidth}
+            \begin{itemize}
+              \item $DFS(G, v_1, v_0)$
+              \begin{itemize}
+                \item visit $v_2$
+                \item visit $v_0$
+                \item terminates
+              \end{itemize}
+            \end{itemize}
+          \end{column}
+        \end{columns}
+      \end{column}
+    \end{columns}
+  \end{solution}
+  \begin{exercisenoinc}
+    \begin{align*}
+      V(F) &:= \{v_i | i \in \mathbb{N}_0\backslash\{0,1\}\}\\
+      E(F) &:= \{(v_i,v_{i\cdot 2})| i\in \mathbb{N}_0\backslash\{0,1\}\} \cup \{(v_i,v_{i+1})|i \in \mathbb{N}_0\backslash\{0,1\}\}
+    \end{align*} 
+  \end{exercisenoinc}
+  \begin{solutionnoinc}
+    \begin{columns}
+      \begin{column}[t]{0.45\textwidth}
+        \resizebox{\textwidth}{!}{
+          \begin{minipage}[t]{1.8\textwidth}
+            \algfour
+          \end{minipage}
+        }
+      \end{column}
+      \begin{column}[t]{0.5\textwidth}
+        \ctikzfig{2b}
+        \vspace{0.25cm}
+        \begin{itemize}
+          \item \alert{If the following rule gets applided:} If there's a choice between several adjacent nodes the node with the highest index gets taken.
+        \end{itemize}
+        \begin{columns}
+          \begin{column}[t]{0.5\linewidth}
+            \begin{itemize}
+              \item $BFS(G,v_2, v_3)$
+              \begin{itemize}
+                \item start at $v_2$
+                \item visit $v_4$
+                \item visit $v_3$
+                \item terminates
+              \end{itemize}
+            \end{itemize}
+          \end{column}
+          \begin{column}[t]{0.5\linewidth}
+            \begin{itemize}
+              \item $DFS(G, v_2, v_3)$
+              \begin{itemize}
+                \item start at $v_2$
+                \item visit $v_4$
+                \item visit $v_8$
+                \item visit $\ldots$
+                \item doesn't terminate
+              \end{itemize}
+            \end{itemize}
+          \end{column}
+        \end{columns}
+      \end{column}
+    \end{columns}
+  \end{solutionnoinc}
+\end{frame}

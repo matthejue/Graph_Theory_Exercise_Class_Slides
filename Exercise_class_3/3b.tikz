@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=rectangle node] (0) at (0, 2) {};
+		\node [style=rectangle node] (1) at (0, 2) {a};
+		\node [style=rectangle node] (2) at (0, 0) {};
+		\node [style=rectangle node] (3) at (0, 0) {b};
+		\node [style=rectangle node] (5) at (2, -2) {c};
+		\node [style=rectangle node] (6) at (0, -4) {d};
+		\node [style=rectangle node] (7) at (0, 4) {r};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style={graph_theory_directed_right}] (1) to (3);
+		\draw [style={graph_theory_directed_right}] (5) to (6);
+		\draw [style={graph_theory_directed_right}] (3) to (6);
+		\draw [style={graph_theory_directed_right}] (7) to (1);
+	\end{pgfonlayer}
+\end{tikzpicture}

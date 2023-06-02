@@ -1,4 +1,4 @@
-%!Tex Root = ../main.tex
+%!Tex Root = ../test.tex
 % ./Design.tex
 % ./Deklarationen.tex
 % ./Vorbereitung.tex
@@ -13,7 +13,7 @@
 % https://tex.stackexchange.com/questions/203045/latex-error-option-clash-for-package-hyperref
 % https://stackoverflow.com/questions/3637129/how-can-i-top-align-the-content-of-a-fragile-frame-in-a-latex-beamer-presentat
 % https://latex-beamer.com/faq/place-content-frame/
-\documentclass[aspectratio=169, hyperref={colorlinks=true, allcolors=PrimaryColor}, c]{beamer}
+% \documentclass[aspectratio=169, hyperref={colorlinks=true, allcolors=PrimaryColor}, c]{beamer}
 % t to position content at the top: https://tex.stackexchange.com/questions/9889/positioning-content-at-the-top-of-a-beamer-slide-by-default
 
 % ┌──────────┐
@@ -23,7 +23,7 @@
 % \usepackage[margin=1.5cm, headheight=12.5pt]{geometry}
 \usepackage[english]{babel}
 
-\usepackage[T1]{fontenc}
+% \usepackage[T1]{fontenc}
 
 \usepackage{lipsum}
 
@@ -82,7 +82,7 @@
 % % \usepackage{tabulary}
 % % https://tex.stackexchange.com/questions/395554/command-rowcolors-from-colortbl-does-not-work-as-expected
 
-\usepackage{nicematrix}
+% \usepackage{nicematrix}
 % \usepackage{tabularx}
 % \usepackage{array}
 % \usepackage{multirow}
@@ -136,11 +136,13 @@
 % https://tex.stackexchange.com/questions/369421/how-to-have-a-figure-going-over-several-pages
 % TODO: set hypcap = true when compiling for the last time
 % https://tex.stackexchange.com/questions/132611/change-color-of-figure-caption-text
-\usepackage[labelfont={color=SecondaryColor, it}, textfont={it}]{caption}
+% NOTE: had do be uncommented because else floatname command isn't working
+% \usepackage[labelfont={color=SecondaryColor, it}, textfont={it}]{caption}
 % hypcap=false
+% \usepackage{subcaption}
 
 % https://tex.stackexchange.com/questions/7210/label-and-caption-without-float
-\DeclareCaptionType{codecaption}[Code][Codeverzeichnis]
+% \DeclareCaptionType{codecaption}[Code][Codeverzeichnis]
 % https://tex.stackexchange.com/questions/449677/spaces-in-newenvironment
 \newenvironment{code}{\bigskip\captionsetup{type=codecaption}}{\medskip}
 
@@ -180,7 +182,8 @@
 % emojis
 \usepackage{tikzsymbols}
 
-\usepackage{algorithm2e}
+% \usepackage{algorithm2e}
+\usepackage[ruled]{algorithm}
 
 % https://tex.stackexchange.com/questions/237974/hide-section-numbering-but-keep-labeling
 % reference titles of sections
@@ -202,8 +205,8 @@
 % change font size
 \usepackage{anyfontsize}
 
-% subcaptions
-\usepackage{caption}
-\usepackage{subcaption}
+% \usepackage{tabularray}
+\usepackage{pseudo}
 
-\usepackage{tabularray}
+% \usepackage[noEnd]{algpseudocodex}
+\usepackage{float}

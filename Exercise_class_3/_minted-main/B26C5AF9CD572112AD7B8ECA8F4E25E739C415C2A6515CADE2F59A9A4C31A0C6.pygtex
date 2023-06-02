@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+declare \PYGZhy{}A a
+\PYG{esc}{\prompt}=1; j=2
+a[\PYGZdl{}i,\PYGZdl{}j]=5
+echo \PYGZdl{}\PYGZob{}a[\PYGZdl{}i,\PYGZdl{}j]\PYGZcb{}
+\end{Verbatim}

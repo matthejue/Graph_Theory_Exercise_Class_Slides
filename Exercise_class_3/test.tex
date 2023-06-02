@@ -1,0 +1,40 @@
+\def\matthias{0}
+
+\documentclass[aspectratio=169, hyperref={colorlinks=true, allcolors=PrimaryColor}, c]{beamer}
+
+% \usepackage{lmodern}
+% \usepackage{anyfontsize}
+
+% ┌──────────┐
+% │ Packages │
+% └──────────┘
+
+% \input{./content/Packete_2}
+% \input{./content/Design_2}
+% \input{./content/Deklarationen_2}
+
+\usepackage[ruled]{algorithm}
+\usepackage{pseudo}
+\floatname{algorithm}{test}
+
+\definecolor{PrimaryColor}{HTML}{FE6A00}
+\definecolor{PrimaryColorDimmed}{HTML}{FFB27B}
+\definecolor{SecondaryColor}{HTML}{FFBB00}
+\definecolor{SecondaryColorDimmed}{HTML}{FFE18F}
+\colorlet{BoxColor}{gray!10!white}
+
+\begin{document}
+  \begin{frame}{Table of Contents}
+    \begin{itemize}
+      \item \scshape{asdf}
+    \end{itemize}
+  \end{frame}
+  \begin{algorithm}
+    \caption{asdf}
+    \begin{pseudo}[kw]
+      \pr{while} \tn{doof}\\
+      \pr{while} \tn{doof}\\
+      \pr{while} \tn{doof}
+    \end{pseudo}
+  \end{algorithm}
+\end{document}

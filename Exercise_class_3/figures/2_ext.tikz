@@ -1,0 +1,127 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (51) at (-1.475, 3.45) {};
+		\node [style=none] (52) at (1.575, 3.3) {};
+		\node [style=none] (53) at (3.525, 1.55) {};
+		\node [style=none] (54) at (3.575, -1.525) {};
+		\node [style=none] (55) at (0.425, 1.55) {};
+		\node [style=none] (56) at (0.475, -1.55) {};
+		\node [style=none] (57) at (-1.5, 0.5) {};
+		\node [style=circle with border] (0) at (-1, -1) {};
+		\node [style=circle with border] (1) at (1, 1) {};
+		\node [style=circle with border] (2) at (-1, 1) {};
+		\node [style=circle with border] (3) at (-1, 3) {};
+		\node [style=circle with border] (6) at (1, 3) {};
+		\node [style=circle with border] (7) at (3, 1) {};
+		\node [style=circle with border] (8) at (-3, 3) {};
+		\node [style=circle with border] (10) at (3, -1) {};
+		\node [style=circle with border] (11) at (1, -1) {};
+		\node [style=circle with border] (12) at (-3, -1) {};
+		\node [style=circle with border] (13) at (-3, 1) {};
+		\node [style=circle with border] (14) at (3, 3) {};
+		\node [style=none] (16) at (1.275, 3.025) {};
+		\node [style=none] (17) at (-1.125, 0.675) {};
+		\node [style=none] (18) at (-1.175, 3.15) {};
+		\node [style=none] (27) at (2.475, 3.525) {};
+		\node [style=none] (28) at (3.525, 3.55) {};
+		\node [style=none] (29) at (3.5, 2.5) {};
+		\node [style=none] (30) at (2.5, 2.5) {};
+		\node [style=none] (35) at (-3.525, 3.525) {};
+		\node [style=none] (36) at (-2.475, 3.55) {};
+		\node [style=none] (37) at (-2.5, 0.5) {};
+		\node [style=none] (38) at (-3.5, 0.5) {};
+		\node [style=none] (43) at (-3.4, 1.325) {};
+		\node [style=none] (44) at (-2.575, 1.325) {};
+		\node [style=none] (45) at (-2.625, 0.65) {};
+		\node [style=none] (46) at (-3.375, 0.65) {};
+		\node [style=none] (31) at (-3.4, 3.325) {};
+		\node [style=none] (32) at (-2.575, 3.325) {};
+		\node [style=none] (33) at (-2.625, 2.65) {};
+		\node [style=none] (34) at (-3.375, 2.65) {};
+		\node [style=none] (23) at (2.625, 3.4) {};
+		\node [style=none] (24) at (3.4, 3.4) {};
+		\node [style=none] (25) at (3.375, 2.65) {};
+		\node [style=none] (26) at (2.625, 2.65) {};
+		\node [style=none] (47) at (-3.475, -0.475) {};
+		\node [style=none] (48) at (-0.475, -0.5) {};
+		\node [style=none] (49) at (-0.575, -1.575) {};
+		\node [style=none] (50) at (-3.45, -1.5) {};
+		\node [style=none] (39) at (-3.225, -0.675) {};
+		\node [style=none] (40) at (-0.725, -0.675) {};
+		\node [style=none] (41) at (-0.775, -1.35) {};
+		\node [style=none] (42) at (-3.2, -1.35) {};
+		\node [style=none] (19) at (0.75, 1.25) {};
+		\node [style=none] (20) at (3.25, 1.25) {};
+		\node [style=none] (21) at (3.25, -1.25) {};
+		\node [style=none] (22) at (0.75, -1.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=Secondary] (52.center)
+			 to [bend left=105, looseness=0.25] (55.center)
+			 to [bend left=90, looseness=0.25] (53.center)
+			 to [bend left=90, looseness=0.25] (54.center)
+			 to [bend left=90, looseness=0.25] (56.center)
+			 to [bend left, looseness=0.25] (57.center)
+			 to [bend left=105, looseness=0.25] (51.center)
+			 to [bend left=105, looseness=0.25] cycle;
+		\draw [style=Primary] (17.center)
+			 to [bend right=120, looseness=0.25] (16.center)
+			 to [in=45, out=105, looseness=0.50] (18.center)
+			 to [bend right=105, looseness=0.50] cycle;
+		\draw [style=Secondary, in=135, out=45, loop] (17.center) to ();
+		\draw [style=Secondary, in=135, out=45, loop] (17.center) to ();
+		\draw [style=Secondary] (28.center)
+			 to [bend left=270, looseness=0.50] (27.center)
+			 to [bend right=90, looseness=0.50] (30.center)
+			 to [bend right=90, looseness=0.50] (29.center)
+			 to [bend right=90, looseness=0.50] cycle;
+		\draw [style=Secondary] (36.center)
+			 to [bend left=270, looseness=0.75] (35.center)
+			 to [bend left=270, looseness=0.25] (38.center)
+			 to [bend right=90, looseness=0.75] (37.center)
+			 to [bend right=90, looseness=0.25] cycle;
+		\draw [style=Primary] (44.center)
+			 to [bend right=60, looseness=1.50] (43.center)
+			 to [bend right=75] (46.center)
+			 to [bend right=60, looseness=1.25] (45.center)
+			 to [bend right=60, looseness=1.25] cycle;
+		\draw [style=Primary] (34.center)
+			 to [bend right=60, looseness=1.25] (33.center)
+			 to [bend right=60, looseness=1.25] (32.center)
+			 to [bend right=60, looseness=1.50] (31.center)
+			 to [bend right=75] cycle;
+		\draw [style=Primary] (26.center)
+			 to [bend right=90, looseness=0.75] (25.center)
+			 to [bend right=90] (24.center)
+			 to [bend right=90] (23.center)
+			 to [bend left=270, looseness=0.75] cycle;
+		\draw [style=Secondary] (48.center)
+			 to [bend right=90, looseness=0.25] (47.center)
+			 to [bend right=90, looseness=0.75] (50.center)
+			 to [bend right=90, looseness=0.25] (49.center)
+			 to [bend right=90, looseness=0.75] cycle;
+		\draw [style=Primary] (40.center)
+			 to [bend right=90, looseness=0.25] (39.center)
+			 to [bend right=90] (42.center)
+			 to [bend right=105, looseness=0.25] (41.center)
+			 to [bend right=90, looseness=0.75] cycle;
+		\draw [style={graph_theory_directed_right}] (2) to (3);
+		\draw [style={graph_theory_directed_left}] (2) to (6);
+		\draw [style={graph_theory_directed_right}] (2) to (1);
+		\draw [style={graph_theory_directed_right}, bend right, looseness=1.50] (12) to (0);
+		\draw [style={graph_theory_directed_right}, bend right=45, looseness=1.25] (0) to (12);
+		\draw [style={graph_theory_directed_left}] (6) to (3);
+		\draw [style={graph_theory_directed_right}] (2) to (11);
+		\draw [style={graph_theory_directed_right}] (8) to (13);
+		\draw [style=Primary] (19.center)
+			 to [bend right=90, looseness=0.25] (22.center)
+			 to [bend right=90, looseness=0.25] (21.center)
+			 to [bend right=90, looseness=0.25] (20.center)
+			 to [bend right=90, looseness=0.25] cycle;
+		\draw [style={graph_theory_directed_right}, bend left=330, looseness=1.25] (7) to (1);
+		\draw [style={graph_theory_directed_right}] (11) to (1);
+		\draw [style={graph_theory_directed_right}, bend right, looseness=1.25] (1) to (7);
+		\draw [style={graph_theory_directed_right}] (7) to (10);
+		\draw [style={graph_theory_directed_right}] (10) to (11);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,189 @@
+\def\matthias{0}
+
+\input{./content/Packete}
+\input{./content/Design}
+\input{./content/Deklarationen}
+
+\newcommand{\algone}{
+  \begin{algorithm}[H]
+    \caption{\pr{Breadth-First Search}}
+    \begin{description}
+      \item[\textbf{Eingabe:}] (Di-) Graph $G = (V, E)$, start node $s \in V$ to which applies: $\forall v \in V \setminus s: \exists$ $s,v$-path
+    \end{description}
+    \begin{pseudo}[indent-mark,kw,hl-warn=false]
+      \ma{Q} $\leftarrow$ \tt{new.Queue()}\\
+      \tt{counter} $\leftarrow 1$\\
+      \ma{Q}\tt{.enqueue($s$)}; \tn{mark node $s$}\\
+      \tt{s.count} $\leftarrow$ \tt{counter}; \tt{counter} $\leftarrow$ \tt{counter} $+ 1$ \\
+      As long as \tn{not \ma{Q}.empty()}\\+
+        \tt{u} $\leftarrow$ \ma{Q}\tt{.dequeue()}\\
+        \pr{BFS-Visit(u)}\\
+        for all \tn{adjavent nodes $v$ of $u$}\\+
+          if \tn{$v$ not marked} then\\+
+            \ma{Q}\tt{.enqueue($v$)}; \tn{mark node $v$}\\
+            \tt{v.count} $\leftarrow$ \tt{counter}; \tt{counter} $\leftarrow$ \tt{counter} $+ 1$
+    \end{pseudo}
+  \end{algorithm}
+}
+
+\newcommand{\algtwo}{
+  \begin{algorithm}[H]
+    \caption{\pr{Breadth-First Search}}
+    \begin{description}
+      \item[\textbf{Eingabe:}] (Di-) Graph $G = (V, E)$, start node $s \in V$ to which applies: $\forall v \in V \setminus s: \exists$ $s,v$-path, target node \tt{t}
+    \end{description}
+    \begin{pseudo}[indent-mark,kw,hl-warn=false]
+      \ma{Q} $\leftarrow$ \tt{new.Queue()}\\
+      \tt{counter} $\leftarrow 1$\\
+      \ma{Q}\tt{.enqueue($s$)}; \tn{mark node $s$}\\
+      \tt{s.count} $\leftarrow$ \tt{counter}; \tt{counter} $\leftarrow$ \tt{counter} $+ 1$ \\
+      As long as \tn{not \ma{Q}.empty()}\\+
+        \tt{u} $\leftarrow$ \ma{Q}\tt{.dequeue()}\\[hl]
+        if \tt{u} is \tt{t} then\\+[hl]
+          return \cn{true}\\-
+        for all \tn{adjavent nodes $v$ of $u$}\\+
+          if \tn{$v$ not marked} then\\+
+            \ma{Q}\tt{.enqueue($v$)}; \tn{mark node $v$}\\
+            \tt{v.count} $\leftarrow$ \tt{counter}; \tt{counter} $\leftarrow$ \tt{counter} $+ 1$ \\---[hl]
+      return \cn{false}
+    \end{pseudo}
+  \end{algorithm}
+}
+
+\newcommand{\algthree}{
+  \begin{algorithm}[H]
+    \caption{\pr{Depth-First Search}}
+    \begin{description}
+      \item[\textbf{Eingabe:}] (Di-) Graph $G = (V, E)$ with nodes $V$ unmarked, start node $s \in V$ to which applies: $\forall v \in V \setminus s: \exists$ $s,v$-path
+    \end{description}
+    \begin{pseudo}[indent-mark,kw,hpad=0.6cm]
+      \ma{S} $\leftarrow$ \tt{new.Stack()} \\
+      \tt{counter} $\leftarrow 1$\\
+      \ma{S}\tt{.push($s$);} \tn{mark} $s$\\
+      \tt{s.start} $\leftarrow$ \tt{counter;} \tt{counter} $\leftarrow$ \tt{counter} $+ 1$ \\
+      \pr{DFS-Visit(s)}\\
+      As long as \tn{not \ma{S}\tt{.empty()}}\\+
+        \tt{u} $\leftarrow$ \ma{S}\tt{.pop();} \ma{S}\tt{.push($u$)}\\
+        if \tn{a not marked adjacent node $v$ of $u$ exists} then\\+
+          \ma{S}\tt{.push($v$);} \tn{mark} $v$\\
+          % \tt{v.start} $\leftarrow$ \tt{counter} \\
+          % \tt{counter} $\leftarrow$ \tt{counter} $+ 1$ \\
+          \pr{DFS-Visit(s)}\\-
+          \tt{v.start} $\leftarrow$ \tt{counter;} \tt{counter} $\leftarrow$ \tt{counter} $+ 1$ \\-
+        else\\+
+          % \tt{u.finish} $\leftarrow$ \tt{counter} \\
+          % \tt{counter} $\leftarrow$ \tt{counter} $+ 1$ \\
+          \tt{u} $\leftarrow$ \ma{S}\tt{.pop()}\\
+          \tt{u.end} $\leftarrow$ \tt{counter;} \tt{counter} $\leftarrow$ \tt{counter} $+ 1$\\--
+      return \cn{false}
+    \end{pseudo}
+  \end{algorithm}
+}
+
+\newcommand{\algfour}{
+  \begin{algorithm}[H]
+    \caption{\pr{Depth-First Search}}
+    \begin{description}
+      \item[\textbf{Eingabe:}] (Di-) Graph $G = (V, E)$ with nodes $V$ unmarked, start node $s \in V$ to which applies: $\forall v \in V \setminus s: \exists$ $s,v$-path,  target node \tt{t}
+    \end{description}
+    \begin{pseudo}[indent-mark,kw,hpad=0.6cm]
+      \ma{S} $\leftarrow$ \tt{new.Stack()} \\
+      \tt{counter} $\leftarrow 1$\\
+      \ma{S}\tt{.push($s$);} \tn{mark} $s$\\
+      \tt{s.start} $\leftarrow$ \tt{counter;} \tt{counter} $\leftarrow$ \tt{counter} $+ 1$\\[hl]
+      if \tt{u} is \tt{t} then\\+[hl]
+        return \cn{true}\\-
+      As long as \tn{not \ma{S}\tt{.empty()}}\\+
+        \tt{u} $\leftarrow$ \ma{S}\tt{.pop();} \ma{S}\tt{.push($u$)}\\
+        if \tn{a not marked adjacent node $v$ of $u$ exists} then\\+
+          \ma{S}\tt{.push($v$);} \tn{mark} $v$\\[hl]
+          % \tt{v.start} $\leftarrow$ \tt{counter} \\
+          % \tt{counter} $\leftarrow$ \tt{counter} $+ 1$ \\
+          if \tt{u} is \tt{t} then\\+[hl]
+            return \cn{true}\\-
+          \tt{v.start} $\leftarrow$ \tt{counter;} \tt{counter} $\leftarrow$ \tt{counter} $+ 1$ \\-
+        else\\+
+          % \tt{u.finish} $\leftarrow$ \tt{counter} \\
+          % \tt{counter} $\leftarrow$ \tt{counter} $+ 1$ \\
+          \tt{u} $\leftarrow$ \ma{S}\tt{.pop()}\\
+          \tt{u.end} $\leftarrow$ \tt{counter;} \tt{counter} $\leftarrow$ \tt{counter} $+ 1$\\--[hl]
+      return \cn{false}
+    \end{pseudo}
+  \end{algorithm}
+}
+
+\newcommand{\domtreecalc}{
+\begin{itemize}
+  \item \alert{$S_v$: Alle Knoten die in $G - \{v\}$ von $r$ aus erreicht werden können:}
+  \begin{itemize}
+    \item $S_{r} = \{\}$
+    \item $S_{a} = \{r\}$
+    \item $S_{b} = \{r, a\}$
+    \item $S_{c} = \{r, a, b, d\}$
+    \item $S_{d} = \{r, a, b\}$
+  \end{itemize}
+  \item \alert{$D_v: V-\{v\}-S_{v}$:}
+    \begin{itemize}
+      \item $D_r = \{r, a, b, c, d\} - \{r\} - \{\} = \{a, b, c, d\}$
+      \item $D_a = \{r, a, b, c, d\} - \{a\} - \{r\} = \{b, c, d\}$
+      \item $D_b = \{r, a, b, c, d\} - \{b\} - \{r, a\} = \{c, d\}$
+      \item $D_c = \{r, a, b, c, d\} - \{c\} - \{r, a, b, d\} = \{\}$
+      \item $D_d = \{r, a, b, c, d\} - \{d\} - \{r, a, b\} = \{c\}$
+    \end{itemize}
+\end{itemize}
+}
+
+\includeonly{
+  % ./content/Vorbereitung,
+  ./content/Aufgabe1,
+  ./content/Aufgabe2,
+  ./content/Aufgabe3,
+  % ./content/Aufgabe4,
+  ./content/Appendix,
+}
+
+\begin{document}
+  \begin{withoutheadline}
+    \begin{withoutfootline}
+      \begin{frame}
+        \titlepagesecond
+      \end{frame}
+    \end{withoutfootline}
+
+    \begin{frame}[shrink=10]{Table of Contents}
+      \tableofcontents[hideallsubsections]
+    \end{frame}
+  \end{withoutheadline}
+
+  \setcounter{section}{0}
+
+  \include{./content/Vorbereitung}
+  \include{./content/Aufgabe1}
+  \include{./content/Aufgabe2}
+  \include{./content/Aufgabe3}
+  \include{./content/Aufgabe4}
+  \include{./content/Appendix}
+
+  \section{Literature}
+  %
+  % \begin{frame}{Bücher}
+  %   \printbibliography[type=book,heading=subbibliography,title={Bücher}]
+  % \end{frame}
+  %
+  % \begin{frame}{Artikel}
+  %   \printbibliography[type=article,heading=subbibliography,title={Artikel}]
+  % \end{frame}
+  %
+  % \begin{frame}{Vorlesungen}
+  %   \printbibliography[type=unpublished,heading=subbibliography,title={Vorlesungen}]
+  % \end{frame}
+  %
+  \begin{frame}{Online}
+    \nocite{noauthor_download_nodate}
+    \printbibliography[type=online,heading=subbibliography,title={Online}]
+  \end{frame}
+  %
+  % \begin{frame}{Sonstiges}
+  %   \printbibliography[nottype=book, nottype=article, nottype=online, nottype=unpublished,heading=subbibliography,keyword=wikikeyword,title={Sonstige Quellen}]
+  % \end{frame}
+\end{document}
