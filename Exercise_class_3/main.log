@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.28)  2 JUN 2023 17:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.28)  2 JUN 2023 18:00
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1580,24 +1580,24 @@ No file ./content/Aufgabe4.aux.
 (./content/Appendix.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1652,60 +1652,60 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 145.
+Package hyperref Info: Link coloring ON on input line 172.
  (./main.out) (./main.out)
 \@outlinefile=\write8
 \openout8 = `main.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 145.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 172.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 145.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 172.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 145.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 145.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 172.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 145.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 145.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 145.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 172.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 145.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 145.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 145.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 172.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 145.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 145.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 145.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 172.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 145.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 145.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 172.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 145.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 172.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 145.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 145.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 145.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 145.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 145.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 145.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 145.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 172.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 172.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 145.
+(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 172.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 145.
+(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 172.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on input line 145.
+(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on input line 172.
  (/usr/share/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (/usr/share/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
@@ -1732,21 +1732,21 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 145.
-Package biblatex Info: Reference segment=0 on input line 145.
-LaTeX Info: Redefining \microtypecontext on input line 145.
-Package microtype Info: Applying patch `item' on input line 145.
-Package microtype Info: Applying patch `toc' on input line 145.
-Package microtype Info: Applying patch `eqnum' on input line 145.
-Package microtype Info: Applying patch `footnote' on input line 145.
-Package microtype Info: Applying patch `verbatim' on input line 145.
+Package biblatex Info: Reference section=0 on input line 172.
+Package biblatex Info: Reference segment=0 on input line 172.
+LaTeX Info: Redefining \microtypecontext on input line 172.
+Package microtype Info: Applying patch `item' on input line 172.
+Package microtype Info: Applying patch `toc' on input line 172.
+Package microtype Info: Applying patch `eqnum' on input line 172.
+Package microtype Info: Applying patch `footnote' on input line 172.
+Package microtype Info: Applying patch `verbatim' on input line 172.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 145.
+LaTeX Info: Redefining \showhyphens on input line 172.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1757,19 +1757,23 @@ Package microtype Info: Loading generic protrusion settings for font family
  (/usr/share/texmf-dist/tex/latex/ninecolors/ninecolors.sty
 Package: ninecolors 2022-02-13 vv2022D Select colors with proper color contrast
 ) (./main.nav)
-Overfull \hbox (32.11804pt too wide) in paragraph at lines 145--145
+Overfull \hbox (32.11804pt too wide) in paragraph at lines 172--172
 [][]  
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 145--145
+Overfull \hbox (30.0pt too wide) in paragraph at lines 172--172
 [][][][]  
  []
 
-<./figures/background.png, id=55, 65.5248pt x 252.2223pt>
+
+Overfull \vbox (8.31094pt too high) detected at line 177
+ []
+
+<./figures/background.png, id=51, 65.5248pt x 252.2223pt>
 File: ./figures/background.png Graphic file (type png)
 <use ./figures/background.png>
-Package pdftex.def Info: ./figures/background.png  used on input line 150.
+Package pdftex.def Info: ./figures/background.png  used on input line 177.
 (pdftex.def)             Requested size: 42.67958pt x 256.07411pt.
 
 Overfull \vbox (15.33258pt too high) has occurred while \output is active []
@@ -1779,7 +1783,7 @@ Overfull \vbox (15.33258pt too high) has occurred while \output is active []
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures/background.png>] (./main.toc)
 File: ./figures/background.png Graphic file (type png)
 <use ./figures/background.png>
-Package pdftex.def Info: ./figures/background.png  used on input line 155.
+Package pdftex.def Info: ./figures/background.png  used on input line 182.
 (pdftex.def)             Requested size: 42.67958pt x 256.07411pt.
 
 Overfull \vbox (15.33258pt too high) has occurred while \output is active []
@@ -1812,7 +1816,7 @@ Overfull \hbox (2.11804pt too wide) has occurred while \output is active
 
 
 ]
-<./figures/note.png, id=92, 210.24pt x 216.81pt>
+<./figures/note.png, id=88, 210.24pt x 216.81pt>
 File: ./figures/note.png Graphic file (type png)
 <use ./figures/note.png>
 Package pdftex.def Info: ./figures/note.png  used on input line 48.
@@ -1954,7 +1958,7 @@ Overfull \hbox (2.11804pt too wide) has occurred while \output is active
 
 
 ]
-<./figures/anote.png, id=202, 210.24pt x 216.81pt>
+<./figures/anote.png, id=198, 210.24pt x 216.81pt>
 File: ./figures/anote.png Graphic file (type png)
 <use ./figures/anote.png>
 Package pdftex.def Info: ./figures/anote.png  used on input line 113.
@@ -2064,20 +2068,20 @@ Overfull \hbox (2.11804pt too wide) has occurred while \output is active
 ]
 File: ./figures/note.png Graphic file (type png)
 <use ./figures/note.png>
-Package pdftex.def Info: ./figures/note.png  used on input line 113.
+Package pdftex.def Info: ./figures/note.png  used on input line 90.
 (pdftex.def)             Requested size: 8.27663pt x 8.53581pt.
  (./_minted-main/default.pygstyle) (./_minted-main/AA63248959951B8F58EDCD472840E93A6E9904CB36DEB1934543322AACAAC32D.pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <6> not available
 (Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 2.
-) (./3c.tikz) (./3a.tikz)
+) (./3b.tikz) (./3a.tikz)
 File: ./figures/note.png Graphic file (type png)
 <use ./figures/note.png>
-Package pdftex.def Info: ./figures/note.png  used on input line 113.
+Package pdftex.def Info: ./figures/note.png  used on input line 90.
 (pdftex.def)             Requested size: 8.27663pt x 8.53581pt.
  (./3b.tikz)
 File: ./figures/note.png Graphic file (type png)
 <use ./figures/note.png>
-Package pdftex.def Info: ./figures/note.png  used on input line 113.
+Package pdftex.def Info: ./figures/note.png  used on input line 90.
 (pdftex.def)             Requested size: 8.27663pt x 8.53581pt.
 > Step: init table outer spec.
 > Step: parse table options.
@@ -2089,16 +2093,24 @@ Package pdftex.def Info: ./figures/note.png  used on input line 113.
 > Step: build the whole table.
 File: ./figures/note.png Graphic file (type png)
 <use ./figures/note.png>
-Package pdftex.def Info: ./figures/note.png  used on input line 113.
+Package pdftex.def Info: ./figures/note.png  used on input line 90.
 (pdftex.def)             Requested size: 8.27663pt x 8.53581pt.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
  (./3c.tikz)
 File: ./figures/note.png Graphic file (type png)
 <use ./figures/note.png>
-Package pdftex.def Info: ./figures/note.png  used on input line 113.
+Package pdftex.def Info: ./figures/note.png  used on input line 90.
 (pdftex.def)             Requested size: 8.27663pt x 8.53581pt.
 File: ./figures/background.png Graphic file (type png)
 <use ./figures/background.png>
-Package pdftex.def Info: ./figures/background.png  used on input line 113.
+Package pdftex.def Info: ./figures/background.png  used on input line 90.
 (pdftex.def)             Requested size: 42.67958pt x 256.07411pt.
 
 Overfull \vbox (15.33258pt too high) has occurred while \output is active []
@@ -2113,7 +2125,7 @@ Overfull \hbox (2.11804pt too wide) has occurred while \output is active
 ]
 File: ./figures/background.png Graphic file (type png)
 <use ./figures/background.png>
-Package pdftex.def Info: ./figures/background.png  used on input line 113.
+Package pdftex.def Info: ./figures/background.png  used on input line 90.
 (pdftex.def)             Requested size: 42.67958pt x 256.07411pt.
 
 Overfull \vbox (15.33258pt too high) has occurred while \output is active []
@@ -2129,7 +2141,7 @@ Overfull \hbox (2.11804pt too wide) has occurred while \output is active
 ]
 File: ./figures/background.png Graphic file (type png)
 <use ./figures/background.png>
-Package pdftex.def Info: ./figures/background.png  used on input line 113.
+Package pdftex.def Info: ./figures/background.png  used on input line 90.
 (pdftex.def)             Requested size: 42.67958pt x 256.07411pt.
 
 Overfull \vbox (15.33258pt too high) has occurred while \output is active []
@@ -2145,7 +2157,7 @@ Overfull \hbox (2.11804pt too wide) has occurred while \output is active
 ]
 File: ./figures/background.png Graphic file (type png)
 <use ./figures/background.png>
-Package pdftex.def Info: ./figures/background.png  used on input line 113.
+Package pdftex.def Info: ./figures/background.png  used on input line 90.
 (pdftex.def)             Requested size: 42.67958pt x 256.07411pt.
 
 Overfull \vbox (15.33258pt too high) has occurred while \output is active []
@@ -2161,7 +2173,7 @@ Overfull \hbox (2.11804pt too wide) has occurred while \output is active
 ]
 File: ./figures/background.png Graphic file (type png)
 <use ./figures/background.png>
-Package pdftex.def Info: ./figures/background.png  used on input line 113.
+Package pdftex.def Info: ./figures/background.png  used on input line 90.
 (pdftex.def)             Requested size: 42.67958pt x 256.07411pt.
 
 Overfull \vbox (15.33258pt too high) has occurred while \output is active []
@@ -2175,31 +2187,9 @@ Overfull \hbox (2.11804pt too wide) has occurred while \output is active
 
 
 ])
-\openout2 = `./content/Appendix.aux'.
-
- (./content/Appendix.tex
 File: ./figures/background.png Graphic file (type png)
 <use ./figures/background.png>
-Package pdftex.def Info: ./figures/background.png  used on input line 11.
-(pdftex.def)             Requested size: 42.67958pt x 256.07411pt.
-
-Overfull \vbox (15.33258pt too high) has occurred while \output is active []
-
-
-Overfull \hbox (2.11804pt too wide) has occurred while \output is active
-[][] 
- []
-
-[19
-
-
-
-
-
-])
-File: ./figures/background.png Graphic file (type png)
-<use ./figures/background.png>
-Package pdftex.def Info: ./figures/background.png  used on input line 167.
+Package pdftex.def Info: ./figures/background.png  used on input line 194.
 (pdftex.def)             Requested size: 42.67958pt x 256.07411pt.
 
 Overfull \vbox (15.33258pt too high) has occurred while \output is active []
@@ -2213,10 +2203,12 @@ Overfull \hbox (2.11804pt too wide) has occurred while \output is active
 
 
 
+
+
 ]
 File: ./figures/background.png Graphic file (type png)
 <use ./figures/background.png>
-Package pdftex.def Info: ./figures/background.png  used on input line 184.
+Package pdftex.def Info: ./figures/background.png  used on input line 211.
 (pdftex.def)             Requested size: 42.67958pt x 256.07411pt.
 
 Overfull \vbox (15.33258pt too high) has occurred while \output is active []
@@ -2244,24 +2236,27 @@ No file ./content/Vorbereitung.aux.
 No file ./content/Aufgabe4.aux.
 (./content/Appendix.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0E0BF9C2ED1562ED8974C91A698B03D5;552.
+(rerunfilecheck)             Checksum: 55303724571070602CDF6CFFC1C49848;469.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 54806 strings out of 476025
- 1182756 string characters out of 5796532
- 2232792 words of memory out of 5000000
- 74102 multiletter control sequences out of 15000+600000
- 531301 words of font info for 126 fonts, out of 8000000 for 9000
+ 54794 strings out of 476025
+ 1182284 string characters out of 5796532
+ 2238418 words of memory out of 5000000
+ 74094 multiletter control sequences out of 15000+600000
+ 532768 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  133i,22n,125p,1001b,2101s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+pdfTeX warning (dest): name{Navigation19} has been referenced but does not exist, replaced by a fixed one
+
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (21 pages, 352675 bytes).
+Output written on main.pdf (20 pages, 352384 bytes).
 PDF statistics:
- 550 PDF objects out of 1000 (max. 8388607)
- 382 compressed objects within 4 object streams
- 50 named destinations out of 1000 (max. 500000)
- 46178 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 536 PDF objects out of 1000 (max. 8388607)
+ 369 compressed objects within 4 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 46170 words of extra memory for PDF output out of 51595 (max. 10000000)
 

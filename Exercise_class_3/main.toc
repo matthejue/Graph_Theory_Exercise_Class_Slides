@@ -3,4 +3,4 @@
 \beamer@sectionintoc {2}{Exercise 2}{8}{0}{2}
 \beamer@sectionintoc {3}{Exercise 3}{13}{0}{3}
 \beamer@sectionintoc {4}{Appendix}{19}{0}{4}
-\beamer@sectionintoc {5}{Literature}{20}{0}{5}
+\beamer@sectionintoc {5}{Literature}{20}{0}{4}

@@ -133,13 +133,40 @@
 \end{itemize}
 }
 
+\newcommand{\domtable}{
+  \begin{table}
+  \centering
+  \begin{tblr}{
+    cells = {white},
+    row{1} = {SecondaryColor},
+    cell{1}{2} = {fg=white},
+    cell{1}{3} = {fg=white},
+    cell{1}{4} = {fg=white},
+    cell{1}{5} = {fg=white},
+    cell{1}{6} = {fg=white},
+    cell{2}{1} = {SecondaryColor,fg=white},
+    cell{3}{1} = {SecondaryColor,fg=white},
+    cell{4}{1} = {SecondaryColor,fg=white},
+    cell{5}{1} = {SecondaryColor,fg=white},
+    cell{6}{1} = {SecondaryColor,fg=white},
+  }
+      & $r$ & $a$ & $b$ & $c$ & $d$ \\
+  $r$ &     &  1  &  1  &  1  &  1  \\
+  $a$ &     &     &  1  &  1  &  1  \\
+  $b$ &     &     &     &  1  &  1  \\
+  $c$ &     &     &     &     &     \\
+  $d$ &     &     &     &  1  &     
+  \end{tblr}
+  \end{table}
+}
+
 \includeonly{
   % ./content/Vorbereitung,
   ./content/Aufgabe1,
   ./content/Aufgabe2,
   ./content/Aufgabe3,
   % ./content/Aufgabe4,
-  ./content/Appendix,
+  % ./content/Appendix,
 }
 
 \begin{document}
