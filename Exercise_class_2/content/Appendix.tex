@@ -45,10 +45,10 @@
   \begin{table}
     \centering
     \begin{tblr}{
-      cells = {BoxColor},
+      cells = {BoxColor, c},
       row{1} = {PrimaryColor,fg=white},
     }
-    $A$ & $B$ & $A\rightarrow B $ & $B\rightarrow A$ & $A\Leftrightarrow B$ \\
+    $A$ & $B$ & $A\Rightarrow B $ & $A\Leftarrow B$ & $A\Leftrightarrow B$ \\
       0  &  0  &  1   &  1   &   1  \\
       0  &  1  &  1   &  0   &   0  \\
       1  &  0  &  0   &  1   &   0  \\
@@ -58,7 +58,7 @@
   \begin{Sidenote}
     \begin{itemize}
       \item if $A\rightarrow B$ then for $A$ we \alert{only} know for sure $\neg B\rightarrow \neg A$, for $\neg A$ it can \alert{both} be the case that $\neg A\rightarrow B$ or $\neg A\rightarrow \neg B$,
-      \item thus for $A\leftrightarrow B$ we know $\neg A\leftrightarrow \neg B$, because we know $\neg B\rightarrow \neg A$ and $\neg A\rightarrow \neg B$ are both the case because $A\leftrightarrow B$ \alert{iff} $B\leftarrow A$ and $A\leftarrow B$
+      \item thus for $A\leftrightarrow B$ we know $\neg A\leftrightarrow \neg B$, because we know $\neg B\rightarrow \neg A$ and $\neg A\rightarrow \neg B$ are both the case because $A\leftrightarrow B$ \alert{iff} $B\leftarrow A\wedge A\leftarrow B$
       \item in \alert{german}: \enquote{hinreichend und notwendig}
     \end{itemize}
   \end{Sidenote}

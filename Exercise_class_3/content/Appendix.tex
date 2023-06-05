@@ -12,3 +12,391 @@
 % letztes Übugsblatt Aufgabe 3, generell nochmal mit Musterlösung vergleichen
 % Homomorphismen, Begriff Mengenrepräsentation
 % Struktur, Modell
+
+\begin{frame}{Appendix}{Search algorithms}
+  \resizebox{\textwidth}{!}{
+    \begin{minipage}[t]{90cm}
+      % https://tex.stackexchange.com/questions/636543/how-can-i-center-and-scale-a-mindmap
+      \centering
+      \begin{mindmap}
+        \begin{mindmapcontent}
+          \node (sa) at (current page.center) {Search Algorithms
+            \resizebox{\textwidth}{!}{
+              \begin{minipage}[t]{8cm}
+                \begin{itemize}
+                  \item \alert{Notations:}
+                  \begin{itemize}
+                    \item \alert{Node expansion:} generating all successor nodes considering the available edges
+                    \item \alert{Frontier:} set of all nodes available for expansion
+                    \item \alert{Search strategy:} defines which node is expanded next
+                    \item \alert{Explored set:} set of already visited nodes
+                  \end{itemize}
+                \item \alert{Criteria for search strategies:}
+                \begin{itemize}
+                  \item \alert{Optimality:} If the strategy finds the best path (with the lowest path cost)
+                  \item \alert{Completeness:} If the strategy is guaranteed to find a path to a target node when there is one
+                  \item \alert{Time complexity} and \alert{Space complexity}
+                \end{itemize}
+                \end{itemize}
+              \end{minipage}
+            }
+          }
+          child {
+            node (ts) {Tree-based search
+              \resizebox{\textwidth}{!}{
+                \begin{minipage}[t]{8cm}
+                  \begin{itemize}
+                    \item might happen that a node is \alert{visited multiple times}, leading even to \alert{infinite loops}
+                    \item one searches within a graph \alert{as if} one would perform a \alert{search on a tree} where a node can't be visited multiple times to \alert{save memory}
+                  \end{itemize}
+                \end{minipage}
+              }
+              \resizebox{\textwidth}{!}{
+                \begin{minipage}[t]{11cm}
+                  \begin{algorithm}[H]
+                    \caption{\pr{Tree-Search}(problem)}
+                    % \begin{pseudo}[kw]
+                    % \fn{initialize} \tn{the} \tt{frontier} \tn{using the initial state of problem}\\
+                    % As long as \tt{frontier} \tn{is not} \cn{empty} do\\+
+                    % \fn{choose} \tn{a} \tt{leaf node} $v$ \tn{and remove it from the} \tt{frontier}\\
+                    %   if \tt{v} \tn{contains a} \cn{goal state} then\\+
+                    %     return \cn{True}\\-
+                    %     \fn{expand} \tn{the} \tt{node}\tn{, adding the resulting nodes to the} \tt{frontier}\\--
+                    % return \cn{False}
+                    % \end{pseudo}
+                    \begin{pseudo}[kw]
+                    \fn{initialize} \tn{the} \tt{frontier} \tn{using the initial state of problem}\\
+                    As long as \tt{frontier} \tn{is not} \cn{empty} do\\+
+                    \fn{choose} \tn{a} \tt{leaf node} \tn{and remove it from the} \tt{frontier}\\
+                      if \tt{node} \tn{contains a} \cn{goal state} then\\+
+                        return \cn{Solution}\\-
+                        \fn{expand} \tn{the} \tt{node}\tn{, adding the resulting nodes to the} \tt{frontier}\\--
+                    return \cn{Failure}
+                    \end{pseudo}
+                  \end{algorithm}
+                  \sourcesone
+                \end{minipage}
+              }
+            }
+          }
+          child {
+            node (gs) {Graph-based search
+              \resizebox{\textwidth}{!}{
+                \begin{minipage}[t]{8cm}
+                  \begin{itemize}
+                    \item Keeps a \alert{explored set} and avoids the problem of tree-based search
+                    \item \alert{exponential memory requirements} in the worst case
+                  \end{itemize}
+                \end{minipage}
+              }
+              \resizebox{\textwidth}{!}{
+                \begin{minipage}[t]{12cm}
+                  \begin{algorithm}[H]
+                    \caption{\pr{Graph-Search}(problem)}
+                    \begin{pseudo}[kw]
+                    \fn{initialize} \tn{the} \tt{frontier} \tn{using the initial state of problem}\\
+                    \fn{initialize} \tn{the} \tt{explored set} \tn{to be empty}\\
+                    As long as \tt{frontier} \tn{is not} \cn{empty} do\\+
+                    \fn{choose} \tn{a} \tt{leaf node} \tn{and remove it from the} \tt{frontier}\\
+                      if \tt{node} \tn{contains a} \cn{goal state} then\\+
+                        return \cn{True}\\-
+                        \fn{add} \tn{the node to the} \tt{explored set}\\
+                        if \tt{node} \tn{not in the} \tt{frontier} \tn{or} \tt{explored set} then \\+
+                          \fn{expand} \tn{the} \tt{node}\tn{, adding the resulting nodes to the} \tt{frontier}\\---
+                    return \cn{False}
+                    \end{pseudo}
+                  \end{algorithm}
+                  \sourcesone
+                \end{minipage}
+              }
+            }
+          }
+          child {
+            node {Uninformed Search Algorithms
+              \resizebox{\textwidth}{!}{
+                \begin{minipage}[t]{8cm}
+                  \begin{itemize}
+                    \item  Rigid procedure with no knowledge of the cost of a given node to the goal (e.g. \alert{no heuristic function} $h(v)$), only uses other currently available knowledge (e.g. \alert{path-cost function} $g(v)$ or e.g. \alert{depth function} $d(v)$)
+                  \end{itemize}
+                \end{minipage}
+              }
+            }
+            child {
+              node (ucs) {Uniform-Cost Search
+                \resizebox{\textwidth}{!}{
+                  \begin{minipage}[t]{10cm}
+                    \begin{itemize}
+                      \item FIFO datastructure (stack) gets replaced by \alert{priority queue} 
+                      \item expands node $v$ from the frontier with \alert{lowest path costs} $g(v)$
+                      \item is \alert{complete}, provided that the branching factor is finite and all edge weights are less then $\epsilon$ and \alert{optimal}
+                      \item generalization of \alert{Breadth-First Search}, where edge weights can have \alert{different values}
+                      \item special case of \alert{Best-First Search}, where $f(v) = g(v)$
+                      \item special case of \alert{A$^*$ Search}, where $h(v) = 0$ and thus $f(v) = g(v) + h(v) = g(v)$
+                      \begin{itemize}
+                        \item if all edge weights would be $1$, then a node would have depth $k$ exactly when it's path costs would be $k$. 
+                        \item then the expansion criteria would therefore be the same as for BFS, beacuse a node would have minimal depth exactly when it would have minimum path costs
+                      \end{itemize}
+                    \end{itemize}
+                  \end{minipage}
+                }
+              }
+              child {
+                node (rbfs) {Breadth-First Search
+                  \resizebox{\textwidth}{!}{
+                    \begin{minipage}[t]{10cm}
+                      \begin{itemize}
+                        \item \alert{FIFO} datastructure (\alert{stack})
+                        \item expands node $v$ from the frontier with \alert{lowest depth} $d(v)$
+                        \item \alert{complete}, provided that the branching factor is finite and \alert{optimal}, provided every edge has identical, non-negative weights
+                        \item special case of \alert{Uniform-Cost Search} where all edge weights have \alert{no value}
+                        \item special case of \alert{Best-First Search}, where $f(v) = d(v)$
+                        % \item \alert{Time complexity:} the maximal number of nodes expanded is $b+b^{2}+b^{3}+\ldots +b^{d}\in O(b^{d})$
+                        % \begin{itemize}
+                        %   \item $b$ be the \alert{maximal branching factor}
+                        %   \item $d$ the \alert{depth} of a \alert{solution path}
+                        % \end{itemize}
+                        % \item \alert{Space complexity:} Every node generated is \alert{kept in memory}. Therefore space needed for the \alert{frontier} is $O(b^d)$ and for the \alert{explored set} $O(b^{d-1})$
+                      \end{itemize}
+                    \end{minipage}
+                  }
+                  \resizebox{\textwidth}{!}{
+                    \begin{minipage}[t]{10.5cm}
+                      \bfs
+                    \end{minipage}
+                  }
+                }
+                child {
+                  node (bidirectional) {Bidirectional Search}
+                }
+              }
+            }
+            child {
+              node (dfs) {Depth-First Search
+                \resizebox{\textwidth}{!}{
+                  \begin{minipage}[t]{10cm}
+                    \begin{itemize}
+                      \item \alert{LIFO} datastracture (LIFO-\alert{queue})
+                      \item expands node $v$ from the frontier with \alert{greatest depth} $d(v)$
+                    \item In general, the path found is \alert{not optimal} and \alert{completeness} can be guaranteed \alert{only for graph-based search} and \alert{finite graphs}
+                      \item special case of \alert{Best-First Search}, where $f(v) = -d(v)$
+                      % \item \alert{Time complexity:} 
+                      % \begin{itemize}
+                      %   \item \alert{tree-based search:} search bounded by the \alert{size of the state space} (\alert{might be infinite})
+                      %   \item \alert{graph-based search:} algorithm might generate $O(b^m)$ nodes in the search tree which might be much larger than the size of the state space
+                      %   \begin{itemize}
+                      %     \item $m$ is the maximum length of a path in the state space
+                      %   \end{itemize}
+                      % \end{itemize}
+                      % \item \alert{Space complexity:} 
+                      % \begin{itemize}
+                      %   \item \alert{tree-based search:} $O(b^m)$ 
+                      %   \item \alert{graph-based search:} in worst case, all states need to be stored in the explored set (no advantage over breadth-first) 
+                      % \end{itemize}
+                    \end{itemize}
+                  \end{minipage}
+                }
+                \resizebox{\textwidth}{!}{
+                  \begin{minipage}[t]{11cm}
+                    \dfs
+                  \end{minipage}
+                }
+              }
+              child {
+                node {Recursive Depth-First Search
+                  \resizebox{\textwidth}{!}{
+                    \begin{minipage}[t]{11cm}
+                      \dfsrec
+                    \end{minipage}
+                  }
+                }
+              }
+              child {
+                node {Depth-Limited Search}
+                child {
+                  node {Iterative-Deepening Search}
+                }
+              }
+            }
+          }
+          child {
+            node {Informed Search Algorithms
+              \resizebox{\textwidth}{!}{
+                \begin{minipage}[t]{8cm}
+                  \begin{itemize}
+                    \item Knowledge of the worth of expanding a node $v$ is given in the form of an \alert{evaluation function} $f(v)$, which assigns a real number to each node
+                    \item Often $f(v)$ includes a \alert{heuristic function} $h(v)$ as a component, which estimates the costs of the cheapest path from $v$ to the goal
+                  \end{itemize}
+                \end{minipage}
+              }
+            }
+            child {
+            node {Local Search Algorithms
+              \resizebox{\textwidth}{!}{
+                \begin{minipage}[t]{8cm}
+                  \begin{itemize}
+                    \item if it is unimportant how the goal is reached, \alert{only the goal itself matters} and if in addition a \alert{quality} measure for nodes is given
+                    \item it operates using a \alert{single current node} (rather than multiple paths)
+                    \item requires little memory
+                  \end{itemize}
+                \end{minipage}
+              }
+            }
+            child {
+              node {Hill Climbing
+                \resizebox{\textwidth}{!}{
+                  \begin{minipage}[t]{8cm}
+                    \begin{itemize}
+                      \item Begin with a randomly-chosen configuration and \alert{improve} on it \alert{step by step}
+                    \end{itemize}
+                  \end{minipage}
+                }
+              }
+              child {
+                node {Simulated Annealing
+                  \resizebox{\textwidth}{!}{
+                    \begin{minipage}[t]{8cm}
+                      \begin{itemize}
+                        \item \enquote{noise} is injected systematically, first a lot, then gradually less
+                      \end{itemize}
+                    \end{minipage}
+                  }
+                }
+              }
+              child {
+                node {Gradient Descent}
+              }
+            }
+          }
+          child {
+            node {Genetic Algorithms
+              \resizebox{\textwidth}{!}{
+                \begin{minipage}[t]{8cm}
+                  \begin{itemize}
+                    \item Similar to \alert{evolution}, we search for solutions by three operators: \alert{mutation}, \alert{crossover}, and \alert{selection}
+                  \end{itemize}
+                \end{minipage}
+              }
+            }
+          }
+            child {
+              node (bfs) {Best-First Search 
+                \resizebox{\textwidth}{!}{
+                  \begin{minipage}[t]{8cm}
+                    \begin{itemize}
+                      \item informed search procedure that expands the node with the \enquote{\alert{best}} $f$-value first
+                      \item is an instance of the general \alert{Tree-Search} algorithm in which frontier is a \alert{priority queue} ordered by an \alert{evaluation function} $f$
+                      \begin{itemize}
+                        \item When $f$ is always correct, we do not need to search!
+                      \end{itemize}
+                    \end{itemize}
+                  \end{minipage}
+                }
+              }
+              child {
+                node {Greedy Search
+                  \resizebox{\textwidth}{!}{
+                    \begin{minipage}[t]{8cm}
+                      \begin{itemize}
+                        \item A \alert{best-first} search using the \alert{heuristic function} $h(v)$ as the \alert{evaluation function}, i.e. $f(v) = h(v)$ is called a \alert{greedy search}
+                        \begin{itemize}
+                          % \item judge the \enquote{worth} of a node by estimating its path costs to the target node
+                          \item $h(v) =$ estimated path-costs from $v$ to the target node
+                          \item the only real restriction is that $h(v) = 0$ if $v$ is the target node
+                        \end{itemize}
+                        \item is generally \alert{incomplete} and \alert{not optimal}
+                        \begin{itemize}
+                          \item graph-search version is complete only in finite graphs
+                        \end{itemize}
+                      \end{itemize}
+                    \end{minipage}
+                  }
+                }
+                child {
+                  node (hf) {Heuristic function
+                    \resizebox{\textwidth}{!}{
+                      \begin{minipage}[t]{8cm}
+                        \begin{itemize}
+                          \item or simply a \alert{heuristic}
+                          \item the evaluation function $f$ in \alert{greedy searches} is a heuristic function $h$ 
+                          \item the heuristic is \alert{problem-specific} and \alert{focuses} the search
+                          \item \alert{In AI it has two meanings:}
+                          \begin{itemize}
+                            \item Heuristics are \alert{fast} but in certain situations \alert{incomplete} methods for problem-solving
+                            \item Heuristics are methods that \alert{improve the search} in the \alert{average-case}
+                          \end{itemize}
+                        \end{itemize}
+                      \end{minipage}
+                    }
+                  }
+                }
+              }
+              child {
+                node (astar) {A$^*$
+                  \resizebox{\textwidth}{!}{
+                    \begin{minipage}[t]{8cm}
+                      \begin{itemize}
+                        \item A$^*$ combines \alert{greedy search} with the \alert{uniform-cost search}
+                        \item Always expands node with lowest \alert{evaluation function} $f(v)$ first, where:
+                        \begin{itemize}
+                          \item $g(v) =$ actual cost from the start node to $v$
+                          \item $h(v) =$ estimated cost from $v$ to the nearest target node
+                          \item $f(v) = g(v) + h(v) =$ the estimated cost of the cheapest path through $v$
+                        \end{itemize}
+                        \item We require that for A$^*$, that $h$ is admissible (e.g. straight-line distance is admissible)
+                        \begin{itemize}
+                          \item $h$ is an \alert{optimistic estimate} of the costs that actually occur
+                        \end{itemize}
+                      \end{itemize}
+                    \end{minipage}
+                  }
+                }
+                child {
+                  node {Iterative-Deepening A$^*$ (IDA$^*$)
+                %     \resizebox{\textwidth}{!}{
+                %       \begin{minipage}[t]{8cm}
+                %         \begin{itemize}
+                %           \item the $f$-costs are used to define the cutoff (rather than the depth of the search tree)
+                %         \end{itemize}
+                %       \end{minipage}
+                %     }
+                  }
+                }
+                child {
+                  node {Recursive Best First Search (RBFS)}
+                }
+                child {
+                  node {Memory-bounded A$^*$ (MA$^*$) and Simplified MA$^*$ (SMA$^*$)}
+                }
+                child {
+                  node {Admissible
+                    \resizebox{\textwidth}{!}{
+                      \begin{minipage}[t]{8cm}
+                        \begin{itemize}
+                          \item $h$ is admissible if the following holds for all $v$: $h(v) \le h^*(v)$
+                          \begin{itemize}
+                            \item $h^*(v)$ are the actual cost of the optimal path from $v$ to the target node
+                          \end{itemize}
+                        \end{itemize}
+                      \end{minipage}
+                    }
+                  }
+                }
+              }
+            }
+          };
+        \end{mindmapcontent}
+        \begin{edges}
+          \edge{dfs}{bidirectional}
+          \edge{ts}{bfs}
+          \edge{ts}{rbfs}
+          \edge{gs}{dfs}
+          \edge{astar}{ucs}
+          \edge{bfs}{ucs}
+          % \edge{bfs}{rbfs}
+          \edge{bfs}{dfs}
+          \edge{hf}{astar}
+        \end{edges}
+      \end{mindmap}
+    \end{minipage}
+  }
+\end{frame}
