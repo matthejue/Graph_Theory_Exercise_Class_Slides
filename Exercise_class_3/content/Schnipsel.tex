@@ -6,16 +6,13 @@
     \end{description}
     \begin{pseudo}[indent-mark,kw,hl-warn=false]
       \ma{Q} $\leftarrow$ \tt{new.Queue()}\\
-      \tt{counter} $\leftarrow 1$\\
       \ma{Q}\tt{.enqueue($s$)}; \tn{mark $s$}\\
-      $s$\tt{.count} $\leftarrow$ \tt{counter}; \tt{counter} $\leftarrow$ \tt{counter} $+ 1$ \\
       As long as \tn{not \ma{Q}.empty()} do\\+
         $u \leftarrow$ \ma{Q}\tt{.dequeue()}\\
         \pr{BFS-Visit}($u$)\\
         for each \tn{adjavent node $v$ of $u$ in $G$} do\\+
           if $v$ \tn{not marked} then\\+
             \ma{Q}\tt{.enqueue($v$)}; \tn{mark $v$}\\
-            $v$\tt{.count} $\leftarrow$ \tt{counter}; \tt{counter} $\leftarrow$ \tt{counter} $+ 1$
     \end{pseudo}
   \end{algorithm}
 }
@@ -118,6 +115,18 @@
 }
 
 \newcommand{\sourcesone}{\tiny \cite{AnswerWhatDifference2018}, \cite{russell2010artificial}, \cite{Pseudocode2023}}
+
+\newcommand{\bd}{
+  \resizebox{\textwidth}{!}{
+    \begin{minipage}[t]{10cm}
+      \begin{itemize}
+        \item number of \alert{Vertices} ${\mid}V{\mid}$ and \alert{Edges} ${\mid}E{\mid}$ are for \alert{explicit graphs}
+        \item \alert{branching factor} (average out-degree) $b$, \alert{depth of a target node} $d$, \alert{maximum depth of the search tree} $m$, \alert{cost of the optimal path} $C$ and \alert{minimal weight of an edge} $\epsilon$ are for \alert{implicit graphs}, whose vertices or edges are not represented as explicit objects in a computer's memory, but rather are determined algorithmically from some other input, e.g. a computable function. That might be needed when working with graphs that are too large to store explicitly (or infinite)
+        \item ${\mid}E{\mid}$ may vary between $1$ and ${\mid}V{\mid}^2$ for simple graphs
+      \end{itemize}
+    \end{minipage}
+  }
+}
 
 \newcommand{\domtreecalc}{
 \begin{itemize}

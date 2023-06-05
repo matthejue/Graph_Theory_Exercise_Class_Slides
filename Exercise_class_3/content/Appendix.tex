@@ -136,6 +136,8 @@
                         \item if all edge weights would be $1$, then a node would have depth $k$ exactly when it's path costs would be $k$. 
                         \item then the expansion criteria would therefore be the same as for BFS, beacuse a node would have minimal depth exactly when it would have minimum path costs
                       \end{itemize}
+                    \item \alert{Worst Case Time complexity:} $O(b^{1+\left\lfloor \frac{C}{\epsilon}\right\rfloor})$
+                      \item \alert{Space complexity:} $O(b^{1+\left\lfloor\frac{C}{\epsilon}\right\rfloor})$
                     \end{itemize}
                   \end{minipage}
                 }
@@ -150,6 +152,8 @@
                         \item \alert{complete}, provided that the branching factor is finite and \alert{optimal}, provided every edge has identical, non-negative weights
                         \item special case of \alert{Uniform-Cost Search} where all edge weights have \alert{no value}
                         \item special case of \alert{Best-First Search}, where $f(v) = d(v)$
+                        \item \alert{Worst Case Time complexity:} $O({\mid} V{\mid}+{\mid} E{\mid}) = O(b^d)$
+                        \item \alert{Space complexity:} $O({\mid} V{\mid}) = O(b^d)$
                         % \item \alert{Time complexity:} the maximal number of nodes expanded is $b+b^{2}+b^{3}+\ldots +b^{d}\in O(b^{d})$
                         % \begin{itemize}
                         %   \item $b$ be the \alert{maximal branching factor}
@@ -178,8 +182,8 @@
                       \item \alert{LIFO} datastracture (LIFO-\alert{queue})
                       \item expands node $v$ from the frontier with \alert{greatest depth} $d(v)$
                     \item In general, the path found is \alert{not optimal} and \alert{completeness} can be guaranteed \alert{only for graph-based search} and \alert{finite graphs}
-                      \item special case of \alert{Best-First Search}, where $f(v) = -d(v)$
-                      % \item \alert{Time complexity:} 
+                    \item special case of \alert{Best-First Search}, where $f(v) = -d(v)$
+                    \item \alert{Worst Case Time complexity:} $O({\mid} V{\mid}+{\mid} E{\mid}) = O(b^m)$
                       % \begin{itemize}
                       %   \item \alert{tree-based search:} search bounded by the \alert{size of the state space} (\alert{might be infinite})
                       %   \item \alert{graph-based search:} algorithm might generate $O(b^m)$ nodes in the search tree which might be much larger than the size of the state space
@@ -187,7 +191,7 @@
                       %     \item $m$ is the maximum length of a path in the state space
                       %   \end{itemize}
                       % \end{itemize}
-                      % \item \alert{Space complexity:} 
+                    \item \alert{Worst Case Space complexity:} $O({\mid} V{\mid}) = O(b\cdot m)$
                       % \begin{itemize}
                       %   \item \alert{tree-based search:} $O(b^m)$ 
                       %   \item \alert{graph-based search:} in worst case, all states need to be stored in the explored set (no advantage over breadth-first) 
@@ -396,6 +400,8 @@
           \edge{bfs}{dfs}
           \edge{hf}{astar}
         \end{edges}
+        \annotation{dfs}{\bd}
+        \annotation{rbfs}{\bd}
       \end{mindmap}
     \end{minipage}
   }
