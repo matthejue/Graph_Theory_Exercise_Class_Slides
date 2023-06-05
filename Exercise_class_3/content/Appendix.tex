@@ -15,7 +15,7 @@
 
 \begin{frame}{Appendix}{Search algorithms}
   \resizebox{\textwidth}{!}{
-    \begin{minipage}[t]{90cm}
+    \begin{minipage}[t]{120cm}
       % https://tex.stackexchange.com/questions/636543/how-can-i-center-and-scale-a-mindmap
       \centering
       \begin{mindmap}
@@ -26,10 +26,11 @@
                 \begin{itemize}
                   \item \alert{Notations:}
                   \begin{itemize}
-                    \item \alert{Node expansion:} generating all successor nodes considering the available edges
-                    \item \alert{Frontier:} set of all nodes available for expansion
+                    \item \alert{Node expansion:} look up adjacent nodes that can be added to the frontier % considering the available incident edges
+                      % generating all successor nodes considering the available edges
+                    \item \alert{Frontier:} set of all nodes available for expansion (e.g. datastructures like (priority) queue or stack)
                     \item \alert{Search strategy:} defines which node is expanded next
-                    \item \alert{Explored set:} set of already visited nodes
+                    \item \alert{Explored set:} set of already visited nodes (e.g. also markings on nodes)
                   \end{itemize}
                 \item \alert{Criteria for search strategies:}
                 \begin{itemize}
@@ -42,72 +43,90 @@
             }
           }
           child {
-            node (ts) {Tree-based search
+            node (generalsearch) {General Search
               \resizebox{\textwidth}{!}{
                 \begin{minipage}[t]{8cm}
                   \begin{itemize}
-                    \item might happen that a node is \alert{visited multiple times}, leading even to \alert{infinite loops}
-                    \item one searches within a graph \alert{as if} one would perform a \alert{search on a tree} where a node can't be visited multiple times to \alert{save memory}
+                    \item distinction between tree search and graph search is not rooted in the fact whether the problem graph is a tree or a general graph. It is \alert{always assumed} you're dealing with a \alert{general graph}
+                    \item The \alert{distinction} lies in the \alert{traversal pattern} that is used to search through the graph, which can be graph-shaped or tree-shaped
+                    \begin{itemize}
+                      \item If one is dealing with a \alert{tree-shaped problem}, both algorithm variants lead to equivalent results. So one would pick the simpler tree search variant.
+                    \end{itemize}
                   \end{itemize}
-                \end{minipage}
-              }
-              \resizebox{\textwidth}{!}{
-                \begin{minipage}[t]{11cm}
-                  \begin{algorithm}[H]
-                    \caption{\pr{Tree-Search}(problem)}
-                    % \begin{pseudo}[kw]
-                    % \fn{initialize} \tn{the} \tt{frontier} \tn{using the initial state of problem}\\
-                    % As long as \tt{frontier} \tn{is not} \cn{empty} do\\+
-                    % \fn{choose} \tn{a} \tt{leaf node} $v$ \tn{and remove it from the} \tt{frontier}\\
-                    %   if \tt{v} \tn{contains a} \cn{goal state} then\\+
-                    %     return \cn{True}\\-
-                    %     \fn{expand} \tn{the} \tt{node}\tn{, adding the resulting nodes to the} \tt{frontier}\\--
-                    % return \cn{False}
-                    % \end{pseudo}
-                    \begin{pseudo}[kw]
-                    \fn{initialize} \tn{the} \tt{frontier} \tn{using the initial state of problem}\\
-                    As long as \tt{frontier} \tn{is not} \cn{empty} do\\+
-                    \fn{choose} \tn{a} \tt{leaf node} \tn{and remove it from the} \tt{frontier}\\
-                      if \tt{node} \tn{contains a} \cn{goal state} then\\+
-                        return \cn{Solution}\\-
-                        \fn{expand} \tn{the} \tt{node}\tn{, adding the resulting nodes to the} \tt{frontier}\\--
-                    return \cn{Failure}
-                    \end{pseudo}
-                  \end{algorithm}
-                  \sourcesone
                 \end{minipage}
               }
             }
-          }
-          child {
-            node (gs) {Graph-based search
-              \resizebox{\textwidth}{!}{
-                \begin{minipage}[t]{8cm}
-                  \begin{itemize}
-                    \item Keeps a \alert{explored set} and avoids the problem of tree-based search
-                    \item \alert{exponential memory requirements} in the worst case
-                  \end{itemize}
-                \end{minipage}
+            child {
+              node (ts) {Tree-based search
+                \resizebox{\textwidth}{!}{
+                  \begin{minipage}[t]{8cm}
+                    \begin{itemize}
+                      \item nodes are possibly \alert{visited multiple times} (if there are multiple directed paths to a node rooting in the start node), possible leading even to \alert{infinite loops}
+                      % \item It will visit a state of the underlying problem graph multiple times, if there are multiple directed paths to it rooting in the start state
+                      % \item It is even possible to visit a state an infinite number of times if it lies on a directed loop
+                      \begin{itemize}
+                        \item but each of this multiple visits would correspond to a different node if one would generate a tree by the nodes visited by the algorithm
+                      \end{itemize}
+                    \end{itemize}
+                  \end{minipage}
+                }
+                % \resizebox{\textwidth}{!}{
+                %   \begin{minipage}[t]{11cm}
+                %     \begin{algorithm}[H]
+                %       \caption{\pr{Tree-Search}(problem)}
+                %       % \begin{pseudo}[kw]
+                %       % \fn{initialize} \tn{the} \tt{frontier} \tn{using the initial state of problem}\\
+                %       % As long as \tt{frontier} \tn{is not} \cn{empty} do\\+
+                %       % \fn{choose} \tn{a} \tt{leaf node} $v$ \tn{and remove it from the} \tt{frontier}\\
+                %       %   if \tt{v} \tn{contains a} \cn{goal state} then\\+
+                %       %     return \cn{True}\\-
+                %       %     \fn{expand} \tn{the} \tt{node}\tn{, adding the resulting nodes to the} \tt{frontier}\\--
+                %       % return \cn{False}
+                %       % \end{pseudo}
+                %       \begin{pseudo}[kw]
+                %       \fn{initialize} \tn{the} \tt{frontier} \tn{using the initial state of problem}\\
+                %       As long as \tt{frontier} \tn{is not} \cn{empty} do\\+
+                %       \fn{choose} \tn{a} \tt{leaf node} \tn{and remove it from the} \tt{frontier}\\
+                %         if \tt{node} \tn{contains a} \cn{goal state} then\\+
+                %           return \cn{Solution}\\-
+                %           \fn{expand} \tn{the} \tt{node}\tn{, adding the resulting nodes to the} \tt{frontier}\\--
+                %       return \cn{Failure}
+                %       \end{pseudo}
+                %     \end{algorithm}
+                %     \sourcesone
+                %   \end{minipage}
+                % }
               }
-              \resizebox{\textwidth}{!}{
-                \begin{minipage}[t]{12cm}
-                  \begin{algorithm}[H]
-                    \caption{\pr{Graph-Search}(problem)}
-                    \begin{pseudo}[kw]
-                    \fn{initialize} \tn{the} \tt{frontier} \tn{using the initial state of problem}\\
-                    \fn{initialize} \tn{the} \tt{explored set} \tn{to be empty}\\
-                    As long as \tt{frontier} \tn{is not} \cn{empty} do\\+
-                    \fn{choose} \tn{a} \tt{leaf node} \tn{and remove it from the} \tt{frontier}\\
-                      if \tt{node} \tn{contains a} \cn{goal state} then\\+
-                        return \cn{True}\\-
-                        \fn{add} \tn{the node to the} \tt{explored set}\\
-                        if \tt{node} \tn{not in the} \tt{frontier} \tn{or} \tt{explored set} then \\+
-                          \fn{expand} \tn{the} \tt{node}\tn{, adding the resulting nodes to the} \tt{frontier}\\---
-                    return \cn{False}
-                    \end{pseudo}
-                  \end{algorithm}
-                  \sourcesone
-                \end{minipage}
+            }
+            child {
+              node (gs) {Graph-based search
+                \resizebox{\textwidth}{!}{
+                  \begin{minipage}[t]{8cm}
+                    \begin{itemize}
+                      \item Keeps a \alert{explored set} and avoids the problem of tree-based search
+                      \item \alert{exponential memory requirements} in the worst case
+                    \end{itemize}
+                  \end{minipage}
+                }
+                % \resizebox{\textwidth}{!}{
+                %   \begin{minipage}[t]{12cm}
+                %     \begin{algorithm}[H]
+                %       \caption{\pr{Graph-Search}(problem)}
+                %       \begin{pseudo}[kw]
+                %       \fn{initialize} \tn{the} \tt{frontier} \tn{using the initial state of problem}\\
+                %       \fn{initialize} \tn{the} \tt{explored set} \tn{to be empty}\\
+                %       As long as \tt{frontier} \tn{is not} \cn{empty} do\\+
+                %       \fn{choose} \tn{a} \tt{leaf node} \tn{and remove it from the} \tt{frontier}\\
+                %         if \tt{node} \tn{contains a} \cn{goal state} then\\+
+                %           return \cn{True}\\-
+                %           \fn{add} \tn{the node to the} \tt{explored set}\\
+                %           if \tt{node} \tn{not in the} \tt{frontier} \tn{or} \tt{explored set} then \\+
+                %             \fn{expand} \tn{the} \tt{node}\tn{, adding the resulting nodes to the} \tt{frontier}\\---
+                %       return \cn{False}
+                %       \end{pseudo}
+                %     \end{algorithm}
+                %   \end{minipage}
+                % }
               }
             }
           }
@@ -128,7 +147,7 @@
                     \begin{itemize}
                       \item FIFO datastructure (stack) gets replaced by \alert{priority queue} 
                       \item expands node $v$ from the frontier with \alert{lowest path costs} $g(v)$
-                      \item is \alert{complete}, provided that the branching factor is finite and all edge weights are less then $\epsilon$ and \alert{optimal}
+                      \item is \alert{complete}, provided that the branching factor is finite and \alert{optimal}
                       \item generalization of \alert{Breadth-First Search}, where edge weights can have \alert{different values}
                       \item special case of \alert{Best-First Search}, where $f(v) = g(v)$
                       \item special case of \alert{A$^*$ Search}, where $h(v) = 0$ and thus $f(v) = g(v) + h(v) = g(v)$
@@ -136,10 +155,30 @@
                         \item if all edge weights would be $1$, then a node would have depth $k$ exactly when it's path costs would be $k$. 
                         \item then the expansion criteria would therefore be the same as for BFS, beacuse a node would have minimal depth exactly when it would have minimum path costs
                       \end{itemize}
-                    \item \alert{Worst Case Time complexity:} $O(b^{1+\left\lfloor \frac{C}{\epsilon}\right\rfloor})$
-                      \item \alert{Space complexity:} $O(b^{1+\left\lfloor\frac{C}{\epsilon}\right\rfloor})$
+                      \item is a modification of \alert{Dijkstra's Algorithm} which is focused on searching a \alert{single shortest path} in terms of \alert{cost} from the \alert{root node} to a \alert{target node} rather than finding the shortest path to every node
+                      \begin{itemize}
+                        \item it does this by stopping as soon as the target node is found
+                        \item it is applicable for both \alert{explicit graphs} and \alert{implicit graphs}, it doesn't need the entire graph as input
+                      \end{itemize}
+                    \item \alert{Time complexity:} $O(b^{1+\left\lfloor \frac{C}{\epsilon}\right\rfloor})$
+                      \item \alert{Space complexity:} $O(b^{1+\left\lfloor\frac{C}{\epsilon}\right\rfloor})$, priority queue is filled gradually
                     \end{itemize}
                   \end{minipage}
+                }
+              }
+              child {
+                node (dijkstra) {Dijkstra's Algorithm
+                  \resizebox{\textwidth}{!}{
+                    \begin{minipage}[t]{8cm}
+                      \begin{itemize}
+                        \item determines the \alert{shortest path} in terms of \alert{cost} from the \alert{root node} to \alert{every other node}
+                        \item there is \alert{no target node}, processing continues until all nodes have been removed from the priority queue, i.e. until shortest paths to all nodes (not just a target node) have been determined
+                        \item is only applicable in \alert{explicit graphs} where the entire graph is given as input
+                        \item \alert{Time complexity:} always more time consuming than UCS
+                        \item \alert{Space complexity:} adds all nodes to the priority queue at the beginnging with infinite cost
+                      \end{itemize}
+                    \end{minipage}
+                  }
                 }
               }
               child {
@@ -152,13 +191,16 @@
                         \item \alert{complete}, provided that the branching factor is finite and \alert{optimal}, provided every edge has identical, non-negative weights
                         \item special case of \alert{Uniform-Cost Search} where all edge weights have \alert{no value}
                         \item special case of \alert{Best-First Search}, where $f(v) = d(v)$
-                        \item \alert{Worst Case Time complexity:} $O({\mid} V{\mid}+{\mid} E{\mid}) = O(b^d)$
-                        \item \alert{Space complexity:} $O({\mid} V{\mid}) = O(b^d)$
+                        \item \alert{Time complexity:} $O({\mid} V{\mid}+{\mid} E{\mid})$, $b + b^2 + \ldots + b^d\in O(b^d)$ is the maximal number of nodes expanded
+                        \begin{itemize}
+                          \item If the algorithm were to apply the goal test to nodes when selected for expansion rather than when generated, the whole layer of nodes at depth $d$ would be expanded before the goal was detected and the time complexity would be $O(b^{d+1})$
+                        \end{itemize}
+                        \item \alert{Space complexity:}
+                        \begin{itemize}
+                          \item \alert{tree based:} $O({\mid} V{\mid}) = O(b^d)$ for the frontier%, every explored node is kept in memory
+                          \item \alert{graph based:} $O(b^d)$ for the frontier and $O(b^{d-1})$ for the explored set
+                        \end{itemize}
                         % \item \alert{Time complexity:} the maximal number of nodes expanded is $b+b^{2}+b^{3}+\ldots +b^{d}\in O(b^{d})$
-                        % \begin{itemize}
-                        %   \item $b$ be the \alert{maximal branching factor}
-                        %   \item $d$ the \alert{depth} of a \alert{solution path}
-                        % \end{itemize}
                         % \item \alert{Space complexity:} Every node generated is \alert{kept in memory}. Therefore space needed for the \alert{frontier} is $O(b^d)$ and for the \alert{explored set} $O(b^{d-1})$
                       \end{itemize}
                     \end{minipage}
@@ -181,21 +223,21 @@
                     \begin{itemize}
                       \item \alert{LIFO} datastracture (LIFO-\alert{queue})
                       \item expands node $v$ from the frontier with \alert{greatest depth} $d(v)$
-                    \item In general, the path found is \alert{not optimal} and \alert{completeness} can be guaranteed \alert{only for graph-based search} and \alert{finite graphs}
+                    \item in general, the path found is \alert{not optimal} and \alert{completeness} can be guaranteed \alert{only for graph-based search} and \alert{finite graphs}
                     \item special case of \alert{Best-First Search}, where $f(v) = -d(v)$
-                    \item \alert{Worst Case Time complexity:} $O({\mid} V{\mid}+{\mid} E{\mid}) = O(b^m)$
-                      % \begin{itemize}
-                      %   \item \alert{tree-based search:} search bounded by the \alert{size of the state space} (\alert{might be infinite})
-                      %   \item \alert{graph-based search:} algorithm might generate $O(b^m)$ nodes in the search tree which might be much larger than the size of the state space
+                    \item \alert{Time complexity:}
+                      \begin{itemize}
+                        \item \alert{graph-based:} $O({\mid} V{\mid}+{\mid} E{\mid})$, search bounded by the number of nodes (might be infinite)
+                        \item \alert{tree-based:} algorithm might generate $O(b^m)$ nodes in the search tree which might be much larger than the number of nodes
                       %   \begin{itemize}
                       %     \item $m$ is the maximum length of a path in the state space
                       %   \end{itemize}
-                      % \end{itemize}
-                    \item \alert{Worst Case Space complexity:} $O({\mid} V{\mid}) = O(b\cdot m)$
-                      % \begin{itemize}
-                      %   \item \alert{tree-based search:} $O(b^m)$ 
-                      %   \item \alert{graph-based search:} in worst case, all states need to be stored in the explored set (no advantage over breadth-first) 
-                      % \end{itemize}
+                      \end{itemize}
+                    \item \alert{Space complexity:} 
+                      \begin{itemize}
+                        \item \alert{graph-based:} $O({\mid} V{\mid})$, in worst case, all nodes need to be stored in the explored set (no advantage over breadth-first)
+                        \item \alert{tree-based:} $O(b\cdot m)$, needs to store only the nodes along the path from the root to the leaf node. Once a node has been expanded, it can be removed from memory as soon as all its descendants have been fully explored
+                      \end{itemize}
                     \end{itemize}
                   \end{minipage}
                 }
@@ -290,7 +332,7 @@
                       \item informed search procedure that expands the node with the \enquote{\alert{best}} $f$-value first
                       \item is an instance of the general \alert{Tree-Search} algorithm in which frontier is a \alert{priority queue} ordered by an \alert{evaluation function} $f$
                       \begin{itemize}
-                        \item When $f$ is always correct, we do not need to search!
+                        \item when $f$ is always correct, ones does not need to search
                       \end{itemize}
                     \end{itemize}
                   \end{minipage}
@@ -392,8 +434,8 @@
         \begin{edges}
           \edge{dfs}{bidirectional}
           \edge{ts}{bfs}
-          \edge{ts}{rbfs}
-          \edge{gs}{dfs}
+          % \edge{ts}{rbfs}
+          % \edge{gs}{dfs}
           \edge{astar}{ucs}
           \edge{bfs}{ucs}
           % \edge{bfs}{rbfs}
@@ -402,7 +444,17 @@
         \end{edges}
         \annotation{dfs}{\bd}
         \annotation{rbfs}{\bd}
+        \annotation{generalsearch}{\sourcesone}
+        \annotation{dijkstra}{
+          \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{4cm}
+              \cite{vineetnayak28AnswerWhatDifference2016}
+            \end{minipage}
+          }
+        }
       \end{mindmap}
     \end{minipage}
   }
 \end{frame}
+
+% vielleicht noch was mit reachability problem lösen

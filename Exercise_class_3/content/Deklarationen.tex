@@ -218,7 +218,7 @@ Lösungsidee
 
 
 \newlength{\leveldistance}
-\setlength{\leveldistance}{16cm}
+\setlength{\leveldistance}{17cm}
 
 \newenvironment{mindmap}{
   \begin{tikzpicture}[
@@ -293,4 +293,4 @@ Lösungsidee
 
 \newenvironment{edges}{\begin{pgfonlayer}{background}\draw [concept connection]}{;\end{pgfonlayer}}
 \newcommand{\edge}[2]{(#1) edge (#2)}
-\newcommand{\annotation}[2]{\path (#1) -- node[annotation, above, align=center, pos=0.05] {#2} (sa);}
+\newcommand{\annotation}[2]{\path (#1) -- node[annotation, above, align=center, pos=0.03] {#2} (sa);}

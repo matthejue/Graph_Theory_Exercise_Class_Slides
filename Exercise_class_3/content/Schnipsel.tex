@@ -19,7 +19,7 @@
 
 \NewDocumentCommand{\bfs}{s}{
   \begin{algorithm}[H]
-    \caption{\pr{Breadth-First Search}($G$, $s$, $t$)}
+    \caption{\pr{Breadth-First Search as Graph-Search}($G$, $s$, $t$)}
     \begin{pseudo}[indent-mark,kw,hl-warn=false]
       \ma{Q} $\leftarrow$ \tt{new.Queue()}\\
       \tt{counter} $\leftarrow 1$\\
@@ -70,7 +70,7 @@
 
 \NewDocumentCommand{\dfs}{s}{
   \begin{algorithm}[H]
-    \caption{\pr{Depth-First Search}($G$, $s$, $t$)}
+    \caption{\pr{Depth-First Search as Graph Search}($G$, $s$, $t$)}
     \begin{pseudo}[indent-mark,kw,hpad=0.6cm]
       \ma{S} $\leftarrow$ \tt{new.Stack()} \\
       \tt{counter} $\leftarrow 1$\\
@@ -114,14 +114,20 @@
   \end{algorithm}
 }
 
-\newcommand{\sourcesone}{\tiny \cite{AnswerWhatDifference2018}, \cite{russell2010artificial}, \cite{Pseudocode2023}}
+\newcommand{\sourcesone}{
+  \resizebox{\textwidth}{!}{
+    \begin{minipage}[t]{6cm}
+      \tiny \cite{AnswerWhatDifference2018}, \cite{russell2010artificial}, \cite{Pseudocode2023}, \cite{ziggystarAnswerWhatDifference2013}
+    \end{minipage}
+  }
+}
 
 \newcommand{\bd}{
   \resizebox{\textwidth}{!}{
     \begin{minipage}[t]{10cm}
       \begin{itemize}
         \item number of \alert{Vertices} ${\mid}V{\mid}$ and \alert{Edges} ${\mid}E{\mid}$ are for \alert{explicit graphs}
-        \item \alert{branching factor} (average out-degree) $b$, \alert{depth of a target node} $d$, \alert{maximum depth of the search tree} $m$, \alert{cost of the optimal path} $C$ and \alert{minimal weight of an edge} $\epsilon$ are for \alert{implicit graphs}, whose vertices or edges are not represented as explicit objects in a computer's memory, but rather are determined algorithmically from some other input, e.g. a computable function. That might be needed when working with graphs that are too large to store explicitly (or infinite)
+        \item \alert{maximal branching factor} (maximal out-degree) $b$, \alert{depth of a target node} $d$, \alert{maximum depth of the search tree} $m$, \alert{cost of the optimal path} $C$ and \alert{minimal weight of an edge} $\epsilon$ are for \alert{implicit graphs}, whose vertices or edges are not represented as explicit objects in a computer's memory, but rather are determined algorithmically from some other input, e.g. a computable function (the states/nodes are generated). That might be needed when working with graphs that are too large to store explicitly (or infinite)
         \item ${\mid}E{\mid}$ may vary between $1$ and ${\mid}V{\mid}^2$ for simple graphs
       \end{itemize}
     \end{minipage}
