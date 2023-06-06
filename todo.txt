@@ -6,38 +6,3 @@ Was Rekursion ist Datenstruktur
 Tail Call
 Vergessen in erste Foliensatz nuee Folie weil noc nicht proldziert war
 Wie sieht Schleife bei gerichteter Inzidenz- und äzidenzmatrix aukjs
-
-Heurika
-
-Wie man negative Zweierkomplementzahl direkt erhält, Folien aus TI in Ordner tuen
-Beweis O-Notation machen
-Die Sache mit Assoziativ
-Einerkomplement und Zweierkomplement zyklisch im Gegensatz zu BV
-Zweierkomplement assoziativitäŧ
-Beim Zweierkomplement-2^{n-1}, weil nach Potenzgesetzen
-Die Sache mit Bildmenge surjektiv
-Euklidischer Algorithmus wichtig für RSA
-Fehler in Folien aktualisiert, letztes Tutorat
-Geometrische Summenformel ist 1111 2^n-1
-In welcher Reihenfolge am sinnvollsten bearbeiten
-Keine Sorge wegen wenigen Punkten, Punktzahl varriert pro Blatt
-Wie Kurzschluss, Flussrichtung
-Wie Musterlösung aussieht
-Wie Wertigkeit allgemein funktioniert
-Wie das konrektt aussieht beim Zweierkomplement mit Folien
-Zyklische weiterer Vorteil von Zweriomplemeen und Einerkomplement
-p-Kanal mit 0 Eselbrücke, wenn 0 anliegt
-weil links eine 1 rauskommen muss damit es mit der +1 zusammen 2 ergibt, um die 2^1=2 auszugleichen Oder besseres Beispiel für b=10 und n = 1: 3*10^0 - 0*10^1 + 1 + 6*10^0 - 1*10^1 = 3 + 6 + 1 - 10 = 0
-
-6 ist 0110 und 7 ist 0111 als Bias
-Modelle
-Verschiedene Arten Implikation anzusehen
-Wie man DNF und KNF sehr einfach aus KI
-mit weiterer Nachkommastellen mehr Lücken augefüllt, aber imm gleicher Abstand zur lsb Stelle
-
-Fragen wofür IN wichtig ist?
-Man kann es bei kommutativen Schaltungen einfacher machen
-Wann weiß man, dass man fertig ist
-man kann mergen sobald überall gleiche Eingänge und Ausgänge
-
-Flussrichtung bei Cmos
