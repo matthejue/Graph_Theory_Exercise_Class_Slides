@@ -34,6 +34,7 @@ jobs:
         with:
           run: |
             # apk add make
+            apk add tex-gyre
             cd ./Exercise_class_${{ github.event.inputs.number }}
             latexmk main.tex
         # continue-on-error: true
