@@ -30,17 +30,17 @@ jobs:
         with:
           ref: "master"
 
-      # - uses: ConorMacBride/install-package@v1
-      #   with:
-      #     apt: tex-gyre
+      - uses: ConorMacBride/install-package@v1
+        with:
+          apt: tex-gyre
 
       - uses: matthejue/texlive-action-personal-copy/full@master
         with:
           run: |
             # apk add make
-            mkdir ~/.fonts
-            cp ./texgyredejavu-math.otf ~/.fonts/texgyredejavu-math.otf
-            fc-cache -f -v
+            # mkdir ~/.fonts
+            # cp ./texgyredejavu-math.otf ~/.fonts/texgyredejavu-math.otf
+            # fc-cache -f -v
             cd ./Exercise_class_${{ github.event.inputs.number }}
             latexmk main.tex
         # continue-on-error: true
