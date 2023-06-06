@@ -30,11 +30,14 @@ jobs:
         with:
           ref: "master"
 
+      - uses: ConorMacBride/install-package@v1
+        with:
+          apt: tex-gyre
+
       - uses: matthejue/texlive-action-personal-copy/full@master
         with:
           run: |
             # apk add make
-            sudo apt install tex-gyre
             cd ./Exercise_class_${{ github.event.inputs.number }}
             latexmk main.tex
         # continue-on-error: true
