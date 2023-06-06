@@ -30,10 +30,10 @@ jobs:
         with:
           ref: "master"
 
-      - uses: ConorMacBride/install-package@v1
-        with:
-          # apt: tex-gyre
-          apt: fonts-dejavu
+      # - uses: ConorMacBride/install-package@v1
+      #   with:
+      #     # apt: tex-gyre
+      #     apt: fonts-dejavu
 
       - uses: matthejue/texlive-action-personal-copy/full@master
         with:
