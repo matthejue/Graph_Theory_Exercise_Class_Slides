@@ -39,9 +39,9 @@ jobs:
         with:
           run: |
             # apk add make
-            # mkdir ~/.fonts
-            # cp ./texgyredejavu-math.otf ~/.fonts/texgyredejavu-math.otf
-            # fc-cache -f -v
+            mkdir ~/.fonts
+            cp ./DejaVuMathTeXGyre.ttf ~/.fonts/DejaVuMathTeXGyre.ttf
+            fc-cache -f -v
             cd ./Exercise_class_${{ github.event.inputs.number }}
             latexmk main.tex
         # continue-on-error: true
