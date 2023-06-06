@@ -1,6 +1,5 @@
-\def\matthias{0}
-
-\documentclass[aspectratio=169, hyperref={colorlinks=true, allcolors=PrimaryColor}, c]{beamer}
+% \documentclass[aspectratio=169, hyperref={colorlinks=true, allcolors=PrimaryColor}, c]{beamer}
+\documentclass[varwidth]{standalone}
 
 % \usepackage{lmodern}
 % \usepackage{anyfontsize}
@@ -13,9 +12,14 @@
 % \input{./content/Design_2}
 % \input{./content/Deklarationen_2}
 
-\usepackage[ruled]{algorithm}
+% \usepackage[ruled]{algorithm}
 \usepackage{pseudo}
-\floatname{algorithm}{test}
+% \floatname{algorithm}{test}
+\usepackage{float}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,theorems}
+
+\newtcbtheorem{algorithm}{Algorithm}{pseudo/ruled, float}{alg}
 
 \definecolor{PrimaryColor}{HTML}{FE6A00}
 \definecolor{PrimaryColorDimmed}{HTML}{FFB27B}
@@ -24,13 +28,8 @@
 \colorlet{BoxColor}{gray!10!white}
 
 \begin{document}
-  \begin{frame}{Table of Contents}
-    \begin{itemize}
-      \item \scshape{asdf}
-    \end{itemize}
-  \end{frame}
-  \begin{algorithm}
-    \caption{asdf}
+  \begin{algorithm}{Sort an array $A$ of $n$ elements.}{gnome}
+    % \caption{asdf}
     \begin{pseudo}[kw]
       \pr{while} \tn{doof}\\
       \pr{while} \tn{doof}\\

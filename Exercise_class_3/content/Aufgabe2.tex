@@ -23,41 +23,47 @@
     \begin{columns}
       \begin{column}[t]{0.5\textwidth}
         \resizebox{\textwidth}{!}{
-          \begin{minipage}[t]{1.5\textwidth}
+          \begin{minipage}{1.5\textwidth}
             \bfs
           \end{minipage}
         }
       \end{column}
       \begin{column}[t]{0.5\textwidth}
-        \ctikzfig{2a}
-        \vspace{0.25cm}
-        \begin{itemize}
-          \item \alert{If the following rule gets applided:} If there's a choice between several adjacent nodes the node with the lowest index gets taken.
-        \end{itemize}
-        \begin{columns}
-          \begin{column}[t]{0.5\linewidth}
+        \resizebox{\textwidth}{!}{
+          \begin{minipage}{1\textwidth}
+
+            \ctikzfig{2a}
+            \vspace{0.25cm}
             \begin{itemize}
-              \item $BFS(G, v_1, v_0)$
-              \begin{itemize}
-                \item starte bei $v1$
-                \item visit $v_2$
-                \item visit $v_3$
-                \item visit $\ldots$
-                \item doesn't terminate
-              \end{itemize}
+              \item \alert{If the following rule gets applided:} If there's a choice between several adjacent nodes the node with the lowest index gets taken.
             \end{itemize}
-          \end{column}
-          \begin{column}[t]{0.5\linewidth}
-            \begin{itemize}
-              \item $DFS(G, v_1, v_0)$
-              \begin{itemize}
-                \item visit $v_2$
-                \item visit $v_0$
-                \item terminates
-              \end{itemize}
-            \end{itemize}
-          \end{column}
-        \end{columns}
+            \begin{columns}
+              \begin{column}[t]{0.5\linewidth}
+                \begin{itemize}
+                  \item $BFS(G, v_1, v_0)$
+                  \begin{itemize}
+                    \item starte bei $v1$
+                    \item visit $v_2$
+                    \item visit $v_3$
+                    \item visit $\ldots$
+                    \item doesn't terminate
+                  \end{itemize}
+                \end{itemize}
+              \end{column}
+              \begin{column}[t]{0.5\linewidth}
+                \begin{itemize}
+                  \item $DFS(G, v_1, v_0)$
+                  \begin{itemize}
+                    \item visit $v_2$
+                    \item visit $v_0$
+                    \item terminates
+                  \end{itemize}
+                \end{itemize}
+              \end{column}
+            \end{columns}
+
+          \end{minipage}
+        }
       \end{column}
     \end{columns}
   \end{solution}
@@ -71,42 +77,48 @@
     \begin{columns}
       \begin{column}[t]{0.45\textwidth}
         \resizebox{\textwidth}{!}{
-          \begin{minipage}[t]{1.8\textwidth}
+          \begin{minipage}{1.8\textwidth}
             \dfs
           \end{minipage}
         }
       \end{column}
       \begin{column}[t]{0.5\textwidth}
-        \ctikzfig{2b}
-        \vspace{0.25cm}
-        \begin{itemize}
-          \item \alert{If the following rule gets applided:} If there's a choice between several adjacent nodes the node with the highest index gets taken.
-        \end{itemize}
-        \begin{columns}
-          \begin{column}[t]{0.5\linewidth}
+        \resizebox{\textwidth}{!}{
+          \begin{minipage}{\textwidth}
+
+            \ctikzfig{2b}
+            \vspace{0.25cm}
             \begin{itemize}
-              \item $BFS(G,v_2, v_3)$
-              \begin{itemize}
-                \item start at $v_2$
-                \item visit $v_4$
-                \item visit $v_3$
-                \item terminates
-              \end{itemize}
+              \item \alert{If the following rule gets applided:} If there's a choice between several adjacent nodes the node with the highest index gets taken.
             \end{itemize}
-          \end{column}
-          \begin{column}[t]{0.5\linewidth}
-            \begin{itemize}
-              \item $DFS(G, v_2, v_3)$
-              \begin{itemize}
-                \item start at $v_2$
-                \item visit $v_4$
-                \item visit $v_8$
-                \item visit $\ldots$
-                \item doesn't terminate
-              \end{itemize}
-            \end{itemize}
-          \end{column}
-        \end{columns}
+            \begin{columns}
+              \begin{column}[t]{0.5\linewidth}
+                \begin{itemize}
+                  \item $BFS(G,v_2, v_3)$
+                  \begin{itemize}
+                    \item start at $v_2$
+                    \item visit $v_4$
+                    \item visit $v_3$
+                    \item terminates
+                  \end{itemize}
+                \end{itemize}
+              \end{column}
+              \begin{column}[t]{0.5\linewidth}
+                \begin{itemize}
+                  \item $DFS(G, v_2, v_3)$
+                  \begin{itemize}
+                    \item start at $v_2$
+                    \item visit $v_4$
+                    \item visit $v_8$
+                    \item visit $\ldots$
+                    \item doesn't terminate
+                  \end{itemize}
+                \end{itemize}
+              \end{column}
+            \end{columns}
+
+          \end{minipage}
+        }
       \end{column}
     \end{columns}
   \end{solutionnoinc}
