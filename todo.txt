@@ -6,3 +6,4 @@ Was Rekursion ist Datenstruktur
 Tail Call
 Vergessen in erste Foliensatz nuee Folie weil noc nicht proldziert war
 Wie sieht Schleife bei gerichteter Inzidenz- und äzidenzmatrix aukjs
+Folgen und Reihen
