@@ -11,8 +11,13 @@
 \newlength{\leveldistance}
 \setlength{\leveldistance}{17cm}
 
-\newtcbtheorem{algorithm}{\color{SecondaryColor}Algorithm}{pseudo/ruled}{alg}
-% \newtcbtheorem{algorithm}{Algorithm}{pseudo/ruled, float}{alg}
+% \newcounter{asdf} 
+% \setcounter{asdf}{1}
+% \newtheorem{asdf}{Algorithm}
+
+\newcounter{algorithm}
+\setcounter{algorithm}{0}
+\newtcbtheorem[use counter=algorithm]{algorithm}{\color{SecondaryColor}Algorithm}{pseudo/ruled}{alg}
 
 \newenvironment{mindmap}{
   \begin{tikzpicture}[

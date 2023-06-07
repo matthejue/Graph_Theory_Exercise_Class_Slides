@@ -17,7 +17,7 @@
 }
 
 \NewDocumentCommand{\bfs}{s}{
-  \begin{algorithm}{\pr{Breadth-First Search as Graph-Search}($G$, $s$, $t$)}{bfs}
+  \begin{algorithm}{\pr{Breadth-First Search as Graph-Search}($G$, $s$, $t$)}{\thetcbcounter}
     \begin{pseudo}[indent-mark,kw,hl-warn=false]
       \ma{Q} $\leftarrow$ \tt{new.Queue()}\\
       \tt{counter} $\leftarrow 1$\\
@@ -60,13 +60,12 @@
           % \tt{counter} $\leftarrow$ \tt{counter} $+ 1$ \\
           $u$ $\leftarrow$ \ma{S}\tt{.pop()}\\
           $u$\tt{.end} $\leftarrow$ \tt{counter;} \tt{counter} $\leftarrow$ \tt{counter} $+ 1$\\--
-      return \cn{false}
     \end{pseudo}
   \end{algorithm}
 }
 
 \NewDocumentCommand{\dfs}{s}{
-  \begin{algorithm}{\pr{Depth-First Search as Graph Search}($G$, $s$, $t$)}{dfs}
+  \begin{algorithm}{\pr{Depth-First Search as Graph Search}($G$, $s$, $t$)}{\thetcbcounter}
     \begin{pseudo}[indent-mark,kw,hpad=0.6cm]
       \ma{S} $\leftarrow$ \tt{new.Stack()} \\
       \tt{counter} $\leftarrow 1$\\
@@ -91,7 +90,7 @@
 }
 
 \NewDocumentCommand{\dfsrec}{s}{
-  \begin{algorithm}{\pr{Recursive Depth-First Search}($G$, $s$, $t$, $1$)}{dfsrec}
+  \begin{algorithm}{\pr{Recursive Depth-First Search}($G$, $s$, $t$, $1$)}{\thetcbcounter}
     \begin{pseudo}[indent-mark,kw,hl-warn=false]
     \fn{Rec-DFS}\tn{($G$, $u$, $t$, \tt{counter})}\IfBooleanTF#1{\\+[hl]}{\\+}
       if $u$ is $t$ then\IfBooleanTF#1{\\+[hl]}{\\+}

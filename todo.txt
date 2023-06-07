@@ -1,6 +1,6 @@
 ismorphismen usw.
 Die Sache mit schwach und stark zusammenhängend
-Was ist Strutkur Graph
+Was ist Strutkur Graph, andere Graphendarstellungen in anderer Litarutr weniger Präzisse
 Folie ergänzt, Wahrheitstabelle, Man kann Graphen auch anders darstellen, nur Kanten udn Knoten Relation
 Was Rekursion ist Datenstruktur
 Tail Call
