@@ -1,0 +1,69 @@
+%!Tex Root = ../main.tex
+% ./Packete.tex
+% ./Design.tex
+% ./Deklarationen.tex
+% ./Vorbereitung.tex
+% ./Aufgabe2.tex
+% ./Aufgabe3.tex
+% ./Aufgabe4.tex
+% ./Appendix.tex
+
+\section{Exercise 1}
+
+\setcounter{exercise}{1}
+
+\begin{frame}[allowframebreaks]{Aufgabe \thesection}{Maximum Cut, Maximal Cut, Perfect Cut, Vertex Cover}
+  \begin{solution}
+    \ctikzfig{1a}
+  \end{solution}
+  \begin{solution}
+    \ctikzfig{1a_sol}
+  \end{solution}
+  \begin{solution}
+    \ctikzfig{1b}
+  \end{solution}
+  \begin{solutionnoinc}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{1b_sol}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{1c}
+      \end{column}
+    \end{columns}
+  \end{solutionnoinc}
+  \begin{solution}
+    \ctikzfig{1c_diff}
+  \end{solution}
+  \begin{solution}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+          \item maximum matching $\alpha'(G) = 6$
+          \item minimum vertex cover $\beta(G) = 6$
+          \begin{itemize}
+            \item \alert{König und Egerváry:} For any bipartite graph $G$ the size of maximum matching equals the size of minimum vertex cover
+          \end{itemize}
+          \item maximum independant set $\alpha(G) = 12 - 6 = 6$ 
+          \begin{itemize}
+            \item $\alpha(G) + \beta(G) = n(G)$
+            % \item \alert{dual problem with edge cover:} The size of a (minimal) edge cover is at least the size of a maximal independed set
+          \end{itemize}
+          \item minimum edge cover $\beta'(G) = 12 - 6 = 6$
+          \begin{itemize}
+            \item \alert{Gallai:} $\alpha'(G) + \beta'(G) = n(G)$
+          \end{itemize}
+        \end{itemize}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{1e}
+      \end{column}
+    \end{columns}
+  \end{solution}
+  \begin{solutionnoinc}
+    \ctikzfig{1f}
+  \end{solutionnoinc}
+  \begin{solution}
+    \ctikzfig{1f2}
+  \end{solution}
+\end{frame}

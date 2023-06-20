@@ -1,0 +1,388 @@
+%!Tex Root = ../main.tex
+% ./Packete.tex
+% ./Design.tex
+% ./Deklarationen.tex
+% ./Vorbereitung.tex
+% ./Aufgabe1.tex
+% ./Aufgabe3.tex
+% ./Aufgabe4.tex
+% ./Appendix.tex
+
+\section{Exercise 2}
+
+\setcounter{exercise}{1}
+
+\begin{frame}[allowframebreaks]{Aufgabe \thesection}{Hungarian Algorithm}
+  \begin{solutionnoinc}
+    \begin{enumerate}
+      \item[1.] Determine the excess matrix
+      \item[2.] Draw/Update the equality subgraph from the excess matrix
+    \end{enumerate}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \centering
+        \resizebox{\textwidth}{!}{
+            \begin{tasktwocolumn}
+              \textcolor{white}{}\diagbox{$w_{i,j}$}{$e_{i,j}$} &    j    & 1              & 2              & 3              & 4              & 5              \\
+                  i      &             \diagbox{$u_i$}{$v_j$}   & 0              & 0              & 0              & 0              & 0     \\
+                  1                  &      4              & \diagbox{2}{2} & \diagbox{1}{3} & \diagbox{1}{3} & \textcolor{PrimaryColor}{\diagbox{4}{0}} & \diagbox{0}{4} \\
+                  2                  &      3              & \diagbox{2}{1} & \diagbox{2}{1} & \diagbox{2}{1} & \textcolor{PrimaryColor}{\diagbox{3}{0}} & \diagbox{1}{2} \\
+                  3                  &      4              & \textcolor{PrimaryColor}{\diagbox{4}{0}} & \diagbox{2}{2} & \diagbox{1}{3} & \diagbox{2}{2} & \diagbox{2}{2} \\
+                  4                  &      3              & \diagbox{1}{2} & \textcolor{PrimaryColor}{\diagbox{3}{0}} & \textcolor{PrimaryColor}{\diagbox{3}{0}} & \diagbox{1}{2} & \diagbox{2}{1} \\
+                  5                  &      2              & \textcolor{PrimaryColor}{\diagbox{2}{0}} & \diagbox{0}{2} & \diagbox{1}{1} & \diagbox{0}{2} & \diagbox{1}{1}
+            \end{tasktwocolumn}
+        }
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \resizebox{\textwidth}{!}{
+          \begin{minipage}[t]{10cm}
+            \ctikzfig{2a}
+          \end{minipage}
+        }
+      \end{column}
+    \end{columns}
+  \end{solutionnoinc}
+\begin{solutionnoinc}
+  \begin{itemize}
+    \item[3.] Determine a maximum matching in the equality subgraph
+    \item[4.] Determine a minimal vertex cover in the equality subgraph with the same number of vertices as edges in the matching
+    \begin{itemize}
+      \item[4.1] Mark the minimal vertex cover in the matrix
+    \end{itemize}
+    \item If it's a perfect matching, one can immediately go on with step 6
+  \end{itemize}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \resizebox{\textwidth}{!}{
+          \begin{tasktwocolumn}
+            \textcolor{white}{}\diagbox{$w_{i,j}$}{$e_{i,j}$} &    j    & 1              & 2              & 3              & 4              & 5              \\
+              i      &             \diagbox{$u_i$}{$v_j$}   & \textcolor{SecondaryColor}{0}              & 0              & 0              & \textcolor{SecondaryColor}{0}              & 0     \\
+                1                  &      4              & \textcolor{SecondaryColor}{\diagbox{2}{2}} & \diagbox{1}{3} & \diagbox{1}{3} & \textcolor{SecondaryColor}{\diagbox{4}{0}} & \diagbox{0}{4} \\
+                2                  &      3              & \textcolor{SecondaryColor}{\diagbox{2}{1}} & \diagbox{2}{1} & \diagbox{2}{1} & \textcolor{SecondaryColor}{\diagbox{3}{0}} & \diagbox{1}{2} \\
+                3                  &      4              & \textcolor{SecondaryColor}{\diagbox{4}{0}} & \diagbox{2}{2} & \diagbox{1}{3} & \textcolor{SecondaryColor}{\diagbox{2}{2}} & \diagbox{2}{2} \\
+                4                  &      \textcolor{SecondaryColor}{3}              & \textcolor{SecondaryColor}{\diagbox{1}{2}} & \textcolor{SecondaryColor}{\diagbox{3}{0}} & \textcolor{SecondaryColor}{\diagbox{3}{0}} & \textcolor{SecondaryColor}{\diagbox{1}{2}} & \textcolor{SecondaryColor}{\diagbox{2}{1}} \\
+            5                  &      2              & \textcolor{SecondaryColor}{\diagbox{2}{0}} & \diagbox{0}{2} & \diagbox{1}{1} & \textcolor{SecondaryColor}{\diagbox{0}{2}} & \diagbox{1}{1}
+          \end{tasktwocolumn}
+      }
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \resizebox{\textwidth}{!}{
+        \begin{minipage}[t]{10cm}
+          \ctikzfig{2b1}
+        \end{minipage}
+      }
+    \end{column}
+  \end{columns}
+  \end{solutionnoinc}
+  \begin{solutionnoinc}
+    \begin{itemize}
+      \item Need to get zeros to uncovered positions in order to get a perfect matching in the equality subgraph
+      \item[5.] Find smallest uncovered value $e_{i,j}$ in the excess matrix. This value is substracted from all the uncovered values $e_{i,j}$. This value is substrated from each $u_i$ not part of the vertex cover. This value is added to each $v_i$ that is part of the vertex cover
+      \item Back to Step 2
+    \end{itemize}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \centering
+        \resizebox{\textwidth}{!}{
+            \begin{tasktwocolumn}
+              \textcolor{white}{}\diagbox{$w_{i,j}$}{$e_{i,j}$} &    j    & 1              & 2              & 3              & 4              & 5              \\
+              i      &             \diagbox{$u_i$}{$v_j$}   & \textcolor{SecondaryColor}{1}              & 0              & 0              & \textcolor{SecondaryColor}{1}              & 0     \\
+                  1                  &      3              & \textcolor{SecondaryColor}{\diagbox{2}{2}} & \diagbox{1}{2} & \diagbox{1}{2} & \textcolor{SecondaryColor}{\diagbox{4}{0}} & \diagbox{0}{3} \\
+                  2                  &      2              & \textcolor{SecondaryColor}{\diagbox{2}{1}} & \diagbox{2}{0} & \diagbox{2}{0} & \textcolor{SecondaryColor}{\diagbox{3}{0}} & \diagbox{1}{1} \\
+                  3                  &      3              & \textcolor{SecondaryColor}{\diagbox{4}{0}} & \diagbox{2}{1} & \diagbox{1}{2} & \textcolor{SecondaryColor}{\diagbox{2}{2}} & \diagbox{2}{1} \\
+                  4                  &      \textcolor{SecondaryColor}{3}              & \textcolor{SecondaryColor}{\diagbox{1}{2}} & \textcolor{SecondaryColor}{\diagbox{3}{0}} & \textcolor{SecondaryColor}{\diagbox{3}{0}} & \textcolor{SecondaryColor}{\diagbox{1}{2}} & \textcolor{SecondaryColor}{\diagbox{2}{1}} \\
+              5                  &      1              & \textcolor{SecondaryColor}{\diagbox{2}{0}} & \diagbox{0}{1} & \diagbox{1}{0} & \textcolor{SecondaryColor}{\diagbox{0}{2}} & \diagbox{1}{0}
+            \end{tasktwocolumn}
+        }
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \resizebox{\textwidth}{!}{
+          \begin{minipage}[t]{10cm}
+            \ctikzfig{2b1}
+          \end{minipage}
+        }
+      \end{column}
+    \end{columns}
+  \end{solutionnoinc}
+  \begin{solutionnoinc}
+      \begin{itemize}
+        \item[2.] Draw/Update the equality subgraph from the excess matrix
+        \item[3.] Determine a maximum matching in the equality subgraph
+        \item[4.] Determine a minimal vertex cover in the equality subgraph with the same number of vertices as edges in the matching
+          \begin{itemize}
+            \item[4.1] Mark the minimal vertex cover in the matrix
+          \end{itemize}
+        \item If it's a perfect matching, one can immediately go on with step 6
+      \end{itemize}
+      \begin{columns}
+        \begin{column}{0.5\textwidth}
+          \centering
+          \resizebox{\textwidth}{!}{
+              \begin{tasktwocolumn}
+                \textcolor{white}{}\diagbox{$w_{i,j}$}{$e_{i,j}$} &    j    & 1              & 2              & 3              & 4              & 5              \\
+                i      &             \diagbox{$u_i$}{$v_j$}   & \textcolor{SecondaryColor}{1}              & 0              & 0              & \textcolor{SecondaryColor}{1}              & 0     \\
+                1                  &      3              & \textcolor{SecondaryColor}{\diagbox{2}{2}} & \textcolor{SecondaryColor}{\diagbox{1}{2}} & \textcolor{SecondaryColor}{\diagbox{1}{2}} & \textcolor{PrimaryColor}{\diagbox{4}{0}} & \textcolor{SecondaryColor}{\diagbox{0}{3}} \\
+                2                  &      2              & \textcolor{SecondaryColor}{\diagbox{2}{1}} & \textcolor{PrimaryColor}{\diagbox{2}{0}} & \textcolor{PrimaryColor}{\diagbox{2}{0}} & \textcolor{PrimaryColor}{\diagbox{3}{0}} & \textcolor{SecondaryColor}{\diagbox{1}{1}} \\
+                3                  &      3              & \textcolor{PrimaryColor}{\diagbox{4}{0}} & \textcolor{SecondaryColor}{\diagbox{2}{1}} & \textcolor{SecondaryColor}{\diagbox{1}{2}} & \textcolor{SecondaryColor}{\diagbox{2}{2}} & \textcolor{SecondaryColor}{\diagbox{2}{1}} \\
+                    4                  &      \textcolor{SecondaryColor}{3}              & \textcolor{SecondaryColor}{\diagbox{1}{2}} & \textcolor{PrimaryColor}{\diagbox{3}{0}} & \textcolor{PrimaryColor}{\diagbox{3}{0}} & \textcolor{SecondaryColor}{\diagbox{1}{2}} & \textcolor{SecondaryColor}{\diagbox{2}{1}} \\
+                    5                  &      1              & \textcolor{PrimaryColor}{\diagbox{2}{0}} & \textcolor{SecondaryColor}{\diagbox{0}{1}} & \textcolor{PrimaryColor}{\diagbox{1}{0}} & \textcolor{SecondaryColor}{\diagbox{0}{2}} & \textcolor{PrimaryColor}{\diagbox{1}{0}}
+              \end{tasktwocolumn}
+          }
+        \end{column}
+        \begin{column}{0.5\textwidth}
+          \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{10cm}
+              \ctikzfig{2b2}
+            \end{minipage}
+          }
+        \end{column}
+      \end{columns}
+    \end{solutionnoinc}
+\end{frame}
+\begin{frame}{Aufgabe \thesection}{Hungarian Algorithm}
+    \begin{solutionnoinc}
+      \begin{itemize}
+        \only<1>{\item[6.] Determine the maximum weighted matching by summing the values of the adjancy matrix that correspond to the edges in the perfect matching of the equality subgraph}
+        \only<2>{\item[6.] Determine the maximum weighted matching and minimal weighted vortex cover}
+        \begin{itemize}
+        \only<1>{
+          \item The perfect matching corresponds to choosing $n$ zeros while ensuring that each row and column of the excess matrix only contains one choosen zero
+          \item To obtain the maximum weighted matching, one may also sum the values of the adjacency matrix that are in the same positions as the choosen zeros from the excess matrix
+        \item \alert{Note:} One may find more than one way of choosing $n$ zeros in the excess matrix. That is ok, because all the choices will have the same total weight}
+        \only<2>{
+          \item if in the algorithm the equality subgraph reaches a perfect matching $M$ then because of the duality also a maximal weighted matching is found: $\sum_{u_iv_j\in M} w_{i,j}$ and a minimal weighted vertex cover: $\sum_{i} u_i + \sum_{j} v_j$ and both have the same weight
+          \item \alert{Optimal assignment:} $\displaystyle \sum_{u_iv_j\in M} w_{i,j} = 4 + 2 + 4 + 3 + 1 = 14 = 3 + 2 + 3 + 3 + 1 + 1 + 1 = \sum_{i} u_i + \sum_{j} v_j$}
+        \end{itemize}
+        % \begin{itemize}
+        % \end{itemize}
+      \end{itemize}
+      \begin{columns}
+        \begin{column}{0.5\textwidth}
+          \centering
+          \resizebox{\textwidth}{!}{
+              \begin{tasktwocolumn}
+                \textcolor{white}{}\diagbox{$w_{i,j}$}{$e_{i,j}$} &    j    & 1              & 2              & 3              & 4              & 5              \\
+                i      &             \diagbox{$u_i$}{$v_j$}   & 1              & 0              & 0              & 1              & 0     \\
+                    1                  &      3              & \diagbox{2}{2} & \diagbox{1}{2} & \diagbox{1}{2} & \textcolor{PrimaryColor}{\diagbox{4}{0}} & \diagbox{0}{3} \\
+                    2                  &      2              & \diagbox{2}{1} & \textcolor{PrimaryColor}{\diagbox{2}{0}} & \textcolor{SecondaryColor}{\diagbox{2}{0}} & \textcolor{SecondaryColor}{\diagbox{3}{0}} & \diagbox{1}{1} \\
+                    3                  &      3              & \textcolor{PrimaryColor}{\diagbox{4}{0}} & \diagbox{2}{1} & \diagbox{1}{2} & \diagbox{2}{2} & \diagbox{2}{1} \\
+                    4                  &      3              & \diagbox{1}{2} & \textcolor{SecondaryColor}{\diagbox{3}{0}} & \textcolor{PrimaryColor}{\diagbox{3}{0}} & \diagbox{1}{2} & \diagbox{2}{1} \\
+                    5                  &      1              & \textcolor{SecondaryColor}{\diagbox{2}{0}} & \diagbox{0}{1} & \textcolor{SecondaryColor}{\diagbox{1}{0}} & \diagbox{0}{2} & \textcolor{PrimaryColor}{\diagbox{1}{0}}
+              \end{tasktwocolumn}
+          }
+        \end{column}
+        \begin{column}{0.5\textwidth}
+          \resizebox{\textwidth}{!}{
+            \begin{minipage}[t]{10cm}
+              \ctikzfig{2b2}
+            \end{minipage}
+          }
+        \end{column}
+      \end{columns}
+    \end{solutionnoinc}
+\end{frame}
+
+%     \item \alert{Test for optimal assignment:} cover zeros with a minimum number of straight lines
+%     \begin{itemize}
+%       \item \alert{Note:} the number of straight lines needed is indicated with $m$ in the following
+%       \item $m \le n$:  An optimal assignment can't yet be made
+%       \begin{itemize}
+%         \item[4.1.] \alert{Populate zeros:} Need to get zeros to uncovered positions in order to increase the minimum number of number of lines required to cover all of the zeros
+%         \item Find smallest uncovered value
+%         \item This value is substracted from all the uncovered values
+%         \item This value is added to each value situated at the intersection of two lines
+%       \end{itemize}
+%       \item $m = n$: An optimal assignment can be made
+%       \begin{itemize}
+%         \item[4.2.] \alert{Making the final assignment:} Choosing $n$ zeros while ensuring that each row and column of the matrix only contains one choosen zero. 
+%         \item The choosen zeros represent the final assignmennt of workers to jobs. To obtain the total minimum cost, we sum the values of the original matrix that are in the same positions as the choosen zeros
+%         \item \alert{Note:} One may find more than one way of choosing $n$ zeros. That is ok, because all the choices will have the same total cost
+%       \end{itemize}
+%     \end{itemize}
+
+% \begin{frame}[allowframebreaks]{Aufgabe \thesection}{Hungarian Algorithm}
+%   \begin{enumerate}
+%     \setcounter{enumi}{1}
+%     \item[$\blacktriangleright$] \alert{Objective is to maximize total cost:}
+%     \begin{itemize}
+%       \item[1.] \alert{Make the matrix nonnegative:} Negate all values, add a constant to each value such that all values are nonnegative
+%     \end{itemize}
+%     \item \alert{Row Reduction:} substract each rows minimum from every value in that row
+%     \begin{itemize}
+%       \item this means that each row now contains at least one $0$
+%     \end{itemize}
+%     \item \alert{Column Reduction:} substract each columns minimum from every value in that column
+%     \begin{itemize}
+%       \item this means that each column now contains at least one $0$
+%     \end{itemize}
+%     \item \alert{Test for optimal assignment:} cover zeros with a minimum number of straight lines
+%     \begin{itemize}
+%       \item \alert{Note:} the number of straight lines needed is indicated with $m$ in the following
+%       \item $m \le n$:  An optimal assignment can't yet be made
+%       \begin{itemize}
+%         \item[4.1.] \alert{Populate zeros:} Need to get zeros to uncovered positions in order to increase the minimum number of number of lines required to cover all of the zeros
+%         \item Find smallest uncovered value
+%         \item This value is substracted from all the uncovered values
+%         \item This value is added to each value situated at the intersection of two lines
+%       \end{itemize}
+%       \item $m = n$: An optimal assignment can be made
+%       \begin{itemize}
+%         \item[4.2.] \alert{Making the final assignment:} Choosing $n$ zeros while ensuring that each row and column of the matrix only contains one choosen zero. 
+%         \item The choosen zeros represent the final assignmennt of workers to jobs. To obtain the total minimum cost, we sum the values of the original matrix that are in the same positions as the choosen zeros
+%         \item \alert{Note:} One may find more than one way of choosing $n$ zeros. That is ok, because all the choices will have the same total cost
+%       \end{itemize}
+%     \end{itemize}
+%   \end{enumerate}
+%   \begin{Sidenote}
+%     \begin{itemize}
+%       \item If one has more rows than columns then one just adds extra rows or columns filled with zeros. One discards any assignments to these in the final solution
+%     \end{itemize}
+%   \end{Sidenote}
+%   \begin{solutionnoinc}
+%     \centering
+%     \resizebox{\textwidth}{!}{
+%         \begin{tasktwo}
+%           \textcolor{white}{}$w_{i,j}$ &    j    & 1              & 2              & 3              & 4              & 5              \\
+%               i      &             \diagbox{$u_i$}{$v_j$}   & 0              & 0              & 0              & 0              & 0     \\
+%           1                  &      4              & \diagbox{2}{2} & \diagbox{1}{1} & \diagbox{1}{1} & \diagbox{4}{4} & \diagbox{0}{0} \\
+%           2                  &      3              & \diagbox{2}{2} & \diagbox{2}{2} & \diagbox{2}{2} & \diagbox{3}{3} & \diagbox{1}{1} \\
+%           3                  &      4              & \diagbox{4}{4} & \diagbox{2}{2} & \diagbox{1}{1} & \diagbox{2}{2} & \diagbox{2}{2} \\
+%           4                  &      3              & \diagbox{1}{1} & \diagbox{3}{3} & \diagbox{3}{3} & \diagbox{1}{1} & \diagbox{2}{2} \\
+%           5                  &      2              & \diagbox{2}{2} & \diagbox{0}{0} & \diagbox{1}{1} & \diagbox{0}{0} & \diagbox{1}{1}
+%         \end{tasktwo}
+%     }
+%   \end{solutionnoinc}
+%   \begin{solutionnoinc}
+%     \begin{itemize}
+%       \item[1.] \alert{Make the matrix nonnegative:} Negate all values, add a constant to each value such that all values are nonnegative
+%     \end{itemize}
+%     \begin{columns}
+%       \begin{column}{0.5\textwidth}
+%         \resizebox{\textwidth}{!}{
+%             \begin{tasktwocolumn}
+%             \textcolor{white}{}$w_{i,j}$ &    j    & 1              & 2              & 3              & 4              & 5              \\
+%                   i              & \diagbox{$u_i$}{$v_j$}& 0              & 0              & 0              & 0              & 0     \\
+%               1                  &      4              & \diagbox{-2}{2} & \diagbox{-1}{1} & \diagbox{-1}{1} & \diagbox{-4}{4} & \diagbox{0}{0} \\
+%               2                  &      3              & \diagbox{-2}{2} & \diagbox{-2}{2} & \diagbox{-2}{2} & \diagbox{-3}{3} & \diagbox{-1}{1} \\
+%               3                  &      4              & \diagbox{-4}{4} & \diagbox{-2}{2} & \diagbox{-1}{1} & \diagbox{-2}{2} & \diagbox{-2}{2} \\
+%               4                  &      3              & \diagbox{-1}{1} & \diagbox{-3}{3} & \diagbox{-3}{3} & \diagbox{-1}{1} & \diagbox{-2}{2} \\
+%               5                  &      2              & \diagbox{-2}{2} & \diagbox{0}{0} & \diagbox{-1}{1} & \diagbox{0}{0} & \diagbox{-1}{1}
+%             \end{tasktwocolumn}
+%         }
+%       \end{column}
+%       \begin{column}{0.5\textwidth}
+%         \resizebox{\textwidth}{!}{
+%             \begin{tasktwocolumn}
+%             \textcolor{white}{}$w_{i,j}$ &    j    & 1              & 2              & 3              & 4              & 5              \\
+%                   i              & \diagbox{$u_i$}{$v_j$}& 0              & 0              & 0              & 0              & 0     \\
+%               1                  &      4              & \diagbox{2}{2} & \diagbox{3}{1} & \diagbox{3}{1} & \diagbox{0}{4} & \diagbox{4}{0} \\
+%               2                  &      3              & \diagbox{2}{2} & \diagbox{2}{2} & \diagbox{2}{2} & \diagbox{1}{3} & \diagbox{3}{1} \\
+%               3                  &      4              & \diagbox{0}{4} & \diagbox{2}{2} & \diagbox{3}{1} & \diagbox{2}{2} & \diagbox{2}{2} \\
+%               4                  &      3              & \diagbox{3}{1} & \diagbox{1}{3} & \diagbox{1}{3} & \diagbox{3}{1} & \diagbox{2}{2} \\
+%               5                  &      2              & \diagbox{2}{2} & \diagbox{4}{0} & \diagbox{3}{1} & \diagbox{4}{0} & \diagbox{3}{1}
+%             \end{tasktwocolumn}
+%         }
+%       \end{column}
+%     \end{columns}
+%   \end{solutionnoinc}
+%   \begin{solutionnoinc}
+%     \begin{itemize}
+%       \item[2.] \alert{Row Reduction:} Substract each rows minimum from every value in that row
+%     \end{itemize}
+%     \resizebox{\textwidth}{!}{
+%         \begin{tasktwo}
+%         \textcolor{white}{}$w_{i,j}$ &    j    & 1              & 2              & 3              & 4              & 5              \\
+%               i              & \diagbox{$u_i$}{$v_j$}& 0              & 0              & 0              & 0              & 0     \\
+%           1                  &      4              & \diagbox{2}{2} & \diagbox{3}{1} & \diagbox{3}{1} & \diagbox{0}{4} & \diagbox{4}{0} \\
+%           2                  &      3              & \diagbox{1}{2} & \diagbox{1}{2} & \diagbox{1}{2} & \diagbox{0}{3} & \diagbox{2}{1} \\
+%           3                  &      4              & \diagbox{0}{4} & \diagbox{2}{2} & \diagbox{3}{1} & \diagbox{2}{2} & \diagbox{2}{2} \\
+%           4                  &      3              & \diagbox{2}{1} & \diagbox{0}{3} & \diagbox{0}{3} & \diagbox{2}{1} & \diagbox{1}{2} \\
+%           5                  &      2              & \diagbox{0}{2} & \diagbox{2}{0} & \diagbox{1}{1} & \diagbox{2}{0} & \diagbox{1}{1}
+%         \end{tasktwo}
+%     }
+%   \end{solutionnoinc}
+%   \begin{solutionnoinc}
+%     \begin{itemize}
+%       \item[3.] \alert{Column Reduction:} Substract each columns minimum from every value in that column
+%     \end{itemize}
+%     \resizebox{\textwidth}{!}{
+%         \begin{tasktwo}
+%         \textcolor{white}{}$w_{i,j}$ &    j    & 1              & 2              & 3              & 4              & 5              \\
+%           i                  & \diagbox{$u_i$}{$v_j$}& 0              & 0              & 0              & 0              & 0     \\
+%           1                  &      4              & \diagbox{2}{2} & \diagbox{3}{1} & \diagbox{3}{1} & \diagbox{0}{4} & \diagbox{3}{0} \\
+%           2                  &      3              & \diagbox{1}{2} & \diagbox{1}{2} & \diagbox{1}{2} & \diagbox{0}{3} & \diagbox{1}{1} \\
+%           3                  &      4              & \diagbox{0}{4} & \diagbox{2}{2} & \diagbox{3}{1} & \diagbox{2}{2} & \diagbox{1}{2} \\
+%           4                  &      3              & \diagbox{2}{1} & \diagbox{0}{3} & \diagbox{0}{3} & \diagbox{2}{1} & \diagbox{0}{2} \\
+%           5                  &      2              & \diagbox{0}{2} & \diagbox{2}{0} & \diagbox{1}{1} & \diagbox{2}{0} & \diagbox{0}{1}
+%         \end{tasktwo}
+%     }
+%   \end{solutionnoinc}
+%   \begin{solutionnoinc}
+%     \begin{itemize}
+%       \item[4.] \alert{Test for optimal assignment:} Cover zeros with a minimum number of straight lines
+%     \end{itemize}
+%     \resizebox{\textwidth}{!}{
+%         \begin{tasktwo}
+%         \textcolor{white}{}$w_{i,j}$ &    j    & 1              & 2              & 3              & 4              & 5              \\
+%           i                  & \diagbox{$u_i$}{$v_j$}& 0              & 0              & 0              & 0              & 0     \\
+%           1                  &      4              & \diagbox{2}{2} & \diagbox{3}{1} & \diagbox{3}{1} & \diagbox{\textcolor{SecondaryColor}{0}}{4} & \diagbox{3}{0} \\
+%           2                  &      3              & \diagbox{1}{2} & \diagbox{1}{2} & \diagbox{1}{2} & \diagbox{\textcolor{SecondaryColor}{0}}{3} & \diagbox{1}{1} \\
+%           3                  &      4              & \diagbox{\textcolor{SecondaryColor}{0}}{4} & \diagbox{\textcolor{SecondaryColor}{2}}{2} & \diagbox{\textcolor{SecondaryColor}{3}}{1} & \diagbox{\textcolor{SecondaryColor}{2}}{2} & \diagbox{\textcolor{SecondaryColor}{1}}{2} \\
+%           4                  &      3              & \diagbox{\textcolor{SecondaryColor}{2}}{1} & \diagbox{\textcolor{SecondaryColor}{0}}{3} & \diagbox{\textcolor{SecondaryColor}{0}}{3} & \diagbox{\textcolor{SecondaryColor}{2}}{1} & \diagbox{\textcolor{SecondaryColor}{0}}{2} \\
+%           5                  &      2              & \diagbox{\textcolor{SecondaryColor}{0}}{2} & \diagbox{\textcolor{SecondaryColor}{2}}{0} & \diagbox{\textcolor{SecondaryColor}{1}}{1} & \diagbox{\textcolor{SecondaryColor}{2}}{0} & \diagbox{\textcolor{SecondaryColor}{0}}{1}
+%         \end{tasktwo}
+%     }
+%   \end{solutionnoinc}
+%   \begin{solutionnoinc}
+%     \begin{itemize}
+%       \item[4.1.] \alert{Populate zeros:} Need to get zeros to uncovered positions in order to increase the minimum number of number of lines required to cover all of the zeros
+%     \end{itemize}
+%     \resizebox{\textwidth}{!}{
+%         \begin{tasktwo}
+%         \textcolor{white}{}$w_{i,j}$ &    j    & 1              & 2              & 3              & 4              & 5              \\
+%           i                  & \diagbox{$u_i$}{$v_j$}& 0              & 0              & 0              & 1              & 0     \\
+%           1                  &      3              & \diagbox{1}{2} & \diagbox{2}{1} & \diagbox{2}{1} & \diagbox{\textcolor{SecondaryColor}{0}}{4} & \diagbox{2}{0} \\
+%           2                  &      2              & \diagbox{0}{2} & \diagbox{0}{2} & \diagbox{0}{2} & \diagbox{\textcolor{SecondaryColor}{0}}{3} & \diagbox{0}{1} \\
+%           3                  &      4              & \diagbox{\textcolor{SecondaryColor}{0}}{4} & \diagbox{\textcolor{SecondaryColor}{2}}{2} & \diagbox{\textcolor{SecondaryColor}{3}}{1} & \diagbox{\textcolor{SecondaryColor}{3}}{2} & \diagbox{\textcolor{SecondaryColor}{1}}{2} \\
+%           4                  &      3              & \diagbox{\textcolor{SecondaryColor}{2}}{1} & \diagbox{\textcolor{SecondaryColor}{0}}{3} & \diagbox{\textcolor{SecondaryColor}{0}}{3} & \diagbox{\textcolor{SecondaryColor}{3}}{1} & \diagbox{\textcolor{SecondaryColor}{0}}{2} \\
+%           5                  &      2              & \diagbox{\textcolor{SecondaryColor}{0}}{2} & \diagbox{\textcolor{SecondaryColor}{2}}{0} & \diagbox{\textcolor{SecondaryColor}{1}}{1} & \diagbox{\textcolor{SecondaryColor}{3}}{0} & \diagbox{\textcolor{SecondaryColor}{0}}{1}
+%         \end{tasktwo}
+%     }
+%   \end{solutionnoinc}
+%   \begin{solutionnoinc}
+%     \begin{itemize}
+%       \item[4.] \alert{Test for optimal assignment:} Cover zeros with a minimum number of straight lines
+%     \end{itemize}
+%     \resizebox{\textwidth}{!}{
+%         \begin{tasktwo}
+%         \textcolor{white}{}$w_{i,j}$ &    j    & 1              & 2              & 3              & 4              & 5              \\
+%           i                  & \diagbox{$u_i$}{$v_j$}& 0              & 0              & 0              & 1              & 0     \\
+%           1                  &      3              & \diagbox{\textcolor{SecondaryColor}{1}}{2} & \diagbox{\textcolor{SecondaryColor}{2}}{1} & \diagbox{\textcolor{SecondaryColor}{2}}{1} & \diagbox{\textcolor{SecondaryColor}{0}}{4} & \diagbox{\textcolor{SecondaryColor}{2}}{0} \\
+%           2                  &      2              & \diagbox{\textcolor{SecondaryColor}{0}}{2} & \diagbox{\textcolor{SecondaryColor}{0}}{2} & \diagbox{\textcolor{SecondaryColor}{0}}{2} & \diagbox{\textcolor{SecondaryColor}{0}}{3} & \diagbox{\textcolor{SecondaryColor}{0}}{1} \\
+%           3                  &      4              & \diagbox{\textcolor{SecondaryColor}{0}}{4} & \diagbox{\textcolor{SecondaryColor}{2}}{2} & \diagbox{\textcolor{SecondaryColor}{3}}{1} & \diagbox{\textcolor{SecondaryColor}{3}}{2} & \diagbox{\textcolor{SecondaryColor}{1}}{2} \\
+%           4                  &      3              & \diagbox{\textcolor{SecondaryColor}{2}}{1} & \diagbox{\textcolor{SecondaryColor}{0}}{3} & \diagbox{\textcolor{SecondaryColor}{0}}{3} & \diagbox{\textcolor{SecondaryColor}{3}}{1} & \diagbox{\textcolor{SecondaryColor}{0}}{2} \\
+%           5                  &      2              & \diagbox{\textcolor{SecondaryColor}{0}}{2} & \diagbox{\textcolor{SecondaryColor}{2}}{0} & \diagbox{\textcolor{SecondaryColor}{1}}{1} & \diagbox{\textcolor{SecondaryColor}{3}}{0} & \diagbox{\textcolor{SecondaryColor}{0}}{1}
+%         \end{tasktwo}
+%     }
+%   \end{solutionnoinc}
+%   \begin{solutionnoinc}
+%     \begin{itemize}
+%       \item[4.2.] \alert{Making the final assignment:} Choosing $n$ zeros while ensuring that each row and column of the matrix only contains one choosen zero. 
+%     \end{itemize}
+%     \resizebox{\textwidth}{!}{
+%         \begin{tasktwo}
+%         \textcolor{white}{}$w_{i,j}$ &    j    & 1              & 2              & 3              & 4              & 5              \\
+%           i                  & \diagbox{$u_i$}{$v_j$}& 0              & 0              & 0              & 1              & 0     \\
+%           1                  &      3              & \diagbox{\textcolor{SecondaryColor}{1}}{2} & \diagbox{\textcolor{SecondaryColor}{2}}{1} & \diagbox{\textcolor{SecondaryColor}{2}}{1} & \diagbox{\textcolor{PrimaryColor}{0}}{\textcolor{PrimaryColor}{4}} & \diagbox{\textcolor{SecondaryColor}{2}}{0} \\
+%           2                  &      2              & \diagbox{\textcolor{SecondaryColor}{0}}{2} & \diagbox{\textcolor{SecondaryColor}{0}}{2} & \diagbox{\textcolor{PrimaryColor}{0}}{\textcolor{PrimaryColor}{2}} & \diagbox{\textcolor{SecondaryColor}{0}}{3} & \diagbox{\textcolor{SecondaryColor}{0}}{1} \\
+%           3                  &      4              & \diagbox{\textcolor{PrimaryColor}{0}}{\textcolor{PrimaryColor}{4}} & \diagbox{\textcolor{SecondaryColor}{2}}{2} & \diagbox{\textcolor{SecondaryColor}{3}}{1} & \diagbox{\textcolor{SecondaryColor}{3}}{2} & \diagbox{\textcolor{SecondaryColor}{1}}{2} \\
+%           4                  &      3              & \diagbox{\textcolor{SecondaryColor}{2}}{1} & \diagbox{\textcolor{PrimaryColor}{0}}{\textcolor{PrimaryColor}{3}} & \diagbox{\textcolor{SecondaryColor}{0}}{3} & \diagbox{\textcolor{SecondaryColor}{3}}{1} & \diagbox{\textcolor{SecondaryColor}{0}}{2} \\
+%           5                  &      2              & \diagbox{\textcolor{SecondaryColor}{0}}{2} & \diagbox{\textcolor{SecondaryColor}{2}}{0} & \diagbox{\textcolor{SecondaryColor}{1}}{1} & \diagbox{\textcolor{SecondaryColor}{3}}{0} & \diagbox{\textcolor{PrimaryColor}{0}}{\textcolor{PrimaryColor}{1}}
+%         \end{tasktwo}
+%     }
+%     \begin{itemize}
+%       \item \alert{Optimal assignment:} $\displaystyle \sum_{u_iv_j\in M} 4 + 2 + 4 + 3 + 1 = 14 = 3 + 2 + 4 + 3 + 2 + 1 = \sum_{i} u_i + \sum_{j} v_j$
+%     \end{itemize}
+%   \end{solutionnoinc}
+% \end{frame}

@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=rectangle node] (0) at (-2, 2) {Ben};
+		\node [style=rectangle node] (1) at (2, 2) {Salami};
+		\node [style=rectangle node] (2) at (-2, 0) {Lou};
+		\node [style=rectangle node] (3) at (2, 0) {Cheese};
+		\node [style=rectangle node] (4) at (-2, -2) {Diana};
+		\node [style=rectangle node] (5) at (2, -2) {Broccoli};
+		\node [style=rectangle node] (6) at (-2, -4) {Alex};
+		\node [style=rectangle node] (7) at (2, -4) {Pineapple};
+		\node [style=rectangle node] (8) at (-2, -6) {Krister};
+		\node [style=rectangle node] (9) at (2, -6) {Anchovy};
+		\node [style=rectangle node] (10) at (-2, -8) {Edith};
+		\node [style=rectangle node] (11) at (2, -8) {Mushrooms};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=new edge style 4] (0) to (1);
+		\draw (2) to (1);
+		\draw [style=new edge style 4] (2) to (3);
+		\draw (10) to (3);
+		\draw (4) to (5);
+		\draw (4) to (7);
+		\draw [style=new edge style 4] (4) to (11);
+		\draw (5) to (6);
+		\draw [style=new edge style 4] (6) to (9);
+		\draw [style=new edge style 4] (8) to (7);
+		\draw (0) to (5);
+		\draw (8) to (11);
+	\end{pgfonlayer}
+\end{tikzpicture}

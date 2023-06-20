@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=circle node] (0) at (-4, 4) {};
+		\node [style=circle node] (1) at (-4, 0) {};
+		\node [style=circle node] (2) at (0, 4) {};
+		\node [style=circle node] (3) at (0, 0) {};
+		\node [style=circle node alternative] (4) at (3, 4) {};
+		\node [style=circle node] (5) at (3, 0) {};
+		\node [style=circle node alternative] (6) at (7, 4) {};
+		\node [style=circle node] (7) at (7, 0) {};
+		\node [style=circle node alternative] (8) at (-4, -3) {};
+		\node [style=circle node alternative] (9) at (-4, -7) {};
+		\node [style=circle node] (10) at (0, -3) {};
+		\node [style=circle node] (11) at (0, -7) {};
+		\node [style=circle node] (12) at (3, -3) {};
+		\node [style=circle node] (13) at (3, -7) {};
+		\node [style=circle node] (14) at (7, -3) {};
+		\node [style=circle node] (15) at (7, -7) {};
+		\node [style=none] (16) at (-2, 3) {Matching};
+		\node [style=none] (17) at (5, 3) {Vertex Cover};
+		\node [style=none] (18) at (5, -4) {Edge Cover};
+		\node [style=none] (19) at (-2, -4) {Independant Set};
+		\node [style=none] (20) at (-2, 2.25) {$\alpha'(G)=2$};
+		\node [style=none] (21) at (5, 2.25) {$\beta(G)=2$};
+		\node [style=none] (22) at (-2, -4.75) {$\alpha(G) = 2$};
+		\node [style=none] (23) at (5, -4.75) {$\beta'(G)=2$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=new edge style 4, in=135, out=-45] (0) to (3);
+		\draw (0) to (2);
+		\draw [style=new edge style 4] (1) to (2);
+		\draw (4) to (6);
+		\draw (6) to (5);
+		\draw (4) to (7);
+		\draw (8) to (11);
+		\draw (10) to (9);
+		\draw (8) to (10);
+		\draw [style=new edge style 4] (12) to (14);
+		\draw [style=new edge style 4] (14) to (13);
+		\draw (12) to (15);
+	\end{pgfonlayer}
+\end{tikzpicture}

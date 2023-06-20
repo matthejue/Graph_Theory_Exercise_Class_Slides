@@ -1,0 +1,345 @@
+%!Tex Root = ../main.tex
+% ./Packete.tex
+% ./Deklarationen.tex
+% ./Vorbereitung.tex
+% ./Aufgabe1.tex
+% ./Aufgabe2.tex
+% ./Aufgabe3.tex
+% ./Appendix.tex
+
+% ┌──────────────────────┐
+% │ Beamer Configuration │
+% └──────────────────────┘
+
+\usetheme{default}
+\useoutertheme{infolines}
+
+% ┌─────────────────────┐
+% │ Color Configuration │
+% └─────────────────────┘
+
+% % https://latexdraw.com/how-to-draw-venn-diagrams-in-latex/
+% as beamer itself already provides these functionalities, there is no need to load hyperref, color, graphicx, graphics
+% \usepackage{xcolor}
+% \definecolor{PrimaryColor}{HTML}{#FE6A00}
+% \definecolor{PrimaryColorDimmed}{HTML}{FFB27B}
+% \definecolor{SecondaryColor}{HTML}{#FFBB00}
+% \definecolor{SecondaryColorDimmed}{HTML}{FFE18F}
+\definecolor{PrimaryColor}{HTML}{C95000}
+\definecolor{PrimaryColorDimmed}{HTML}{FFC8A3}
+\definecolor{SecondaryColor}{HTML}{C99300}
+\definecolor{SecondaryColorDimmed}{HTML}{FFE7A5}
+\colorlet{BoxColor}{gray!10!white}
+
+\setbeamercolor{normal text}{%
+  fg=black,
+  bg=white
+}
+\setbeamercolor{alerted text}{%
+  fg=SecondaryColor,
+}
+
+% \setbeamercolor{example text}{%
+%   fg=PrimaryColor,
+% }
+
+\setbeamercolor{structure}{fg=SecondaryColor}
+
+\setbeamercolor{frametitle}{fg=PrimaryColor}
+\setbeamercolor{framesubtitle}{fg=SecondaryColor}
+
+\setbeamercolor{title}{fg=PrimaryColor, bg=BoxColor}
+\setbeamercolor{subtitle}{fg=SecondaryColor}
+
+% https://github.com/josephwright/beamer/blob/main/base/themes/color/beamercolorthemedefault.sty
+% https://github.com/josephwright/beamer/blob/main/base/themes/outer/beamerouterthemeinfolines.sty
+\setbeamercolor{author in head/foot}{fg=PrimaryColor, bg=PrimaryColorDimmed}
+\setbeamercolor{title in head/foot}{fg=SecondaryColor, bg=SecondaryColorDimmed}
+\setbeamercolor{date in head/foot}{fg=PrimaryColor, bg=PrimaryColorDimmed}
+
+\setbeamercolor{palette primary}{fg=PrimaryColor,bg=PrimaryColorDimmed}
+\setbeamercolor{palette secondary}{fg=SecondaryColor,bg=SecondaryColorDimmed}
+\setbeamercolor{palette tertiary}{fg=PrimaryColor,bg=PrimaryColorDimmed}
+\setbeamercolor{palette quaternary}{fg=PrimaryColor,bg=PrimaryColorDimmed}
+
+\setbeamercolor{block title}{fg=white, bg=PrimaryColor}
+\setbeamercolor{block body}{fg=black, bg=BoxColor}
+
+\setbeamercolor{block title example}{fg=white, bg=PrimaryColor}
+\setbeamercolor{block body example}{fg=black, bg=BoxColor}
+
+\setbeamercolor{block title alerted}{fg=white, bg=SecondaryColor}
+\setbeamercolor{block body alerted}{fg=black, bg=BoxColor}
+
+% https://tex.stackexchange.com/questions/326527/colored-blocks-for-numbered-theorems-in-beamer
+% https://tex.stackexchange.com/questions/87216/how-to-change-the-color-of-the-text-in-a-theorem-in-beamer/87219#87219
+\AtBeginEnvironment{theorem}{% set of commands to be added
+    \setbeamercolor{block title}{fg=white,bg=PrimaryColor}% colors to change
+    \setbeamercolor{block body}{fg=black,bg=PrimaryColorDimmed}% colors to change
+}
+
+\AtBeginEnvironment{proof}{%
+    \setbeamercolor{block title}{fg=white,bg=SecondaryColor}
+    \setbeamercolor{block body}{fg=black,bg=SecondaryColorDimmed}
+}
+
+% https://tex.stackexchange.com/questions/87133/changing-the-color-of-itemize-item-in-beamer
+\setbeamercolor{itemize item}{fg=SecondaryColor}
+\setbeamercolor{itemize subitem}{fg=SecondaryColor}
+\setbeamercolor{itemize subsubitem}{fg=SecondaryColor}
+
+\setbeamercolor{enumerate item}{fg=SecondaryColor}
+\setbeamercolor{enumerate subitem}{fg=SecondaryColor}
+\setbeamercolor{enumerate subsubitem}{fg=SecondaryColor}
+
+% https://tex.stackexchange.com/questions/130327/how-do-i-access-floats-name-e-g-for-use-with-caption
+% \renewcommand{\algorithmname}{\color{SecondaryColor}Algorithm}
+% \floatname{algorithm}{\color{SecondaryColor}Algorithm}
+% \makeatletter
+% \let\algorithmname\fname@algorithm
+% \makeatother
+\setbeamercolor{caption name}{fg=SecondaryColor}
+\setbeamercolor{caption}{fg=black}
+
+\renewcommand{\pseudohl}{\rowcolor{SecondaryColorDimmed}}
+
+% ┌─────────────────────────┐
+% │ Titlepage Configuration │
+% └─────────────────────────┘
+
+\newcommand{\titlesecond}{Exercise class 4}
+\newcommand{\subtitlesecond}{Reachability, Infinite Graphs, Breadth-First Search, Depth-First Search,, Control Flow Graph, Dominance Tree}
+\newcommand{\groups}{
+\if\matthias0{
+Groups 2, 4
+}\else{
+Groups 3, 6
+}\fi
+}
+\newcommand{\type}{
+  \groups\\[-0.25cm]
+  \rule{6cm}{0.1mm}
+}
+\newcommand{\authorsecond}{
+\if\matthias0{
+Jürgen Mattheis
+}\else{
+Matthias Herrmann
+}\fi
+}
+\newcommand{\mail}{
+\if\matthias0{
+(\href{mailto://juergmatth@gmail.com}{juergmatth@gmail.com})
+}\else{
+(\href{mailto://herrmanm@informatik.uni-freiburg.de}{herrmanm@informatik.uni-freiburg.de})
+}\fi
+}
+\newcommand{\moreinformation}{
+\begin{columns}[t]
+  \begin{column}{0.5\textwidth}
+    \raggedright
+    \small
+    \emph{Lecture by:}
+
+    Prof. Dr. Schindelhauer
+  \end{column}
+  \begin{column}{0.5\textwidth}
+    \raggedleft
+    \small
+    \emph{Supervisor for the exercises:}
+
+    Sneha Mohanty 
+  \end{column}
+\end{columns}
+}
+\newcommand{\institutesecond}{University of Freiburg}
+\newcommand{\datesecond}{\today}
+% \logo{\includegraphics[height=0.5cm]{./figures/logo.png}}
+
+\newcommand{\lehrstuhl}{Chair of Computer Networks and Telematics}
+
+\defbeamertemplate*{title page2}{default}[1][]{
+  \vbox{}
+  \vfill
+  \begingroup
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
+      \usebeamerfont{title}\titlesecond\par%
+      \ifx\subtitlesecond\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\subtitlesecond\par}%
+      \fi%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+       \type
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+      \usebeamerfont{author}\emph{Presenter:}\\ \authorsecond\\\mail
+    \end{beamercolorbox}
+    \vspace{-1em}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+      \moreinformation
+    \end{beamercolorbox}%\vskip1em
+    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+      \usebeamerfont{date}\emph{\datesecond}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+      \usebeamerfont{institute}\institutesecond, \lehrstuhl
+    \end{beamercolorbox}
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \endgroup
+  \vfill
+}
+
+\makeatletter
+\def\titlepagesecond{\usebeamertemplate*{title page2}\@thanks}
+\makeatother
+
+\setbeamertemplate{title page2}[default][colsep=-4bp,rounded=true,shadow=true]
+
+% ┌───────────────────────┐
+% │ Footline and Headline │
+% └───────────────────────┘
+
+% https://github.com/josephwright/beamer/blob/main/base/themes/outer/beamerouterthemeinfolines.sty
+\makeatletter
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\authorsecond % \expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\titlesecond,\enspace\groups
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,leftskip=2ex,rightskip=2ex,sep=0pt]{date in head/foot}%
+      \hfill%
+      \usebeamerfont{author in head/foot}%
+      \institutesecond
+      \hfill%
+      \usebeamercolor[fg]{page number in head/foot}%
+      \usebeamerfont{page number in head/foot}%
+      \usebeamertemplate{page number in head/foot}%
+    \end{beamercolorbox}
+  }%
+  \vskip0pt%
+}
+\makeatother
+
+\setbeamertemplate{headline}{%
+\leavevmode%
+  \hbox{%
+    % https://tex.stackexchange.com/questions/85439/custom-headline-in-latex-beamer
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{palette quaternary}%
+      \textcolor{PrimaryColor}{\insertsectionnavigationhorizontal{\paperwidth}{\hskip0pt plus1filll}{\hskip0pt plus1filll}}
+    \end{beamercolorbox}%
+  }
+}
+
+% https://tex.stackexchange.com/questions/44983/beamer-removing-headline-and-its-space-on-a-single-frame-for-plan-but-keepin
+\newenvironment{withoutheadline}{
+  \setbeamertemplate{headline}{%
+  \leavevmode%
+    \hbox{%
+      \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{palette primary}%
+      \end{beamercolorbox}%
+    }
+  }
+}{}
+
+\newenvironment{withoutfootline}{
+  \setbeamertemplate{footline}{%
+  \leavevmode%
+    \hbox{%
+      \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{palette secondary}%
+      \end{beamercolorbox}%
+    }
+  }
+}{}
+
+% ┌──────────────────────┐
+% │ Layout Configuration │
+% └──────────────────────┘
+
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+% https://tex.stackexchange.com/questions/578098/number-of-figure-in-beamer
+\setbeamertemplate{caption}[numbered]
+
+% \setbeamertemplate{sidebar canvas left}{}
+\setbeamersize{sidebar width right=1.5cm}
+\setbeamertemplate{sidebar right}{%
+  \vspace*{\fill}
+  \includegraphics[width=1.5cm, height=\paperheight]{./figures/background.png}
+  \vspace*{\fill}
+}
+
+\newcommand{\insertsectionHEAD}{%
+	\expandafter\insertsectionHEADaux\insertsectionhead}
+	\newcommand{\insertsectionHEADaux}[3]{\LARGE#3
+}
+
+\AtBeginSection[] {
+  \begingroup
+  \setbeamercolor{background canvas}{bg=PrimaryColorDimmed}
+
+  \setbeamertemplate{sidebar right}{%
+    \vspace*{\fill}
+    \includegraphics[width=1.5cm, height=\paperheight]{./figures/background.png}
+    \vspace*{\fill}
+  }
+
+  \begin{frame}
+    \centering
+    \textcolor{PrimaryColor}{\insertsectionHEAD}
+  \end{frame}
+  \endgroup
+}
+
+% TOC at beginning of each section
+% \AtBeginSection[]{
+%   \begin{frame}{Gliederung}
+%     \tableofcontents[currentsection]
+%   \end{frame}
+% }
+
+% https://tex.stackexchange.com/questions/87133/changing-the-color-of-itemize-item-in-beamer
+\setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize subitem}[triangle]
+\setbeamertemplate{itemize subsubitem}[triangle]
+% square, circle, triangle, \rightTextArrow
+
+% ┌────────────────────┐
+% │ Font Configuration │
+% └────────────────────┘
+
+\setbeamerfont{title}{size=\LARGE}
+\setbeamerfont{date}{size=\footnotesize}
+\setbeamerfont{author}{size=\small}
+\setbeamerfont{institute}{size=\small}
+\setbeamerfont{subtitle}{size=\large}
+
+\setbeamerfont{frametitle}{size=\LARGE}
+\setbeamerfont{framesubtitle}{size=\large}
+
+\setbeamerfont{normal text}{size=\tiny}
+\setbeamerfont{itemize/enumerate body}{size=\scriptsize}
+\setbeamerfont{itemize/enumerate subbody}{size=\scriptsize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
+
+\setbeamerfont{caption}{size=\scriptsize}
+
+% ┌───────────┐
+% │ Resources │
+% └───────────┘
+
+% - latex beamer templates als Inspiration: https://github.com/benjamin-weiss/hsrmbeamertheme/blob/master/beamerthemehsrm.sty
+% - inspiration: https://github.com/martinbjeldbak/ultimate-beamer-theme-list
+% - https://github.com/matze/mtheme
+% - https://github.com/josephwright/beamer/blob/main/base/themes/color/beamercolorthemedefault.sty
+  % - different templates switch
+% - https://github.com/josephwright/beamer/blob/main/base/themes/color/beamercolorthemecrane.sty
+% - https://github.com/josephwright/beamer/blob/main/base/themes/color/beamercolorthemebeetle.sty
+% - https://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf
+% - (https://git.imp.fu-berlin.de/raup90/swp_2019/-/blob/master/presentation/fu-beamer-template.tex)

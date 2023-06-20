@@ -1,0 +1,70 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=rectangle node] (0) at (-2, 2) {Ben};
+		\node [style=rectangle node] (1) at (2, 2) {Salami};
+		\node [style=rectangle node] (2) at (-2, 0) {Lou};
+		\node [style=rectangle node] (3) at (2, 0) {Cheese};
+		\node [style=rectangle node] (4) at (-2, -2) {Diana};
+		\node [style=rectangle node] (5) at (2, -2) {Broccoli};
+		\node [style=rectangle node] (6) at (-2, -4) {Alex};
+		\node [style=rectangle node] (7) at (2, -4) {Pineapple};
+		\node [style=rectangle node] (8) at (-2, -6) {Krister};
+		\node [style=rectangle node] (9) at (2, -6) {Anchovy};
+		\node [style=rectangle node] (10) at (-2, -8) {Edith};
+		\node [style=rectangle node] (11) at (2, -8) {Mushrooms};
+		\node [style=rectangle node] (12) at (11, -2) {Diana};
+		\node [style=rectangle node] (13) at (9, -4) {Pineapple};
+		\node [style=rectangle node] (14) at (9, -6) {Krister};
+		\node [style=rectangle node] (15) at (13, -4) {Mushrooms};
+		\node [style=rectangle node] (17) at (8.5, 2) {Ben};
+		\node [style=rectangle node] (18) at (11, 0) {Broccoli};
+		\node [style=rectangle node] (19) at (6, -2) {Lou};
+		\node [style=rectangle node] (20) at (6, -4) {Chesse};
+		\node [style=rectangle node] (21) at (6, -6) {Edith};
+		\node [style=rectangle node] (22) at (6, 0) {Salami};
+		\node [style=rectangle node] (23) at (21, -2) {Diana};
+		\node [style=rectangle node] (24) at (23, -4.25) {Pineapple};
+		\node [style=rectangle node] (25) at (19, -6) {Krister};
+		\node [style=rectangle node] (26) at (19, -4) {Mushrooms};
+		\node [style=rectangle node] (27) at (18.5, 2) {Ben};
+		\node [style=rectangle node] (28) at (21, 0) {Broccoli};
+		\node [style=rectangle node] (29) at (16, -2) {Lou};
+		\node [style=rectangle node] (30) at (16, -4) {Chesse};
+		\node [style=rectangle node] (31) at (16, -6) {Edith};
+		\node [style=rectangle node] (32) at (16, 0) {Salami};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style={graph_theory_directed_right}] (0) to (1);
+		\draw [style={graph_theory_directed_left}] (2) to (1);
+		\draw [style={graph_theory_directed_right}] (2) to (3);
+		\draw [style={graph_theory_directed_left}] (10) to (3);
+		\draw [style={graph_theory_directed_left}] (4) to (5);
+		\draw [style=new edge style 3] (4) to (7);
+		\draw [style=new edge style 3] (4) to (11);
+		\draw [style={graph_theory_directed_left}] (5) to (6);
+		\draw [style={graph_theory_directed_left}] (6) to (9);
+		\draw [style=new edge style 0] (8) to (7);
+		\draw [style={graph_theory_directed_right}] (0) to (5);
+		\draw [style=new edge style 0] (8) to (11);
+		\draw [style=new edge style 3] (12) to (13);
+		\draw [style={graph_theory_directed_right}] (17) to (18);
+		\draw [style={graph_theory_directed_right}] (18) to (12);
+		\draw [style={graph_theory_directed_right}] (17) to (22);
+		\draw [style={graph_theory_directed_right}] (22) to (19);
+		\draw [style={graph_theory_directed_right}] (19) to (20);
+		\draw [style={graph_theory_directed_right}] (20) to (21);
+		\draw [style=new edge style 3] (12) to (15);
+		\draw [style=new edge style 1] (15) to node [right] {Cross edge} (14);
+		\draw [style=new edge style 2] (14) to (13);
+		\draw [style={graph_theory_directed_right}] (27) to (28);
+		\draw [style={graph_theory_directed_right}] (28) to (23);
+		\draw [style={graph_theory_directed_right}] (27) to (32);
+		\draw [style={graph_theory_directed_right}] (32) to (29);
+		\draw [style={graph_theory_directed_right}] (29) to (30);
+		\draw [style={graph_theory_directed_right}] (30) to (31);
+		\draw [style=new edge style 3] (23) to (26);
+		\draw [style=new edge style 3] (26) to (25);
+		\draw [style=new edge style 0] (25) to node [right] {Cross edge} (24);
+		\draw [style=new edge style 3] (23) to (24);
+	\end{pgfonlayer}
+\end{tikzpicture}

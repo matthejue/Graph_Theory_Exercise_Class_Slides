@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=circle node] (1) at (-2, 1) {2};
+		\node [style=circle node] (2) at (-2, -1) {3};
+		\node [style=circle node alternative] (3) at (-2, -3) {4};
+		\node [style=circle node] (4) at (-2, -5) {5};
+		\node [style=circle node] (7) at (4, -5) {5};
+		\node [style=circle node alternative] (8) at (4, -3) {4};
+		\node [style=circle node] (9) at (4, -1) {3};
+		\node [style=circle node] (10) at (4, 1) {2};
+		\node [style=circle node alternative] (11) at (4, 3) {1};
+		\node [style=circle node] (13) at (-2, 3) {1};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=new edge style 4] (13) to (8);
+		\draw (1) to (8);
+		\draw [style=new edge style 4] (2) to (11);
+		\draw [style=new edge style 4] (3) to (10);
+		\draw (3) to (9);
+		\draw [style={graph_theory_directed_right}] (4) to (11);
+	\end{pgfonlayer}
+\end{tikzpicture}

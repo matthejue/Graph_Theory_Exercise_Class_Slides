@@ -1,0 +1,64 @@
+\def\matthias{0}
+
+\input{./content/Packete}
+\input{./content/Design}
+\input{./content/Deklarationen}
+\input{./content/Deklarationen_Mindmap}
+\input{./content/Schnipsel}
+
+\includeonly{
+  % ./content/Vorbereitung,
+  ./content/Aufgabe1,
+  ./content/Aufgabe2,
+  % ./content/Aufgabe3,
+  % ./content/Aufgabe4,
+  ./content/Appendix,
+  % ./content/Mindmap,
+}
+
+\begin{document}
+  \begin{withoutheadline}
+    \begin{withoutfootline}
+      \begin{frame}
+        \titlepagesecond
+      \end{frame}
+    \end{withoutfootline}
+
+    \begin{frame}[shrink=10]{Table of Contents}
+      \tableofcontents[hideallsubsections]
+    \end{frame}
+  \end{withoutheadline}
+
+  \setcounter{section}{0}
+
+  \include{./content/Vorbereitung}
+  \include{./content/Aufgabe1}
+  \include{./content/Aufgabe2}
+  \include{./content/Aufgabe3}
+  \include{./content/Aufgabe4}
+  \include{./content/Appendix}
+  \include{./content/Mindmap}
+
+  \section{Literature}
+  %
+  % \begin{frame}{Bücher}
+  %   \printbibliography[type=book,heading=subbibliography,title={Bücher}]
+  % \end{frame}
+  %
+  % \begin{frame}{Artikel}
+  %   \printbibliography[type=article,heading=subbibliography,title={Artikel}]
+  % \end{frame}
+  %
+  % \begin{frame}{Vorlesungen}
+  %   \printbibliography[type=unpublished,heading=subbibliography,title={Vorlesungen}]
+  % \end{frame}
+  %
+  \begin{frame}{Online}
+    \nocite{DownloadWhiteBackground}
+    \printbibliography[type=online,heading=subbibliography,title={Online}]
+  \end{frame}
+  %
+  % \begin{frame}{Sonstiges}
+  %   \printbibliography[nottype=book, nottype=article, nottype=online, nottype=unpublished,heading=subbibliography,keyword=wikikeyword,title={Sonstige Quellen}]
+  % \end{frame}
+\end{document}
