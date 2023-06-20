@@ -13,6 +13,102 @@
 \setcounter{exercise}{1}
 
 \begin{frame}[allowframebreaks]{Aufgabe \thesection}{Hungarian Algorithm}
+  \begin{requirementsnoinc}
+    \begin{itemize}
+      \item  The \alert{Hungarian Algorithm} finds a \alert{maximum weight matching} and a \alert{minimum cost cover}
+      \item \alert{excess matrix} $c_{i,j} = u_{i }+ v_{j} - w_{i,j}$
+      \item stop \enquote{production:} $u_{i}+v_{j}>w_{i,j}$ and at the same time minimize $\sum_{i}u_{i}+\sum_{j}\nu_{j}$
+      \item A \alert{transversal} $M$ of an $n \times n$ matrix consists of $n$ positions, one in each row and each column
+      \item \alert{equality subgraph} $G_{u,v}$ for a weighted cover $(u,v)$ is the spanning subgraph of $K_{n,n}$ having the edges $x_iy_j$ such that $u_i + v_j = w_{i,j}$
+      \item  If $G_{u,v}$ has a \alert{perfect matching} then its weight $\displaystyle\sum_{u_{i},v_{j}in M}w_{i,j}$ is equal to $\displaystyle\sum_{i}u_{i}+{{\sum_{j}}}\;\nu_{j}$
+    \end{itemize}
+    % \begin{columns}
+                %   \begin{column}{0.6\textwidth}
+                %   \end{column}
+                %   \begin{column}{0.4\textwidth}
+                %     \centering
+                %     \resizebox{\textwidth}{!}{
+                %       \begin{minipage}[t]{12cm}
+                %         \begin{table}
+                %         \begin{tblr}{
+                %           cells = {c, white},
+                %           cell{1}{1} = {SecondaryColor,fg=white},
+                %           cell{1}{2} = {SecondaryColor,fg=white},
+                %           cell{1}{3} = {SecondaryColor,fg=white},
+                %           cell{1}{4} = {SecondaryColor,fg=white},
+                %           % cell{1}{5} = {SecondaryColor,fg=white},
+                %           % cell{1}{6} = {SecondaryColor,fg=white},
+                %           % cell{1}{7} = {SecondaryColor,fg=white},
+                %           cell{2}{2} = {SecondaryColor,fg=white},
+                %           cell{2}{3} = {SecondaryColorDimmed,fg=black},
+                %           cell{2}{4} = {SecondaryColorDimmed,fg=black},
+                %           % cell{2}{5} = {SecondaryColorDimmed,fg=black},
+                %           % cell{2}{6} = {SecondaryColorDimmed,fg=black},
+                %           % cell{2}{7} = {SecondaryColorDimmed,fg=black},
+                %           cell{1}{1} = {SecondaryColor,fg=white},
+                %           cell{2}{1} = {SecondaryColor,fg=white},
+                %           cell{3}{1} = {SecondaryColor,fg=white},
+                %           cell{4}{1} = {SecondaryColor,fg=white},
+                %           % cell{5}{1} = {SecondaryColor,fg=white},
+                %           % cell{6}{1} = {SecondaryColor,fg=white},
+                %           % cell{7}{1} = {SecondaryColor,fg=white},
+                %           cell{3}{2} = {SecondaryColorDimmed,fg=black},
+                %           cell{4}{2} = {SecondaryColorDimmed,fg=black},
+                %           % cell{5}{2} = {SecondaryColorDimmed,fg=black},
+                %           % cell{6}{2} = {SecondaryColorDimmed,fg=black},
+                %           % cell{7}{2} = {SecondaryColorDimmed,fg=black},
+                %           vline{2-8} = {1-7}{},
+                %           hline{2-8} = {1-7}{},
+                %         }
+                %               \textcolor{white}{}\diagbox{$w_{i,j}$}{$e_{i,j}$} &    j    & 1              & 2              \\
+                %                   i      &             \diagbox{$u_i$}{$v_j$}   & 0              & 0              \\
+                %                   1                  &      4              & \diagbox{2}{2} & \diagbox{4}{0} \\
+                %                   2                  &      4              & \diagbox{4}{0} & \diagbox{2}{2} \\
+                %         \end{tblr}
+                %         \end{table}
+                %         \vspace{0.5cm}
+                %         \begin{table}
+                %         \begin{tblr}{
+                %           cells = {c, white},
+                %           cell{1}{1} = {SecondaryColor,fg=white},
+                %           cell{1}{2} = {SecondaryColor,fg=white},
+                %           cell{1}{3} = {SecondaryColor,fg=white},
+                %           cell{1}{4} = {SecondaryColor,fg=white},
+                %           % cell{1}{5} = {SecondaryColor,fg=white},
+                %           % cell{1}{6} = {SecondaryColor,fg=white},
+                %           % cell{1}{7} = {SecondaryColor,fg=white},
+                %           cell{2}{2} = {SecondaryColor,fg=white},
+                %           cell{2}{3} = {SecondaryColorDimmed,fg=black},
+                %           cell{2}{4} = {SecondaryColorDimmed,fg=black},
+                %           % cell{2}{5} = {SecondaryColorDimmed,fg=black},
+                %           % cell{2}{6} = {SecondaryColorDimmed,fg=black},
+                %           % cell{2}{7} = {SecondaryColorDimmed,fg=black},
+                %           cell{1}{1} = {SecondaryColor,fg=white},
+                %           cell{2}{1} = {SecondaryColor,fg=white},
+                %           cell{3}{1} = {SecondaryColor,fg=white},
+                %           cell{4}{1} = {SecondaryColor,fg=white},
+                %           % cell{5}{1} = {SecondaryColor,fg=white},
+                %           % cell{6}{1} = {SecondaryColor,fg=white},
+                %           % cell{7}{1} = {SecondaryColor,fg=white},
+                %           cell{3}{2} = {SecondaryColorDimmed,fg=black},
+                %           cell{4}{2} = {SecondaryColorDimmed,fg=black},
+                %           % cell{5}{2} = {SecondaryColorDimmed,fg=black},
+                %           % cell{6}{2} = {SecondaryColorDimmed,fg=black},
+                %           % cell{7}{2} = {SecondaryColorDimmed,fg=black},
+                %           vline{2-8} = {1-7}{},
+                %           hline{2-8} = {1-7}{},
+                %         }
+                %               \textcolor{white}{}\diagbox{$w_{i,j}$}{$e_{i,j}$} &    j    & 1              & 2              \\
+                %                   i      &             \diagbox{$u_i$}{$v_j$}   & 0              & 0              \\
+                %                   1                  &      3              & \diagbox{2}{2} & \diagbox{4}{0} \\
+                %                   2                  &      4              & \diagbox{4}{0} & \diagbox{2}{2} \\
+                %         \end{tblr}
+                %         \end{table}
+                %       \end{minipage}
+                %     }
+                %   \end{column}
+                % \end{columns}
+              \end{requirementsnoinc}
   \begin{solutionnoinc}
     \begin{enumerate}
       \item[1.] Determine the excess matrix
@@ -42,38 +138,38 @@
       \end{column}
     \end{columns}
   \end{solutionnoinc}
-\begin{solutionnoinc}
-  \begin{itemize}
-    \item[3.] Determine a maximum matching in the equality subgraph
-    \item[4.] Determine a minimal vertex cover in the equality subgraph with the same number of vertices as edges in the matching
+  \begin{solutionnoinc}
     \begin{itemize}
-      \item[4.1] Mark the minimal vertex cover in the matrix
+      \item[3.] Determine a maximum matching in the equality subgraph
+      \item[4.] Determine a minimal vertex cover in the equality subgraph with the same number of vertices as edges in the matching
+      \begin{itemize}
+        \item[4.1] Mark the minimal vertex cover in the matrix
+      \end{itemize}
+      \item If it's a perfect matching, one can immediately go on with step 6
     \end{itemize}
-    \item If it's a perfect matching, one can immediately go on with step 6
-  \end{itemize}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-      \centering
-      \resizebox{\textwidth}{!}{
-          \begin{tasktwocolumn}
-            \textcolor{white}{}\diagbox{$w_{i,j}$}{$e_{i,j}$} &    j    & 1              & 2              & 3              & 4              & 5              \\
-              i      &             \diagbox{$u_i$}{$v_j$}   & \textcolor{SecondaryColor}{0}              & 0              & 0              & \textcolor{SecondaryColor}{0}              & 0     \\
-                1                  &      4              & \textcolor{SecondaryColor}{\diagbox{2}{2}} & \diagbox{1}{3} & \diagbox{1}{3} & \textcolor{SecondaryColor}{\diagbox{4}{0}} & \diagbox{0}{4} \\
-                2                  &      3              & \textcolor{SecondaryColor}{\diagbox{2}{1}} & \diagbox{2}{1} & \diagbox{2}{1} & \textcolor{SecondaryColor}{\diagbox{3}{0}} & \diagbox{1}{2} \\
-                3                  &      4              & \textcolor{SecondaryColor}{\diagbox{4}{0}} & \diagbox{2}{2} & \diagbox{1}{3} & \textcolor{SecondaryColor}{\diagbox{2}{2}} & \diagbox{2}{2} \\
-                4                  &      \textcolor{SecondaryColor}{3}              & \textcolor{SecondaryColor}{\diagbox{1}{2}} & \textcolor{SecondaryColor}{\diagbox{3}{0}} & \textcolor{SecondaryColor}{\diagbox{3}{0}} & \textcolor{SecondaryColor}{\diagbox{1}{2}} & \textcolor{SecondaryColor}{\diagbox{2}{1}} \\
-            5                  &      2              & \textcolor{SecondaryColor}{\diagbox{2}{0}} & \diagbox{0}{2} & \diagbox{1}{1} & \textcolor{SecondaryColor}{\diagbox{0}{2}} & \diagbox{1}{1}
-          \end{tasktwocolumn}
-      }
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \resizebox{\textwidth}{!}{
-        \begin{minipage}[t]{10cm}
-          \ctikzfig{2b1}
-        \end{minipage}
-      }
-    \end{column}
-  \end{columns}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \centering
+        \resizebox{\textwidth}{!}{
+            \begin{tasktwocolumn}
+              \textcolor{white}{}\diagbox{$w_{i,j}$}{$e_{i,j}$} &    j    & 1              & 2              & 3              & 4              & 5              \\
+                i      &             \diagbox{$u_i$}{$v_j$}   & \textcolor{SecondaryColor}{0}              & 0              & 0              & \textcolor{SecondaryColor}{0}              & 0     \\
+                  1                  &      4              & \textcolor{SecondaryColor}{\diagbox{2}{2}} & \diagbox{1}{3} & \diagbox{1}{3} & \textcolor{SecondaryColor}{\diagbox{4}{0}} & \diagbox{0}{4} \\
+                  2                  &      3              & \textcolor{SecondaryColor}{\diagbox{2}{1}} & \diagbox{2}{1} & \diagbox{2}{1} & \textcolor{SecondaryColor}{\diagbox{3}{0}} & \diagbox{1}{2} \\
+                  3                  &      4              & \textcolor{SecondaryColor}{\diagbox{4}{0}} & \diagbox{2}{2} & \diagbox{1}{3} & \textcolor{SecondaryColor}{\diagbox{2}{2}} & \diagbox{2}{2} \\
+                  4                  &      \textcolor{SecondaryColor}{3}              & \textcolor{SecondaryColor}{\diagbox{1}{2}} & \textcolor{SecondaryColor}{\diagbox{3}{0}} & \textcolor{SecondaryColor}{\diagbox{3}{0}} & \textcolor{SecondaryColor}{\diagbox{1}{2}} & \textcolor{SecondaryColor}{\diagbox{2}{1}} \\
+              5                  &      2              & \textcolor{SecondaryColor}{\diagbox{2}{0}} & \diagbox{0}{2} & \diagbox{1}{1} & \textcolor{SecondaryColor}{\diagbox{0}{2}} & \diagbox{1}{1}
+            \end{tasktwocolumn}
+        }
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \resizebox{\textwidth}{!}{
+          \begin{minipage}[t]{10cm}
+            \ctikzfig{2b1}
+          \end{minipage}
+        }
+      \end{column}
+    \end{columns}
   \end{solutionnoinc}
   \begin{solutionnoinc}
     \begin{itemize}
