@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=circle node] (0) at (-3, -1) {s};
+		\node [style=circle node] (1) at (0, 1) {b};
+		\node [style=circle node] (2) at (0, -3) {a};
+		\node [style=circle node] (3) at (3, -1) {t};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=new edge style 5] (0) to node [above] {1/99} (1);
+		\draw [style={graph_theory_directed_right}] (1) to node [above] {1/99} (3);
+		\draw [style={graph_theory_directed_right}] (0) to node [below] {1/99} (2);
+		\draw [style=new edge style 5] (2) to node [below] {1/99} (3);
+		\draw [style=new edge style 5] (2) to node [right] {0/1} (1);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,74 @@
+\newenvironment{tasktwocolumn}{
+    \begin{minipage}[t]{12cm}
+      \centering
+      \begin{tblr}{
+        cells = {c, white},
+        cell{1}{1} = {SecondaryColor,fg=white},
+        cell{1}{2} = {SecondaryColor,fg=white},
+        cell{1}{3} = {SecondaryColor,fg=white},
+        cell{1}{4} = {SecondaryColor,fg=white},
+        cell{1}{5} = {SecondaryColor,fg=white},
+        cell{1}{6} = {SecondaryColor,fg=white},
+        cell{1}{7} = {SecondaryColor,fg=white},
+        cell{2}{2} = {SecondaryColor,fg=white},
+        cell{2}{3} = {SecondaryColorDimmed,fg=black},
+        cell{2}{4} = {SecondaryColorDimmed,fg=black},
+        cell{2}{5} = {SecondaryColorDimmed,fg=black},
+        cell{2}{6} = {SecondaryColorDimmed,fg=black},
+        cell{2}{7} = {SecondaryColorDimmed,fg=black},
+        cell{1}{1} = {SecondaryColor,fg=white},
+        cell{2}{1} = {SecondaryColor,fg=white},
+        cell{3}{1} = {SecondaryColor,fg=white},
+        cell{4}{1} = {SecondaryColor,fg=white},
+        cell{5}{1} = {SecondaryColor,fg=white},
+        cell{6}{1} = {SecondaryColor,fg=white},
+        cell{7}{1} = {SecondaryColor,fg=white},
+        cell{3}{2} = {SecondaryColorDimmed,fg=black},
+        cell{4}{2} = {SecondaryColorDimmed,fg=black},
+        cell{5}{2} = {SecondaryColorDimmed,fg=black},
+        cell{6}{2} = {SecondaryColorDimmed,fg=black},
+        cell{7}{2} = {SecondaryColorDimmed,fg=black},
+        vline{2-8} = {1-7}{},
+        hline{2-8} = {1-7}{},
+      }
+}{
+      \end{tblr}
+    \end{minipage}
+}
+\newenvironment{tasktwo}{
+    \begin{minipage}[t]{20cm}
+      \centering
+      \begin{tblr}{
+        cells = {c, white},
+        cell{1}{1} = {SecondaryColor,fg=white},
+        cell{1}{2} = {SecondaryColor,fg=white},
+        cell{1}{3} = {SecondaryColor,fg=white},
+        cell{1}{4} = {SecondaryColor,fg=white},
+        cell{1}{5} = {SecondaryColor,fg=white},
+        cell{1}{6} = {SecondaryColor,fg=white},
+        cell{1}{7} = {SecondaryColor,fg=white},
+        cell{2}{2} = {SecondaryColor,fg=white},
+        cell{2}{3} = {SecondaryColorDimmed,fg=black},
+        cell{2}{4} = {SecondaryColorDimmed,fg=black},
+        cell{2}{5} = {SecondaryColorDimmed,fg=black},
+        cell{2}{6} = {SecondaryColorDimmed,fg=black},
+        cell{2}{7} = {SecondaryColorDimmed,fg=black},
+        cell{1}{1} = {SecondaryColor,fg=white},
+        cell{2}{1} = {SecondaryColor,fg=white},
+        cell{3}{1} = {SecondaryColor,fg=white},
+        cell{4}{1} = {SecondaryColor,fg=white},
+        cell{5}{1} = {SecondaryColor,fg=white},
+        cell{6}{1} = {SecondaryColor,fg=white},
+        cell{7}{1} = {SecondaryColor,fg=white},
+        cell{3}{2} = {SecondaryColorDimmed,fg=black},
+        cell{4}{2} = {SecondaryColorDimmed,fg=black},
+        cell{5}{2} = {SecondaryColorDimmed,fg=black},
+        cell{6}{2} = {SecondaryColorDimmed,fg=black},
+        cell{7}{2} = {SecondaryColorDimmed,fg=black},
+        vline{2-8} = {1-7}{},
+        hline{2-8} = {1-7}{},
+      }
+}{
+      \end{tblr}
+    \end{minipage}
+}

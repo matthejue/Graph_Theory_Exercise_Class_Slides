@@ -1,0 +1,227 @@
+%!Tex Root = ../main.tex
+% ./Design.tex
+% ./Deklarationen.tex
+% ./Vorbereitung.tex
+% ./Aufgabe1.tex
+% ./Aufgabe2.tex
+% ./Aufgabe3.tex
+% ./Appendix.tex
+
+% https://tex.stackexchange.com/questions/83101/option-clash-for-package-xcolor
+% [table]
+% https://tex.stackexchange.com/questions/14336/latex-beamer-presentation-package-169-aspect-ratio
+% https://tex.stackexchange.com/questions/203045/latex-error-option-clash-for-package-hyperref
+% https://stackoverflow.com/questions/3637129/how-can-i-top-align-the-content-of-a-fragile-frame-in-a-latex-beamer-presentat
+% https://latex-beamer.com/faq/place-content-frame/
+% \documentclass[draft, aspectratio=169, hyperref={colorlinks=true, allcolors=PrimaryColor}, c]{beamer}
+\documentclass[aspectratio=169, hyperref={colorlinks=true, allcolors=PrimaryColor}, c]{beamer}
+% t to position content at the top: https://tex.stackexchange.com/questions/9889/positioning-content-at-the-top-of-a-beamer-slide-by-default
+
+% ┌──────────┐
+% │ Packages │
+% └──────────┘
+
+% \usepackage[margin=1.5cm, headheight=12.5pt]{geometry}
+\usepackage[english]{babel}
+
+% \usepackage[T1]{fontenc}
+\usepackage{fontspec}
+% https://dejavu-fonts.github.io/Download.html
+\newfontfamily\gyre{DejaVu Math TeX Gyre}
+% \newfontfamily\gyre{Tex Gyre DejaVu Math}
+
+\usepackage{lipsum}
+
+\usepackage{multirow}
+
+\usepackage[parfill]{parskip}
+% % https://latexref.xyz/bs-par.html
+\setlength{\parskip}{0.4cm} % space between paragraphs
+% \usepackage{setspace}
+
+% as beamer itself already provides these functionalities, there is no need to load hyperref, color, graphicx, graphics
+% \usepackage{graphicx}
+
+% % https://tex.stackexchange.com/questions/48509/insert-list-of-figures-in-the-table-of-contents
+% \usepackage[nottoc]{tocbibind}
+
+% % colorbox stuff
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,theorems}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usetikzlibrary{graphs}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadings}
+\usetikzlibrary{mindmap, shadows, backgrounds} % , calc
+% \usepackage{pgfplots}
+% \usepackage{pgfgantt}
+
+\usepackage{tikzit}
+\input{graph_theory.tikzstyles}
+% \input{venn.tikzstyles}
+
+\usetikzlibrary {arrows.meta,positioning}
+\usetikzlibrary{graphs}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadings}
+\usetikzlibrary{mindmap, backgrounds, calc}
+\tcbuselibrary{theorems}
+% \tcbuselibrary{listings}
+% https://tex.stackexchange.com/questions/550052/command-parboxrestore-has-changed
+\tcbuselibrary{minted}
+\tcbset{listing engine=minted}
+\tcbuselibrary{raster}
+
+% % https://tex.stackexchange.com/questions/547950/highlight-labeled-lines-of-code-with-minted
+% % \usepackage{refcount}
+
+% \usepackage{cleveref}
+
+\usepackage[style=authortitle]{biblatex}
+\addbibresource{./Library/library.bib}
+
+\usepackage[export]{adjustbox}
+
+% \usepackage{pdfpages}
+% https://tex.stackexchange.com/questions/94845/problems-with-toprule-and-midrule-in-a-table
+
+% \usepackage{booktabs} % for table rules
+\usepackage{boldline}
+% % \usepackage{tabulary}
+% % https://tex.stackexchange.com/questions/395554/command-rowcolors-from-colortbl-does-not-work-as-expected
+
+% \usepackage{nicematrix}
+% \usepackage{tabularx}
+% \usepackage{array}
+% \usepackage{multirow}
+% \usepackage{amssymb}
+
+% https://tex.stackexchange.com/questions/157389/how-to-center-column-values-in-a-table
+% \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+% https://stackoverflow.com/questions/2888817/footnotes-for-tables-in-latex
+% \usepackage{tablefootnote}
+
+% https://tex.stackexchange.com/questions/8625/force-figure-placement-in-text
+% \usepackage{float}
+
+% https://tex.stackexchange.com/questions/219445/line-break-in-texttt
+\usepackage{seqsplit}
+\newcommand{\seqtt}[1]{{\scriptsize\texttt{\seqsplit{#1}}}}
+\newcommand{\smalltt}[1]{{\small\texttt{#1}}}
+\newcommand{\tinytt}[1]{{\tiny\texttt{#1}}}
+\newcommand{\scripttt}[1]{{\scriptsize\texttt{#1}}}
+
+% https://tex.stackexchange.com/questions/358292/creating-a-subcounter-to-a-counter-i-created
+\usepackage{chngcntr}
+
+% https://tex.stackexchange.com/questions/18870/defining-an-new-itemize-like-environment-where-itemfoo-passes-foo-to-a-macro
+\usepackage{ifmtarg}
+
+
+% https://stackoverflow.com/questions/1061112/eliminate-space-before-beginitemize
+% https://tex.stackexchange.com/questions/31505/trouble-combining-enumitem-and-beamer
+% https://tex.stackexchange.com/questions/325003/given-enumitem-beamer-incompatibility-how-do-i-adjust-the-indent-of-the-enume
+% https://tex.stackexchange.com/questions/455692/beamer-presentation-with-itemize-exceed-text-capacity
+% \usepackage{enumitem}
+
+% https://tex.stackexchange.com/a/263470
+\usepackage{microtype}
+
+% https://tex.stackexchange.com/questions/165178/nameref-hyperref-evaluating-counter-instead-of-section-name
+% \usepackage{nameref}
+
+% https://stackoverflow.com/questions/1078370/subfigs-of-a-figure-on-multiple-pages
+% \usepackage{subfig}
+
+% https://tex.stackexchange.com/questions/186981/is-there-a-subsubsubsection-command
+% https://tex.stackexchange.com/questions/130795/how-can-i-number-sections-below-subsection-in-latex
+% \setcounter{secnumdepth}{5}
+
+% % https://stackoverflow.com/questions/2854299/getting-subsection-to-list-in-table-of-contents-in-latex
+\setcounter{tocdepth}{4}
+
+% https://tex.stackexchange.com/questions/369421/how-to-have-a-figure-going-over-several-pages
+% TODO: set hypcap = true when compiling for the last time
+% https://tex.stackexchange.com/questions/132611/change-color-of-figure-caption-text
+% NOTE: had do be uncommented because else floatname command isn't working
+% \usepackage[labelfont={color=SecondaryColor, it}, textfont={it}]{caption}
+% hypcap=false
+% \usepackage{subcaption}
+
+% https://tex.stackexchange.com/questions/7210/label-and-caption-without-float
+% \DeclareCaptionType{codecaption}[Code][Codeverzeichnis]
+% https://tex.stackexchange.com/questions/449677/spaces-in-newenvironment
+\newenvironment{code}{\bigskip\captionsetup{type=codecaption}}{\medskip}
+
+% https://texblog.net/latex-archive/uncategorized/prevent-floating-image-figure-table/
+% \newcommand\captionof[1]{\def\@captype{#1}\caption}
+% \usepackage{capt-of}
+
+% \usepackage{formal-grammar}
+
+% newfloat package
+% \SetupFloatingEnvironment{floatgrammar}{name=Grammatik}
+
+% \renewcommand{\downplay}[0]{\rowstyle{\color{gray!90!black}}}
+% \newcommand{\removed}[0]{\rowstyle{\color{red}}}
+
+% https://tex.stackexchange.com/questions/26637/how-do-you-get-mathbb1-to-work-characteristic-function-of-a-set
+% \usepackage{bbm}
+% \usepackage{newtxmath}
+
+% https://tex.stackexchange.com/questions/27843/level-of-boldness-changeable
+\usepackage[bold=1]{xfakebold}
+
+% \newcommand{\footnoteurl}[1]{\href{#1}{Link}\footnote{\url{#1}.}}
+
+% https://www.namsu.de/Extra/befehle/Cases.html
+\usepackage{mathtools}
+
+\usepackage{breqn}
+
+% https://tex.stackexchange.com/questions/479632/newcommand-combine-optional-star-and-optional-parameter
+% \usepackage{xparse}
+\tcbuselibrary{xparse}
+
+% https://texfaq.org/FAQ-twooptarg
+\usepackage{xargs}
+
+% emojis
+\usepackage{tikzsymbols}
+
+% \usepackage{algorithm2e}
+% \usepackage[ruled]{algorithm}
+
+% https://tex.stackexchange.com/questions/237974/hide-section-numbering-but-keep-labeling
+% reference titles of sections
+% \usepackage[usetoc]{titleref}
+
+% % https://tex.stackexchange.com/questions/531/what-is-the-best-way-to-use-quotation-mark-glyphs
+\usepackage{csquotes}
+
+% https://tex.stackexchange.com/questions/326527/colored-blocks-for-numbered-theorems-in-beamer
+\usepackage{etoolbox}% new package to be loaded
+
+% https://jansoehlke.com/2010/06/strikethrough-in-latex/
+% \usepackage[normalem]{ulem}
+% \usepackage{cancel}
+
+% get checkmark
+\usepackage{amsmath}
+
+% change font size
+\usepackage{anyfontsize}
+
+\usepackage{tabularray}
+\UseTblrLibrary{diagbox}
+
+\usepackage{pseudo}
+
+% \usepackage[noEnd]{algpseudocodex}
+\usepackage{float}
+
+\usepackage{mathtools}
