@@ -31,7 +31,6 @@
 		\draw [style={graph_theory_directed_right}] (20) to node [above] {1} (29);
 		\draw [style={graph_theory_directed_right}] (17) to node [above] {1} (22);
 		\draw [style={graph_theory_directed_right}, bend right=15] (26) to node [below] {0} (23);
-		\draw [style={graph_theory_directed_right}, bend right=15] (23) to node [above] {0} (24);
 		\draw [style={graph_theory_directed_right}, bend right=15] (20) to node [below] {0} (26);
 		\draw [style={graph_theory_directed_right}, bend right=15] (18) to node [below] {0} (26);
 		\draw [style=new edge style 5] (17) to node [above] {1} (24);
@@ -50,8 +49,9 @@
 		\draw [style={graph_theory_directed_right}, bend left=345] (16) to node [above] {1} (15);
 		\draw [style={graph_theory_directed_right}, bend right=15] (26) to node [above] {1} (20);
 		\draw [style={graph_theory_directed_right}, bend right=15] (23) to node [above] {1} (26);
-		\draw [style=new edge style 5, bend right=15] (24) to node [below] {2} (23);
+		\draw [style={graph_theory_directed_left}, bend right=15] (24) to node [below] {0} (23);
 		\draw [style={graph_theory_directed_right}, bend left=345] (25) to node [above] {2} (24);
 		\draw [style={graph_theory_directed_right}, bend left=345] (26) to node [above] {1} (18);
+		\draw [style=new edge style 5, bend left=15] (24) to node [above] {2} (23);
 	\end{pgfonlayer}
 \end{tikzpicture}
