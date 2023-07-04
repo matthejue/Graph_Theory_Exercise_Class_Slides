@@ -47,10 +47,11 @@
         \resizebox{\textwidth}{!}{
           \begin{minipage}[t]{8cm}
             \begin{itemize}
-              \item $\epsilon(e) = c(e) - f(e)$ if $e$ is followed \alert{forward}
-                \begin{itemize}
-                  \item $\epsilon(e) = f(e)$ if $e$ is followed \alert{backward}
-                \end{itemize}
+              \item[]
+              \begin{itemize}
+                \item $\epsilon(e) = c(e) - f(e)$ if $e$ is followed \alert{forward}
+                \item $\epsilon(e) = f(e)$ if $e$ is followed \alert{backward}
+              \end{itemize}
               \item \alert{source/sink cut [S, T]} are the \alert{edges} from source set $S$ to sink set $T$
               \item \alert{capacity} of the \alert{cut} $[S, T]$: $\displaystyle cap(S, T) = \sum_{\mathclap{\substack{u\in S, v\in T}}} c((u, v))$, edges from $T$ to $S$ do not affect the capacity of the cut
               \item \alert{weak duality:} if $f$ is a \alert{feasible flow} and $[S,T]$ is a \alert{source/sink cut} then $val(f) = f^+(S) - f^-(S) \le f^+(S) \le cap(S, T)$
@@ -80,8 +81,8 @@
           \tiny
           \item $\begin{aligned}[t]\displaystyle val(f) &= f^-(t) - f^+(t)\\
             &= \sum_{\mathclap{\substack{w T-Stadt\in E}}} f(w T{-}Stadt) - \sum_{\mathclap{\substack{T{-}Stadt w\in E}}} f(vw)\\
-            &= (f(N{-}Stadt T{-}Stadt) + f(L{-}Stadt T{-}Stadt) \\
-            &\quad + f(M{-}Stadt T{-}Stadt)) - f(T{-}Stadt M{-}Stadt)\\
+            &= ((f(N{-}Stadt, T{-}Stadt)) + f((L{-}Stadt, T{-}Stadt)) \\
+            &\quad + f((M{-}Stadt, T{-}Stadt)) - f((T{-}Stadt, M{-}Stadt))\\
             &= (0 + 1 + 1 ) - 1 = 2 - 1 = 1\\
           \end{aligned}$
         \end{itemize}
@@ -129,7 +130,7 @@
       \begin{column}{0.5\textwidth}
         \resizebox{\textwidth}{!}{
           \begin{minipage}[t]{14cm}
-            \ctikzfig{schienenetz_4}
+            \ctikzfig{schienenetz_3}
           \end{minipage}
         }
         \centering\scriptsize
