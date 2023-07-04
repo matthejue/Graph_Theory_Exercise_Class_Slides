@@ -19,11 +19,11 @@
 		\draw [style=new edge style 4] (2) to (3);
 		\draw [style=new edge style 4] (10) to (3);
 		\draw [style=new edge style 4] (4) to (5);
-		\draw [style=new edge style 4] (4) to (7);
+		\draw (4) to (7);
 		\draw [style=new edge style 4] (4) to (11);
 		\draw (5) to (6);
 		\draw [style=new edge style 4] (6) to (9);
-		\draw (8) to (7);
+		\draw [style=new edge style 4] (8) to (7);
 		\draw (8) to (11);
 	\end{pgfonlayer}
 \end{tikzpicture}
