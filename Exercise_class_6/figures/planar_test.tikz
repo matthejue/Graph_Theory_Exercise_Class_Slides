@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=circle node] (0) at (-9.5, 1) {};
+		\node [style=circle node] (1) at (-5.5, 0.75) {};
+		\node [style=circle node] (2) at (-4.5, 4) {};
+		\node [style=circle node] (3) at (-10.25, 4.5) {};
+		\node [style=circle node] (4) at (-7.25, 6.5) {};
+		\node [style=circle node] (5) at (-0.75, 1.25) {};
+		\node [style=circle node] (6) at (2.25, 1) {};
+		\node [style=circle node] (7) at (2.5, 3.75) {};
+		\node [style=circle node] (8) at (-0.5, 4) {};
+		\node [style=none] (9) at (1.25, -0.5) {4 - 6 + 4 = 2};
+		\node [style=none] (10) at (-8, -1.25) {5 - 10 + 8 = 3};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (4) to (2);
+		\draw (2) to (1);
+		\draw (1) to (0);
+		\draw (0) to (3);
+		\draw (3) to (4);
+		\draw [bend right=60, looseness=2.00] (4) to (0);
+		\draw [bend left=45, looseness=2.00] (4) to (1);
+		\draw (2) to (3);
+		\draw (1) to (3);
+		\draw (0) to (2);
+		\draw (8) to (7);
+		\draw (7) to (6);
+		\draw (6) to (5);
+		\draw (5) to (8);
+		\draw (5) to (7);
+		\draw [bend right=90, looseness=2.25] (6) to (8);
+	\end{pgfonlayer}
+\end{tikzpicture}
