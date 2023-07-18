@@ -44,6 +44,9 @@
 		\node [style=none] (49) at (21, -27) {$Q_{3}$ is not  a subdivision of $K_{4}$};
 		\node [style=none] (50) at (21, -29) {$Q_{3}$ has a subdivision of $K_{4}$};
 		\node [style=none] (51) at (3.5, -29) {$Q_{2}$ has a subdivision of $K_{3}$};
+		\node [style=none] (52) at (-22, -2) {$Q_i$};
+		\node [style=none] (53) at (-22, -11) {$K_{i+1}$ subdivision};
+		\node [style=none] (54) at (-22, -19) {$K_{i+1}$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [style=new edge style 4] (0) to (1);
