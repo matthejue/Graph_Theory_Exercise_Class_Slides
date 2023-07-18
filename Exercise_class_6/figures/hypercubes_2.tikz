@@ -1,0 +1,44 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=circle node] (0) at (6, -5) {010};
+		\node [style=circle node alternative] (1) at (11, -5) {110};
+		\node [style=circle node alternative] (2) at (6, -10) {000};
+		\node [style=circle node] (3) at (11, -10) {100};
+		\node [style=circle node] (4) at (13, -3) {111};
+		\node [style=circle node alternative] (5) at (13, -8) {101};
+		\node [style=circle node alternative] (6) at (8, -3) {011};
+		\node [style=circle node] (7) at (8, -8) {001};
+		\node [style=circle node] (8) at (-5, -5) {01};
+		\node [style=circle node alternative] (9) at (0, -5) {11};
+		\node [style=circle node alternative] (10) at (-5, -10) {00};
+		\node [style=circle node] (11) at (0, -10) {10};
+		\node [style=circle node] (12) at (-16, -5) {0};
+		\node [style=circle node alternative] (13) at (-11, -5) {1};
+		\node [style=new style 3] (14) at (19, -6) {};
+		\node [style=new style 3] (15) at (20, -6) {};
+		\node [style=new style 3] (16) at (21, -6) {};
+		\node [style=none] (17) at (-13.5, -13) {$\chi(G) = 2$};
+    \node [style=none, align=center] (18) at (-2.5, -13) {$\chi(G \operatorname{\square} H)$\\ $= max(\chi(G), \chi(H))$\\ $= max(2, 2) = 2$};
+		\node [style=none, align=center] (19) at (8.5, -13) {$max(\chi(G \operatorname{\square} H), \chi(G' \operatorname{\square} H'))$\\ $max(max(\chi(G), \chi(H)), max(\chi(G'), \chi(H')))$\\ $= max(max(2, 2), max(2, 2)) = 2$};
+    \node [style=none, align=center] (20) at (20, -13) {$\ldots = max(2, 2) = 2$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1);
+		\draw (1) to (3);
+		\draw (2) to (3);
+		\draw (0) to (2);
+		\draw (0) to (6);
+		\draw (1) to (4);
+		\draw (6) to (4);
+		\draw (7) to (5);
+		\draw (5) to (4);
+		\draw (3) to (5);
+		\draw (2) to (7);
+		\draw (7) to (6);
+		\draw (8) to (9);
+		\draw (9) to (11);
+		\draw (10) to (11);
+		\draw (8) to (10);
+		\draw (12) to (13);
+	\end{pgfonlayer}
+\end{tikzpicture}

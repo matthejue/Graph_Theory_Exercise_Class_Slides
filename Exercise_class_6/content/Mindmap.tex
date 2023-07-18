@@ -1,0 +1,43 @@
+%!Tex Root = ../main.tex
+% ./Packete.tex
+% ./Design.tex
+% ./Vorbereitung.tex
+% ./Aufgabe1.tex
+% ./Aufgabe2.tex
+% ./Aufgabe3.tex
+% ./Aufgabe4.tex
+% ./Appendix.tex
+
+\begin{frame}{Appendix}{Mindmap}
+\resizebox{\textwidth}{!}{
+  \begin{minipage}[t]{120cm}
+    \centering
+    \begin{mindmap}
+      \begin{mindmapcontent}
+        \node (tp) at (current page.center) {Topic}
+        child {
+          node (ex1) {Example 1}
+          child {
+            node (ex2) {Example 2}
+          }
+          child {
+            node (ex3) {Example 3
+              \resizebox{\textwidth}{!}{
+                \begin{minipage}[t]{8cm}
+                  \begin{itemize}
+                    \item content
+                  \end{itemize}
+                \end{minipage}
+              }
+            }
+          }
+        };
+      \end{mindmapcontent}
+      \begin{edges}
+        \edge{tp}{ex2}
+      \end{edges}
+      \annotation{ex2}{Annotation}
+    \end{mindmap}
+  \end{minipage}
+}
+\end{frame}

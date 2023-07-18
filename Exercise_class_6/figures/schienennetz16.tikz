@@ -1,0 +1,48 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=circle node] (15) at (5, -9) {A};
+		\node [style=circle node alternative] (16) at (9, -9) {C};
+		\node [style=circle node] (17) at (17, -5) {H};
+		\node [style=new style 1] (18) at (9, -13) {D};
+		\node [style=circle node alternative] (19) at (13, -5) {E};
+		\node [style=circle node] (20) at (13, -9) {F};
+		\node [style=circle node alternative] (21) at (17, -1) {G};
+		\node [style=new style 1] (22) at (25, -1) {K};
+		\node [style=circle node] (23) at (29, -9) {N};
+		\node [style=circle node alternative] (24) at (25, -5) {L};
+		\node [style=new style 1] (25) at (29, -5) {T};
+		\node [style=circle node alternative] (26) at (21, -13) {J};
+		\node [style=circle node] (27) at (9, -1) {B};
+		\node [style=circle node alternative] (28) at (5, -1) {S};
+		\node [style=circle node alternative] (29) at (21, -9) {I};
+		\node [style=circle node] (30) at (29, -1) {M};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style={graph_theory_directed_right}] (18) to node [right] {} (16);
+		\draw [style={graph_theory_directed_right}] (16) to node [above] {} (20);
+		\draw [style={graph_theory_directed_right}] (20) to node [right] {} (19);
+		\draw [style={graph_theory_directed_right}] (15) to node [above] {} (16);
+		\draw [style={graph_theory_directed_right}] (19) to node [above] {} (17);
+		\draw [style={graph_theory_directed_right}] (27) to node [right] {} (19);
+		\draw [style={graph_theory_directed_right}] (27) to node [above] {} (21);
+		\draw [style={graph_theory_directed_right}] (17) to node [right] {} (21);
+		\draw [style={graph_theory_directed_right}] (21) to node [above] {} (22);
+		\draw [style={graph_theory_directed_right}] (18) to node [left] {} (29);
+		\draw [style={graph_theory_directed_right}] (20) to node [above] {} (29);
+		\draw [style={graph_theory_directed_right}] (17) to node [above] {} (22);
+		\draw [style={graph_theory_directed_right}] (26) to node [above] {} (23);
+		\draw [style={graph_theory_directed_right}] (23) to node [above] {} (24);
+		\draw [style={graph_theory_directed_right}] (20) to node [above] {} (26);
+		\draw [style={graph_theory_directed_right}] (18) to node [above] {} (26);
+		\draw [style={graph_theory_directed_right}] (17) to node [above] {} (24);
+		\draw [style={graph_theory_directed_right}] (22) to node [right] {} (24);
+		\draw [style={graph_theory_directed_right}] (23) to node [right] {} (25);
+		\draw [style={graph_theory_directed_right}] (24) to node [above] {} (25);
+		\draw [style={graph_theory_directed_right}] (15) to node [above] {} (18);
+		\draw [style={graph_theory_directed_right}] (28) to node [above] {} (27);
+		\draw [style={graph_theory_directed_right}] (28) to node [right] {} (15);
+		\draw [style={graph_theory_directed_right}] (29) to node [left] {} (22);
+		\draw [style={graph_theory_directed_left}, bend right=15] (30) to node [left] {} (25);
+		\draw [style={graph_theory_directed_left}, bend right=15] (25) to node [right] {} (30);
+	\end{pgfonlayer}
+\end{tikzpicture}

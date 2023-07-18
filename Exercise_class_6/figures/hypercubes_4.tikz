@@ -1,0 +1,54 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=circle node] (0) at (3, -1) {0100};
+		\node [style=circle node] (1) at (8, -1) {1100};
+		\node [style=circle node] (2) at (3, -6) {0000};
+		\node [style=circle node] (3) at (8, -6) {1000};
+		\node [style=circle node] (4) at (10, 1) {1110};
+		\node [style=circle node] (5) at (10, -4) {1010};
+		\node [style=circle node] (6) at (5, 1) {0110};
+		\node [style=circle node] (7) at (5, -4) {0010};
+		\node [style=circle node] (8) at (-4, 2) {0101};
+		\node [style=circle node] (9) at (9, 2) {1100};
+		\node [style=circle node] (10) at (-4, -11) {0001};
+		\node [style=circle node] (11) at (9, -11) {1001};
+		\node [style=circle node] (12) at (13, 6) {1111};
+		\node [style=circle node] (13) at (13, -7) {1011};
+		\node [style=circle node] (14) at (0, 6) {0111};
+		\node [style=circle node] (15) at (0, -7) {0011};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1);
+		\draw (1) to (3);
+		\draw (2) to (3);
+		\draw (0) to (2);
+		\draw (0) to (6);
+		\draw (1) to (4);
+		\draw (6) to (4);
+		\draw (7) to (5);
+		\draw (5) to (4);
+		\draw (3) to (5);
+		\draw (2) to (7);
+		\draw (7) to (6);
+		\draw (8) to (9);
+		\draw (9) to (11);
+		\draw (10) to (11);
+		\draw (8) to (10);
+		\draw (8) to (14);
+		\draw (9) to (12);
+		\draw (14) to (12);
+		\draw (15) to (13);
+		\draw (13) to (12);
+		\draw (11) to (13);
+		\draw (10) to (15);
+		\draw (15) to (14);
+		\draw (11) to (3);
+		\draw (13) to (5);
+		\draw (4) to (12);
+		\draw (1) to (9);
+		\draw (6) to (14);
+		\draw (0) to (8);
+		\draw (15) to (7);
+		\draw (10) to (2);
+	\end{pgfonlayer}
+\end{tikzpicture}

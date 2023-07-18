@@ -4,13 +4,17 @@
 % \tikzstyle{NAME}=[PROPERTY LIST]
 
 % Node styles
-\tikzstyle{circle node}=[minimum size=0.5cm, inner sep=0pt, fill={rgb,255: red,255; green,225; blue,143}, draw=none, shape=circle, tikzit fill={rgb,255: red,255; green,225; blue,143}, tikzit shape=circle]
+\tikzstyle{circle node}=[minimum size=1cm, inner sep=0pt, fill={rgb,255: red,255; green,225; blue,143}, draw=none, shape=circle, tikzit fill={rgb,255: red,255; green,225; blue,143}, tikzit shape=circle]
 \tikzstyle{rectangle node}=[minimum size=0.5cm, inner sep=0pt, fill={rgb,255: red,255; green,225; blue,143}, draw=none, shape=rectangle, tikzit fill={rgb,255: red,255; green,225; blue,143}, tikzit shape=rectangle]
 \tikzstyle{circle with border}=[fill={rgb,255: red,255; green,225; blue,143}, draw=black, shape=circle, tikzit draw=black, tikzit fill={rgb,255: red,255; green,225; blue,143}]
 \tikzstyle{circle with border primary}=[fill={rgb,255: red,255; green,178; blue,123}, draw=black, shape=circle, tikzit fill={rgb,255: red,255; green,178; blue,123}, tikzit draw=black]
-\tikzstyle{circle node alternative}=[fill={rgb,255: red,255; green,178; blue,123}, draw=none, shape=circle, tikzit fill={rgb,255: red,255; green,178; blue,123}, minimum size=0.5cm, inner sep=0pt]
-\tikzstyle{asdf}=[fill=none, draw=none, shape=circle]
+\tikzstyle{circle node alternative}=[fill={rgb,255: red,255; green,178; blue,123}, draw=none, shape=circle, tikzit fill={rgb,255: red,255; green,178; blue,123}, minimum size=1cm, inner sep=0pt]
+\tikzstyle{empty}=[fill=none, draw=none, shape=circle]
 \tikzstyle{rectangle node primary}=[fill={rgb,255: red,253; green,176; blue,121}, draw=none, shape=rectangle, tikzit fill={rgb,255: red,253; green,176; blue,121}, minimum size=0.5cm]
+\tikzstyle{new style 0}=[fill=none, draw=black, shape=circle, dashed, minimum size=1cm]
+\tikzstyle{new style 1}=[fill=white, draw=none, shape=circle, minimum size=1cm, inner sep=0pt, tikzit fill=white]
+\tikzstyle{new style 2}=[fill={rgb,255: red,255; green,155; blue,155}, draw=none, shape=circle, minimum size=1cm, inner sep=0pt, tikzit fill={rgb,255: red,255; green,205; blue,205}]
+\tikzstyle{new style 3}=[fill=black, draw=none, shape=circle, minimum size=0.1cm, inner sep=0pt]
 
 % Edge styles
 \tikzstyle{graph_theory_directed_left}=[<-]
@@ -29,3 +33,4 @@
 \tikzstyle{new edge style 6}=[draw={rgb,255: red,254; green,106; blue,0}, <-, line width=0.05cm]
 \tikzstyle{new edge style 7}=[->, draw={rgb,255: red,255; green,225; blue,143}, line width=0.05cm]
 \tikzstyle{new edge style 8}=[<-, draw={rgb,255: red,255; green,225; blue,143}, line width=0.05cm]
+\tikzstyle{new edge style 9}=[-, line width=0.025cm]

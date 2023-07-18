@@ -1,0 +1,73 @@
+%!Tex Root = ../main.tex
+% ./Packete.tex
+% ./Design.tex
+% ./Deklarationen.tex
+% ./Vorbereitung.tex
+% ./Aufgabe1.tex
+% ./Aufgabe3.tex
+% ./Aufgabe4.tex
+% ./Appendix.tex
+
+\section{Exercise 2}
+
+\setcounter{exercise}{1}
+
+\begin{frame}[allowframebreaks]{Aufgabe \thesection}{\small Planarity and Subdivisions}
+  \begin{solution}
+    \resizebox{\textwidth}{!}{
+      \begin{minipage}[t]{20cm}
+        \ctikzfig{hypercubes}
+      \end{minipage}
+    }
+  \end{solution}
+  \begin{requirementsnoinc}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \ctikzfig{cartesian_product}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+        \item the cartesian product of $G$ and $H$, $G \operatorname{\square} H$, is the graph with vertex set $V(G) \times V(H)$ then $(u,v)$ is adjacent to $(u',v')$ \alert{iff} $u=u'$, $vv' \in E(H)$ or $v=v'$, $uu' \in E(G)$
+          \item  $\chi(G \operatorname{\square} H) = max(\chi(G), \chi(H))$
+        \end{itemize}
+      \end{column}
+    \end{columns}
+  \end{requirementsnoinc}
+  \begin{solution}
+    \resizebox{\textwidth}{!}{
+      \begin{minipage}[t]{20cm}
+        \ctikzfig{hypercubes_2}
+      \end{minipage}
+    }
+  \end{solution}
+  \begin{solution}
+    \resizebox{\textwidth}{!}{
+      \begin{minipage}[t]{40cm}
+        \ctikzfig{hypercubes_3}
+      \end{minipage}
+    }
+  \end{solution}
+  \begin{solution}
+    \resizebox{\textwidth}{!}{
+      \begin{minipage}[t]{26cm}
+        \ctikzfig{hypercubes_4}
+      \end{minipage}
+    }
+  \end{solution}
+  \begin{solution}
+    \begin{columns}
+      \begin{column}{0.6\textwidth}
+        \resizebox{\textwidth}{!}{
+          \begin{minipage}[t]{16cm}
+            \ctikzfig{hypercubes_5}
+          \end{minipage}
+        }
+      \end{column}
+      \begin{column}{0.4\textwidth}
+        \begin{itemize}
+          \item has a subdivision of $K_5$ $\Rightarrow$ is not planar
+        \end{itemize}
+      \end{column}
+    \end{columns}
+  \end{solution}
+\end{frame}
